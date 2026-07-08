@@ -6,7 +6,6 @@ __pycache__/
 
 .Python
 build/
-dist/
 downloads/
 lib/
 lib64/
