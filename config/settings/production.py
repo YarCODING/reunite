@@ -41,15 +41,20 @@ ADMINS = [
 ]
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
+
+ANYMAIL = {
+    "BREVO_API_KEY": os.environ.get("BREVO_API_KEY"),
+}
+
 EMAIL_TIMEOUT = 5
-EMAIL_PORT = 465
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
+# EMAIL_PORT = 465
+# EMAIL_USE_TLS = False
+# EMAIL_USE_SSL = True
 # GMAIL
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = os.environ.get('GMAIL_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('GMAIL_APP_PASSWORD')
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = os.environ.get('GMAIL_USER')
+# EMAIL_HOST_PASSWORD = os.environ.get('GMAIL_APP_PASSWORD')
 # BREVO
 # EMAIL_HOST = 'smtp-relay.brevo.com'
 # EMAIL_HOST_USER = os.environ.get('BREVO_SMTP_LOGIN')
