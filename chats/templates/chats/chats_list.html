@@ -1,0 +1,98 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %}
+<div class="w-full px-4 sm:px-6 lg:px-8 py-10 bg-slate-50 dark:bg-gray-900 min-h-screen">
+    
+    <div class="mb-8 border-b border-slate-200 dark:border-gray-700 pb-5">
+        <h1 class="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Chats</h1>
+        <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Manage your active and closed conversations regarding items.</p>
+    </div>
+
+    <div class="flex flex-col gap-4 w-full">
+        
+        <a href="{% url 'chat' %}" class="flex items-center justify-between p-5 bg-white dark:bg-gray-800 hover:bg-slate-50/80 dark:hover:bg-gray-700/50 rounded-2xl border border-slate-200/80 dark:border-gray-700 transition duration-200 shadow-sm group">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary-light/10 dark:bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition duration-200">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+                <div>
+                    <h2 class="text-slate-900 dark:text-white font-semibold group-hover:text-primary-dark transition">General Public Chat</h2>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Open space for all community members</p>
+                </div>
+            </div>
+            <div>
+                <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary-light/10 dark:bg-primary/20 text-primary-dark dark:text-primary border border-primary/20 dark:border-primary/30">
+                    Global
+                </span>
+            </div>
+        </a>
+
+        {% for chatroom in chatrooms %}
+            {% if chatroom.is_private %}
+                {% for member in chatroom.members.all %}
+                    {% if member != user %}
+                        
+                        <a href="{% url 'chatroom' chatroom.group_name %}" 
+                           class="flex items-center justify-between p-5 bg-white dark:bg-gray-800 hover:bg-slate-50/80 dark:hover:bg-gray-700/50 rounded-2xl border border-slate-200/80 dark:border-gray-700 transition duration-200 shadow-sm hover:border-primary-light/50 dark:hover:border-primary/50 {% if chatroom.is_closed %}bg-slate-100/70 dark:bg-gray-800/40 border-dashed opacity-75 hover:opacity-100{% endif %}">
+                            
+                            <div class="flex items-center gap-4 w-1/2 pr-4">
+                                <img src="{{ member.profile.avatar }}" alt="{{ member.profile.name }}" 
+                                     class="w-12 h-12 rounded-full object-cover shrink-0 border border-slate-200 dark:border-gray-700 shadow-sm bg-slate-100 dark:bg-gray-700">
+                                
+                                <div class="truncate">
+                                    <h2 class="text-slate-900 dark:text-white font-semibold truncate group-hover:text-primary-dark flex items-center gap-1.5">
+                                        {{ member.profile.name }}
+                                        
+                                        {% if member.has_premium %}
+                                            <i class="fa-solid fa-hand-holding-heart text-xs" style="color: #f297bd;" title="Reunite Hope Subscriber"></i>
+                                        {% endif %}
+                                    </h2>
+                                    {% if chatroom.is_closed %}
+                                        <span class="inline-block text-[10px] uppercase font-bold tracking-wider text-slate-500 dark:text-slate-400 bg-slate-200/80 dark:bg-gray-700 px-2 py-0.5 rounded-md mt-0.5">Archived</span>
+                                    {% else %}
+                                        <span class="inline-block text-[10px] uppercase font-bold tracking-wider text-primary bg-primary-light/10 dark:bg-primary/20 px-2 py-0.5 rounded-md mt-0.5">Active</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-end gap-4 w-1/2 pl-6 border-l border-slate-200 dark:border-gray-700">
+                                {% if chatroom.item %}
+                                    <div class="text-right truncate">
+                                        <h3 class="text-slate-800 dark:text-gray-200 font-semibold text-sm truncate">{{ chatroom.item.title }}</h3>
+                                        <div class="flex items-center justify-end gap-2 mt-0.5">
+                                            <span class="text-xs text-slate-500 dark:text-slate-400 truncate">{{ chatroom.item.city }}</span>
+                                            <span class="w-1 h-1 bg-slate-300 dark:bg-gray-600 rounded-full"></span>
+                                            <span class="text-[11px] font-bold uppercase tracking-wider {% if chatroom.item.type == 'lost' %}text-amber-600 dark:text-amber-500{% else %}text-sky-600 dark:text-sky-400{% endif %}">
+                                                {{ chatroom.item.type }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    {% if chatroom.item.image %}
+                                        <img src="{{ chatroom.item.image.url }}" alt="{{ chatroom.item.title }}" class="w-12 h-12 rounded-xl object-cover border border-slate-200 dark:border-gray-700 shrink-0 shadow-sm">
+                                    {% else %}
+                                        <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-gray-700 flex items-center justify-center text-slate-400 dark:text-slate-500 shrink-0 border border-slate-200 dark:border-gray-600 shadow-inner">
+                                            <i class="fa-solid fa-box-open text-2xl"></i>
+                                        </div>
+                                    {% endif %}
+                                {% else %}
+                                    <div class="text-right">
+                                        <span class="text-xs text-slate-400 dark:text-slate-500 italic">No item attached</span>
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% empty %}
+            <div class="text-center py-20 bg-white dark:bg-gray-800 border border-dashed border-slate-300 dark:border-gray-700 rounded-2xl shadow-sm">
+                <p class="text-slate-600 dark:text-gray-300 font-medium text-lg">No private conversations yet.</p>
+                <p class="text-slate-400 dark:text-slate-500 text-sm mt-1">Chats will appear here once someone reaches out about an item.</p>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+<li class="flex {% if message.author == user %}justify-end{% else %}justify-start{% endif %} items-end gap-3 my-1 w-full">
+    
+    {% if message.author != user %}
+        <a href="{% url 'profile' message.author.username %}">
+            <img class="w-8 h-8 rounded-full object-cover shrink-0 border border-slate-200 shadow-sm" 
+                src="{{ message.author.profile.avatar }}" 
+                alt="{{ message.author.profile.name }}">
+        </a>
+        
+        <div class="flex flex-col max-w-[70%]">
+            <div class="bg-slate-100 text-slate-800 px-4 py-2.5 rounded-2xl rounded-bl-none shadow-sm text-sm border border-slate-200/50 flex items-start gap-1.5">
+                
+                {% if message.author.has_premium %}
+                    <i class="fa-solid fa-hand-holding-heart text-xs mt-0.5 shrink-0" style="color: #f297bd;"></i>
+                {% endif %}
+                
+                <span>{{ message.body }}</span>
+            </div>
+            <span class="text-[10px] text-slate-400 font-medium mt-1 ml-1">
+                {{ message.created|date:"H:i" }}
+            </span>
+        </div>
+
+    {% else %}
+        <div class="flex flex-col max-w-[70%] items-end">
+            <div class="bg-primary text-white px-4 py-2.5 rounded-2xl rounded-br-none shadow-sm text-sm font-medium flex items-start gap-1.5">
+                
+                {% if message.author.has_premium %}
+                    <i class="fa-solid fa-hand-holding-heart text-xs mt-0.5 shrink-0" style="color: #ffe4f0;"></i>
+                {% endif %}
+                
+                <span>{{ message.body }}</span>
+            </div>
+            <span class="text-[10px] text-slate-400 font-medium mt-1 mr-1">
+                {{ message.created|date:"H:i" }}
+            </span>
+        </div>
+    {% endif %}
+</li>

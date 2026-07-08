@@ -1,0 +1,155 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %}
+<wrapper class="block max-w-2xl mx-auto my-10 px-4 sm:px-6">
+    
+    <div id="chat_window" class="h-[45rem] flex flex-col bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none relative overflow-hidden">
+        
+        <div class="flex items-center justify-between bg-white/90 dark:bg-gray-800/90 backdrop-blur-md px-5 py-3 border-b border-slate-100 dark:border-gray-700 sticky top-0 z-10 min-h-[76px]">
+            
+            {% if other_user %}
+                <div class="flex items-center justify-between w-full gap-4">
+                    
+                    <a href="{% url 'profile' other_user.username %}" class="flex items-center gap-3 group focus:outline-none w-1/2">
+                        <div class="relative shrink-0">
+                            <img class="w-11 h-11 rounded-full object-cover border border-slate-100 dark:border-gray-700 bg-slate-50 dark:bg-gray-700" src="{{ other_user.profile.avatar }}" alt="Avatar" />
+                            <div id="online-icon" class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-slate-300 dark:bg-gray-600 border-2 border-white dark:border-gray-800 transition-colors duration-300"></div>
+                        </div>
+                        <div class="truncate">
+                            <p class="font-bold text-slate-900 dark:text-white leading-tight group-hover:text-primary transition truncate flex items-center gap-1.5">
+                                {{ other_user.profile.name }}
+                                
+                                {% if other_user.has_premium %}
+                                    <i class="fa-solid fa-hand-holding-heart text-xs" style="color: #f297bd;" title="Reunite Hope Subscriber"></i>
+                                {% endif %}
+                            </p> 
+                            <p class="text-xs text-slate-400 dark:text-gray-400 font-medium truncate">@{{ other_user.username }}</p>
+                        </div>
+                    </a>
+
+                    {% if chat_group.item %}
+                    <div class="flex items-center gap-3 p-2 pr-4 w-1/2 max-w-xs sm:max-w-sm shrink-0 my-auto">
+                        
+                        {% if chat_group.item.image %}
+                            <div class="w-12 h-12 rounded-xl overflow-hidden border border-slate-200 dark:border-gray-700 shadow-inner shrink-0 bg-slate-50 dark:bg-gray-700">
+                                <img src="{{ chat_group.item.image.url }}" alt="{{ chat_group.item.name }}" class="w-full h-full object-cover">
+                            </div>
+                        {% else %}
+                            <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-gray-700 flex items-center justify-center text-slate-400 dark:text-gray-500 shrink-0 border border-slate-200 dark:border-gray-600 shadow-inner">
+                                <i class="fa-solid fa-box-open text-2xl"></i>
+                            </div>
+                        {% endif %}
+                        
+                        <div class="flex flex-col justify-center min-w-0 leading-tight">
+                            <h4 class="font-bold text-slate-800 dark:text-gray-200 text-sm sm:text-base truncate tracking-wide">
+                                {{ chat_group.item.title }}
+                            </h4>
+                            
+                            <div class="flex items-center justify-between w-full gap-1">
+                                <div class="mt-1">
+                                    {% if chat_group.item.type == 'lost' %}
+                                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-rose-50 dark:bg-rose-950/30 text-rose-600 dark:text-rose-400 border border-rose-100 dark:border-rose-900/30 shadow-sm">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Lost
+                                        </span>
+                                    {% else %}
+                                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30 shadow-sm">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Found
+                                        </span>
+                                    {% endif %}
+                                </div>
+            
+                                <div class="mt-1">
+                                    {% if chat_group.item.category %}
+                                        <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-widest bg-indigo-50 dark:bg-indigo-950/30 text-indigo-600 dark:text-indigo-400 border border-indigo-200/60 dark:border-indigo-900/30">
+                                            {{ chat_group.item.get_category_display|upper }}
+                                        </span>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    {% endif %}
+                </div>
+            {% else %}
+                <div class="flex items-center gap-2.5 w-full justify-center text-slate-700 dark:text-gray-300 font-semibold text-sm">
+                    <div id="online-icon" class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
+                    <div class="flex items-center text-slate-800 dark:text-white font-bold tracking-tight">
+                        <span id="online-count" class="pr-1 text-primary"></span> others online
+                    </div>
+                </div>
+            {% endif %}
+
+        </div>
+
+        {% if chat_group.item and chat_group.item.user == user and chat_group.item.status == 'active' %}
+            <div class="mt-1 ml-1">
+                <form action="{% url 'confirm-reunite' chat_group.group_name %}" method="POST" onsubmit="return confirm('Are you sure this user found your item? This will award them the payouts.');">
+                    {% csrf_token %}
+                    <button type="submit" class="bg-emerald-600! hover:bg-emerald-700! text-white! text-xs font-bold px-4! py-2! rounded-xl border-0 cursor-pointer flex items-center gap-1.5 ml-auto shadow-sm">
+                        <i class="fa-solid fa-handshake"></i> Verified: Item Found here
+                    </button>
+                </form>
+            </div>
+        {% endif %}
+
+        <div id='chat_container' class="overflow-y-auto grow bg-slate-50/40 dark:bg-gray-900/40">
+            <ul id='chat_messages' class="flex flex-col justify-end gap-3 p-5">
+                {% for message in chat_messages reversed %}
+                    {% include 'chats/chat_message.html' %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="sticky bottom-0 z-10 p-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border-t border-slate-100 dark:border-gray-700">
+            <div class="w-full">
+                <form id="chat_message_form" class="w-full 
+                    [&_input]:w-full 
+                    [&_input]:bg-slate-50 dark:[&_input]:bg-gray-700 
+                    [&_input]:border [&_input]:border-slate-200 dark:[&_input]:border-gray-600 
+                    [&_input]:rounded-2xl 
+                    [&_input]:px-4 [&_input]:py-3.5 
+                    [&_input]:text-sm 
+                    [&_input]:text-slate-800 dark:[&_input]:text-gray-100 
+                    [&_input]:placeholder-slate-400 dark:[&_input]:placeholder-gray-400 
+                    [&_input]:focus:outline-none 
+                    [&_input]:focus:border-primary/50 dark:[&_input]:focus:border-primary/50 
+                    [&_input]:focus:bg-white dark:[&_input]:focus:bg-gray-700 
+                    [&_input]:transition-all [&_input]:duration-200"
+                      hx-ext="ws"
+                      ws-connect="/ws/chatroom/{{ chatroom_name }}"
+                      ws-send
+                      hx-on::ws-after-send="this.reset()" >
+                    {% csrf_token %}
+                    {{ form }}
+                </form>
+            </div>
+        </div>
+
+    </div>
+</wrapper>
+
+<style>
+    .dark input::placeholder {
+        color: #9ca3af !important;
+    }
+    .dark input {
+        background-color: #374151 !important;
+        color: #f8fafc !important;
+        border-color: #4b5563 !important;
+    }
+</style>
+{% endblock %}
+
+{% block javascript %}
+<script>
+    function scrollToBottom() {
+        const container = document.getElementById('chat_container');
+        if (container) {
+            container.scrollTop = container.scrollHeight;
+        }
+    }
+    scrollToBottom();
+</script>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %}
+
+<div class="max-w-4xl mx-auto px-8 py-24">
+    <h1 class="text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white">My Subscription</h1>
+
+    {% if subscription %}
+    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl flex gap-6 border border-transparent dark:border-gray-700">
+        
+        {% if subscription.image %}
+        <div class="w-24 h-24 shrink-0">
+            <img src="{{ subscription.image }}" alt="Plan Icon" class="w-full h-full object-cover rounded-xl">
+        </div>
+        {% endif %}
+        
+        <div class="flex-1">
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="font-bold text-2xl text-gray-900 dark:text-white">{{ subscription.product_name }}</div>
+                    <div class="text-gray-500 dark:text-gray-400">Subscribed since: {{ subscription.start_date|date:"F d, Y" }}</div>
+                    
+                    {% if not subscription.is_cancelled %}
+                        {% if subscription.next_charge_date %}
+                        <div class="text-gray-500 dark:text-gray-400">Next charge date: {{ subscription.next_charge_date|date:"F d, Y" }}</div>
+                        {% endif %}
+                    {% else %}
+                        {% if subscription.next_charge_date %}
+                        <div class="text-red-500 dark:text-red-400 font-medium">Cancelled. Access until: {{ subscription.next_charge_date|date:"F d, Y" }}</div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <div>
+                    <div class="font-bold text-xl text-gray-900 dark:text-white">{{ subscription.price_formatted }} / {{ subscription.interval }}</div>
+                </div>
+            </div>
+            
+            <div class="py-4">
+                <p class="text-gray-700 dark:text-gray-300 text-sm">{{ subscription.description }}</p>
+            </div>
+            
+            <div class="mt-4 flex gap-4">
+                {% if subscription.is_active and not subscription.is_cancelled %}
+                <form method="post" action="{% url 'cancel_subscription' subscription.subscription_id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-normal px-6 py-2 rounded-full transition-all text-sm border-0 cursor-pointer">Cancel Subscription</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <div class="text-center">
+            <p class="text-gray-500 dark:text-gray-400 mb-4">You are not subscribed to any plan.</p>
+            <a href="{% url 'subscription' %}" class="bg-black dark:bg-gray-700 hover:bg-neutral-800 dark:hover:bg-gray-600 text-white font-medium px-6 py-3 inline-block rounded-full shadow-md transition-all cursor-pointer no-underline border-0 text-sm">Choose Plan</a>
+        </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

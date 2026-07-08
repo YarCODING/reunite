@@ -1,0 +1,66 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %}
+<div class="max-w-md mx-auto my-20 px-4">
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="mb-4 p-4 text-sm rounded-2xl border {% if message.tags == 'success' %}bg-emerald-50! dark:bg-emerald-950/20! border-emerald-100! dark:border-emerald-900/30! text-emerald-700 dark:text-emerald-400{% else %}bg-rose-50! dark:bg-rose-950/20! border-rose-100! dark:border-rose-900/30! text-rose-700 dark:text-rose-400{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-3xl p-8 shadow-xl shadow-slate-100/50 dark:shadow-none text-center">
+        <div class="w-16 h-16 bg-primary/10 dark:bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+            <i class="fa-solid fa-wallet"></i>
+        </div>
+
+        <h1 class="text-xl font-bold text-slate-900 dark:text-white mb-1">My Wallet</h1>
+        <p class="text-xs text-slate-400 dark:text-slate-400 mb-6">Earned from safely returning items back to the owners.</p>
+
+        <div class="bg-slate-50 dark:bg-gray-700/50 border border-slate-100 dark:border-gray-700 rounded-2xl py-6 mb-6">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-400 block mb-1">Available Balance</span>
+            <span class="text-4xl font-black text-slate-800 dark:text-white">€{{ wallet.balance }}</span>
+        </div>
+
+        <form action="{% url 'request-withdrawal' %}" method="POST">
+            {% csrf_token %}
+            {% if wallet.balance > 0 %}
+                <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-2xl shadow-lg shadow-primary/20 transition flex items-center justify-center gap-2 cursor-pointer border-0 text-sm">
+                    <i class="fa-solid fa-money-bill-transfer"></i> Withdraw Funds
+                </button>
+            {% else %}
+                <button type="button" disabled class="w-full bg-slate-100 dark:bg-gray-700 text-slate-400 dark:text-gray-500 font-bold py-4 rounded-2xl flex items-center justify-center gap-2 cursor-not-allowed border-0 text-sm">
+                    <i class="fa-solid fa-lock"></i> Wallet Empty
+                </button>
+            {% endif %}
+        </form>
+
+        {% if payout_history %}
+            <div class="mt-8 pt-6 border-t border-slate-100 dark:border-gray-700 text-left">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-400 mb-3">Withdrawal History</h3>
+                <div class="space-y-2 max-h-40 overflow-y-auto pr-1">
+                    {% for tx in payout_history %}
+                        <div class="flex items-center justify-between p-3 bg-slate-50 dark:bg-gray-700/40 border border-slate-100 dark:border-gray-700 rounded-xl text-xs">
+                            <div>
+                                <span class="font-bold text-slate-700 dark:text-gray-200 block">{{ tx.amount }} EUR</span>
+                                <span class="text-[10px] text-slate-400 dark:text-slate-400">{{ tx.created_at|date:"M d, Y · H:i" }}</span>
+                            </div>
+                            <div>
+                                {% if tx.status == 'pending' %}
+                                    <span class="bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 font-semibold px-2 py-0.5 rounded-md border border-amber-200/60 dark:border-amber-900/30">Processing</span>
+                                {% elif tx.status == 'completed' %}
+                                    <span class="bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 font-semibold px-2 py-0.5 rounded-md border border-emerald-200/60 dark:border-emerald-900/30">Paid</span>
+                                {% else %}
+                                    <span class="bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 font-semibold px-2 py-0.5 rounded-md border border-rose-200/60 dark:border-rose-900/30">Cancelled</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

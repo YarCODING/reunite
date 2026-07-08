@@ -1,0 +1,88 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 py-10 select-none">
+    
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+        <div>
+            <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Explore items on the global map</h1>
+            <p class="text-sm text-slate-400 mt-1">Find lost property and report discoveries worldwide.</p>
+        </div>
+    </div>
+
+    <div id="global-map" class="h-[80vh] w-full rounded-lg shadow-md dark:invert dark:hue-rotate-180 dark:brightness-95 dark:contrast-90"></div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{{ cities_json|json_script:"map-data" }}
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mapContainer = document.getElementById('global-map');
+        if (!mapContainer) return;
+
+        const cities = JSON.parse(document.getElementById('map-data').textContent);
+        if (!cities || cities.length === 0) return;
+
+        const firstCity = cities[0];
+        const map = L.map('global-map', { scrollWheelZoom: true, minZoom: 0.5, maxZoom: 7 }).setView([firstCity.lat, firstCity.lng], 4);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        const bounds = [];
+
+        function getRadius(count) {
+            return Math.min(8 + (count * 2), 30);
+        }
+
+        function getColor(count) {
+            return count > 10 ? '#ef4444' :
+                   count > 5  ? '#f97316' :
+                                '#3F888F';
+        }
+
+        cities.forEach(cityData => {
+            const lat = parseFloat(cityData.lat);
+            const lng = parseFloat(cityData.lng);
+
+            if (isNaN(lat) || isNaN(lng)) return;
+
+            bounds.push([lat, lng]);
+
+            const marker = L.circleMarker([lat, lng], {
+                radius: getRadius(cityData.count),
+                fillColor: getColor(cityData.count),
+                color: '#ffffff',
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.6
+            }).addTo(map);
+
+            marker.bindPopup(`
+                <div class="p-2 font-sans min-w-[180px]">
+                    <div class="font-bold text-slate-800 text-base dark:text-gray-950">${cityData.city}</div>
+                    <div class="text-sm text-slate-600 dark:text-slate-300 mt-1 mb-3">
+                        Active listings: <span class="font-semibold text-primary dark:text-primary-dark">${cityData.count}</span>
+                    </div>
+                    <a href="/items/?type=&city=${encodeURIComponent(cityData.city)}" 
+                    class="inline-flex items-center justify-center w-full px-3 py-1.5 text-xs font-medium text-white! bg-primary hover:bg-primary-dark rounded transition-colors text-center no-underline">
+                        View items
+                    </a>
+                </div>
+            `);
+
+            marker.on('mouseover', function (e) {
+                this.openPopup();
+            });
+        });
+        
+
+        if (bounds.length > 0) {
+            map.fitBounds(bounds, { padding: [50, 50] });
+        }
+    });
+</script>
+{% endblock %}

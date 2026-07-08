@@ -1,0 +1,80 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %}
+<div class="max-w-[75vw] mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full text-left">
+    
+    <div class="mb-8">
+        <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Your Dashboard</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Manage your reported posts or create a new one.</p>
+    </div>
+
+    <div class="db-grid" 
+         x-data="{ activeTab: 'list' }" 
+         @item-created.window="activeTab = 'list'">
+        
+        <aside class="db-sidebar bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl p-5 shadow-xl shadow-gray-100/30 dark:shadow-none">
+            <div class="px-4 py-2 mb-2">
+                <p class="text-[10px] font-extrabold uppercase tracking-widest text-gray-400 dark:text-gray-500">Control Panel</p>
+            </div>
+            
+            <nav class="space-y-1">
+                <button hx-get="{% url 'dashboard_list' %}" 
+                        hx-target="#dashboard-content"
+                        @click="activeTab = 'list'"
+                        :class="activeTab === 'list' ? 'bg-primary/10 dark:bg-primary/20 text-primary font-bold' : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-white font-medium'"
+                        class="w-full flex items-center gap-3 px-4 py-3 rounded-2xl transition duration-200 text-left text-sm cursor-pointer border-0">
+                    <i class="fa-solid fa-rectangle-list text-base"></i>
+                    <span>My Listings</span>
+                </button>
+
+                <button hx-get="{% url 'dashboard_add' %}" 
+                        hx-target="#dashboard-content"
+                        @click="activeTab = 'add'"
+                        :class="activeTab === 'add' ? 'bg-primary/10 dark:bg-primary/20 text-primary font-bold' : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-white font-medium'"
+                        class="w-full flex items-center gap-3 px-4 py-3 rounded-2xl transition duration-200 text-left text-sm cursor-pointer border-0">
+                    <i class="fa-solid fa-circle-plus text-base"></i>
+                    <span>Report New Item</span>
+                </button>
+            </nav>
+        </aside>
+
+        <main class="db-main w-full min-w-0" id="dashboard-content">
+            {% include 'posts/partials/dashboard_items.html' %}
+        </main>
+
+    </div>
+</div>
+
+<style>
+    .db-grid {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 2rem;
+        align-items: start;
+        width: 100%;
+    }
+    
+    .db-sidebar {
+        position: sticky;
+        top: 2rem;
+    }
+
+    @media (max-w: 1024px) {
+        .db-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        .db-sidebar {
+            position: static;
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.25s ease-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,217 @@
+{% extends 'layouts/blank.html' %}
+{% load static %}
+
+{% block content %}
+<div class="bg-gray-50/50 dark:bg-gray-900 min-h-screen transition-colors duration-200">
+
+    <section class="relative overflow-hidden py-20 lg:py-32">
+        <div class="absolute top-0 right-0 -z-10 transform translate-x-1/3 -translate-y-1/4 w-150 h-150 bg-primary/15 dark:bg-primary/10 rounded-full filter blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -z-10 transform -translate-x-1/3 translate-y-1/4 w-100 h-100 bg-primary/10 dark:bg-primary/5 rounded-full filter blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <span class="inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-primary-light dark:bg-primary/10 text-primary dark:text-primary-light border border-primary/10 dark:border-primary/20 mb-6">
+                <i class="fa-solid fa-shield-heart text-[10px]"></i> Smart & Safe Network
+            </span>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-950 dark:text-white max-w-4xl mx-auto leading-[1.15] mb-6">
+                Bring What’s <span class="text-primary dark:text-primary-dark">Lost</span> Back to Where It's <span class="text-primary-dark dark:text-primary">Loved</span>
+            </h1>
+            
+            <p class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-medium leading-relaxed mb-10">
+                Reunite is a modern, community-driven platform designed to reconnect lost belongings with their rightful owners. Safe, secure, and fast.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="{% url 'dashboard' %}" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full transition-all duration-200 shadow-xl shadow-primary/20 hover:scale-[1.02]">
+                    <i class="fa-solid fa-magnifying-glass text-xs"></i> Report Lost Item
+                </a>
+                <a href="{% url 'items' %}" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200/80 dark:border-gray-700 font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full transition-all duration-200 shadow-sm hover:border-gray-300 dark:hover:border-gray-600">
+                    Browse All Listings
+                </a>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 max-w-xl mx-auto mt-16 pt-8 border-t border-gray-100 dark:border-gray-800 text-center">
+                <div>
+                    <p class="text-2xl sm:text-3xl font-extrabold text-gray-950 dark:text-white">94%</p>
+                    <p class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mt-1">Success Rate</p>
+                </div>
+                <div>
+                    <p class="text-2xl sm:text-3xl font-extrabold text-gray-950 dark:text-white">24/7</p>
+                    <p class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mt-1">Active Search</p>
+                </div>
+                <div>
+                    <p class="text-2xl sm:text-3xl font-extrabold text-gray-950 dark:text-white">15k+</p>
+                    <p class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mt-1">Reunited Items</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-20 bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-primary mb-3 block">Why Choose Us</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-950 dark:text-white tracking-tight">Engineered for Safe Return</h2>
+                <p class="text-gray-400 dark:text-gray-550 font-medium text-sm mt-3">We built a set of intelligent tools to protect your privacy while maximizing the chances of finding your items.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-gray-50/50 dark:bg-gray-800/40 border border-gray-100/70 dark:border-gray-700 rounded-3xl text-left transition-all duration-300 hover:bg-white dark:hover:bg-gray-800 hover:shadow-xl hover:shadow-gray-100 dark:hover:shadow-none">
+                    <div class="w-12 h-12 rounded-2xl bg-primary-light dark:bg-primary/20 text-primary dark:text-primary-light flex items-center justify-center text-lg font-bold mb-6">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-950 dark:text-white mb-2">Privacy First Chat</h3>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 font-medium leading-relaxed">Communicate securely with finders through our encrypted internal messaging system without ever revealing your personal phone number or email.</p>
+                </div>
+
+                <div class="p-8 bg-gray-50/50 dark:bg-gray-800/40 border border-gray-100/70 dark:border-gray-700 rounded-3xl text-left transition-all duration-300 hover:bg-white dark:hover:bg-gray-800 hover:shadow-xl hover:shadow-gray-100 dark:hover:shadow-none">
+                    <div class="w-12 h-12 rounded-2xl bg-primary-light dark:bg-primary/20 text-primary dark:text-primary-light flex items-center justify-center text-lg font-bold mb-6">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-950 dark:text-white mb-2">Smart Geo-Targeting</h3>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 font-medium leading-relaxed">Pinpoint exactly where an item was last seen. Our smart mapping architecture helps local communities look in exactly the right places.</p>
+                </div>
+
+                <div class="p-8 bg-gray-50/50 dark:bg-gray-800/40 border border-gray-100/70 dark:border-gray-700 rounded-3xl text-left transition-all duration-300 hover:bg-white dark:hover:bg-gray-800 hover:shadow-xl hover:shadow-gray-100 dark:hover:shadow-none">
+                    <div class="w-12 h-12 rounded-2xl bg-primary-light dark:bg-primary/20 text-primary dark:text-primary-light flex items-center justify-center text-lg font-bold mb-6">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-950 dark:text-white mb-2">Instant Match Alerts</h3>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 font-medium leading-relaxed">Our background cross-referencing engine alerts you immediately the moment someone submits a "Found" report matching your "Lost" item description.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-20 bg-gray-50/30 dark:bg-gray-900/50 border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-primary mb-3 block">Simple Steps</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-950 dark:text-white tracking-tight">How Does Reunite Work?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                <div class="hidden md:block absolute top-16 left-[15%] right-[15%] h-0.5 bg-linear-to-r from-primary-light via-primary/20 to-primary-light dark:from-primary/10 dark:via-primary/30 dark:to-primary/10 -z-10"></div>
+
+                <div class="text-center flex flex-col items-center group">
+                    <div class="w-14 h-14 rounded-full bg-white dark:bg-gray-800 border-2 border-primary text-primary font-extrabold text-base flex items-center justify-center shadow-md group-hover:bg-primary group-hover:text-white dark:group-hover:text-white transition-all duration-300 mb-6">
+                        01
+                    </div>
+                    <h3 class="text-base font-bold text-gray-950 dark:text-white mb-2">Publish a Report</h3>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 font-medium max-w-xs leading-relaxed">Create a listing with details, area tags, and photos. It takes less than 2 minutes to broadcast to the network.</p>
+                </div>
+
+                <div class="text-center flex flex-col items-center group">
+                    <div class="w-14 h-14 rounded-full bg-white dark:bg-gray-800 border-2 border-primary text-primary font-extrabold text-base flex items-center justify-center shadow-md group-hover:bg-primary group-hover:text-white dark:group-hover:text-white transition-all duration-300 mb-6">
+                        02
+                    </div>
+                    <h3 class="text-base font-bold text-gray-950 dark:text-white mb-2">Verify & Connect</h3>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 font-medium max-w-xs leading-relaxed">Once a potential match is found, use our secure text system to verify item ownership safely through security questions.</p>
+                </div>
+
+                <div class="text-center flex flex-col items-center group">
+                    <div class="w-14 h-14 rounded-full bg-white dark:bg-gray-800 border-2 border-primary text-primary font-extrabold text-base flex items-center justify-center shadow-md group-hover:bg-primary group-hover:text-white dark:group-hover:text-white transition-all duration-300 mb-6">
+                        03
+                    </div>
+                    <h3 class="text-base font-bold text-gray-950 dark:text-white mb-2">Safely Reunite</h3>
+                    <p class="text-xs text-gray-400 dark:text-gray-400 font-medium max-w-xs leading-relaxed">Arrange to meet up in a public, well-lit safe exchange spot to successfully hand over your recovered property.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-20 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div class="text-left">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-primary mb-3 block">Live Feed</span>
+                    <h2 class="text-3xl font-extrabold text-gray-950 dark:text-white tracking-tight">Latest Active Reports</h2>
+                    <p class="text-gray-400 dark:text-gray-500 font-medium text-sm mt-1">Help your neighbors find what they are looking for.</p>
+                </div>
+                <a href="{% url 'items' %}" class="text-primary hover:text-primary-dark dark:hover:text-primary-light font-bold text-sm uppercase tracking-wider flex items-center gap-1.5 mt-4 md:mt-0 group transition-colors">
+                    See All Reports <i class="fa-solid fa-arrow-right text-xs transform transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for item in items %}
+                {% include 'posts/item_card.html' %}
+                {% empty %}
+                <div class="col-span-full py-12 text-center border-2 border-dashed border-gray-100 dark:border-gray-700 rounded-3xl p-8">
+                    <i class="fa-solid fa-folder-open text-gray-300 dark:text-gray-700 text-4xl mb-3"></i>
+                    <h3 class="text-base font-bold text-gray-700 dark:text-gray-400">No active reports found</h3>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">Be the first one to create a safe report listing!</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-20 bg-gray-50/50 dark:bg-gray-900/50 border-t border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-primary mb-3 block">Success Stories</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-950 dark:text-white tracking-tight">Heartwarming Reunions</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl p-8 shadow-xl shadow-gray-100/30 dark:shadow-none text-left flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-xs mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-gray-900 dark:text-white mb-2">"Found my keys in 2 hours!"</h4>
+                        <p class="text-xs text-gray-400 dark:text-gray-400 font-medium leading-relaxed mb-6">"I dropped my car keys while jogging in Central Park. Posted a report here, and someone found them and contacted me via secure chat within two hours. Absolute lifesaver!"</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-50 dark:border-gray-700">
+                        <img class="h-8 w-8 rounded-full object-cover transition-all" src="{% static 'images/marcus.jpg' %}" alt="Avatar" />
+                        <div>
+                            <p class="text-xs font-bold text-gray-800 dark:text-gray-200 leading-none">Marcus Harris</p>
+                            <p class="text-[10px] font-semibold text-gray-400 dark:text-gray-500 mt-1">Lost Car Keys</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl p-8 shadow-xl shadow-gray-100/30 dark:shadow-none text-left flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-xs mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-gray-900 dark:text-white mb-2">"Max is back home safely"</h4>
+                        <p class="text-xs text-gray-400 dark:text-gray-400 font-medium leading-relaxed mb-6">"Our golden retriever Max escaped through the backyard fence. The community support here was outstanding. A neighbor three blocks away posted a photo of him under 'Found Pets'."</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-50 dark:border-gray-700">
+                        <img class="h-8 w-8 rounded-full object-cover transition-all" src="{% static 'images/emma.jpg' %}" alt="Avatar" />
+                        <div>
+                            <p class="text-xs font-bold text-gray-800 dark:text-gray-200 leading-none">Emma Davis</p>
+                            <p class="text-[10px] font-semibold text-gray-400 dark:text-gray-500 mt-1">Lost Golden Retriever</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl p-8 shadow-xl shadow-gray-100/30 dark:shadow-none text-left flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-xs mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-gray-900 dark:text-white mb-2">"Safe and secure exchange"</h4>
+                        <p class="text-xs text-gray-400 dark:text-gray-400 font-medium leading-relaxed mb-6">"Found an expensive camera setup at a cafe. I was worried about scams, but the built-in messaging let me verify the rightful owner safely by asking them about the specific lens serial number."</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-50 dark:border-gray-700">
+                        <img class="h-8 w-8 rounded-full object-cover transition-all" src="{% static 'images/jason.jpg' %}" alt="Avatar" />
+                        <div>
+                            <p class="text-xs font-bold text-gray-800 dark:text-gray-200 leading-none">Jason K.</p>
+                            <p class="text-[10px] font-semibold text-gray-400 dark:text-gray-500 mt-1">Found DSLR Camera</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+{% endblock %}

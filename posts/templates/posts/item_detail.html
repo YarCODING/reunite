@@ -1,0 +1,322 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto px-4 py-8 select-none">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        
+        <div class="lg:col-span-2 space-y-6">
+            
+            <div class="space-y-3">
+                <div class="flex flex-wrap items-center gap-2">
+                    {% if item.type == 'lost' %}
+                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 border border-rose-100 dark:border-rose-900/30 shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span> Lost
+                        </span>
+                    {% else %}
+                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30 shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Found
+                        </span>
+                    {% endif %}
+
+                    <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-widest bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 border border-indigo-200/60 dark:border-indigo-900/30">
+                        {{ item.get_category_display|upper }}
+                    </span>
+
+                    {% if item.status == 'reunited' %}
+                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-primary text-white shadow-md">
+                            <i class="fa-solid fa-handshake"></i> Reunited
+                        </span>
+                    {% else %}
+                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-900/30 shadow-sm">
+                            Active
+                        </span>
+                    {% endif %}
+                </div>
+
+                <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    {{ item.title }}
+                </h1>
+                
+                <div class="text-xs text-slate-400 dark:text-slate-400 flex items-center gap-1.5">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <span>Published on {{ item.created_at|date:"F d, Y · H:i" }}</span>
+                </div>
+            </div>
+
+            <div class="w-full rounded-2xl overflow-hidden bg-slate-50 dark:bg-gray-800 border border-slate-200/60 dark:border-slate-700 shadow-inner relative flex items-center justify-center">
+                {% if item.image %}
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}" class="w-full h-full object-cover">
+                {% else %}
+                    <div class="flex flex-col items-center justify-center text-slate-300 dark:text-slate-600 py-20 gap-3 w-full">
+                        <i class="fa-solid fa-box-open text-6xl"></i>
+                        <span class="text-sm font-medium text-slate-400 dark:text-slate-500">No image provided</span>
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if not item.is_approved %}
+                <div class="flex items-start sm:items-center gap-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200/70 dark:border-amber-900/40 rounded-2xl p-4 text-amber-900 dark:text-amber-200 animate-fade-in mb-6 text-left">
+                    <div class="flex items-center justify-center w-10 h-10 bg-amber-100/80 dark:bg-amber-900/50 rounded-xl text-amber-600 dark:text-amber-400 shrink-0">
+                        <i class="fa-solid fa-hourglass-half animate-pulse text-base"></i>
+                    </div>
+                    <div class="space-y-0.5">
+                        <h4 class="font-extrabold text-sm tracking-wider uppercase text-amber-800 dark:text-amber-400">
+                            Pending Moderation
+                        </h4>
+                        <p class="text-xs text-amber-700/90 dark:text-amber-300/80 leading-relaxed">
+                            This listing is temporary hidden from the public catalog. A moderator will review it shortly.
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="space-y-2 pt-2">
+                <h2 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Description</h2>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                    {% if item.description %}
+                        {{ item.description }}
+                    {% else %}
+                        <span class="italic text-slate-400 dark:text-slate-500">No description available for this item.</span>
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="space-y-2 pt-2">
+                <h2 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Listed By</h2>
+                <div class="relative inline-flex items-center gap-3 p-3 bg-white dark:bg-gray-800 border border-slate-100 dark:border-slate-700 rounded-xl min-w-55 shadow-sm">
+                    <a href="{% url 'profile' item.user.username %}" class="absolute inset-0 z-10" aria-label="{{ item.user.username }}"></a>
+
+                    {% if item.user.profile.avatar %}
+                        <img src="{{ item.user.profile.avatar }}" alt="{{ item.user.username }}" class="w-10 h-10 rounded-full object-cover shadow-sm">
+                    {% endif %}
+                    <div class="flex flex-col min-w-0">
+                         <div class="hidden lg:block text-left">
+                            <p class="text-xs font-bold text-gray-700 dark:text-gray-200 leading-none m-0 flex items-center gap-1.5">
+                                {{ item.user.profile.name }}
+                                
+                                {% if item.user.has_premium %}
+                                    <i class="fa-solid fa-handholding-heart text-[11px]" style="color: #f297bd;" title="Reunite Hope Subscriber"></i>
+                                {% endif %}
+                            </p>
+                        </div>
+                        {% if not item.user.is_staff %}
+                        <span class="text-[11px] text-slate-400 dark:text-slate-500">Community Member</span>
+                        {% else %}
+                        <span class="text-[11px] text-blue-700 dark:text-blue-400">Staff Member</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-3 pt-2">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Location</h2>
+                    <span class="text-xs font-bold text-slate-600 dark:text-slate-300 bg-white dark:bg-gray-800 border border-slate-100 dark:border-slate-700 px-2.5 py-1 rounded-md shadow-sm">
+                        <i class="fa-solid fa-location-dot text-slate-400 dark:text-slate-500 mr-1"></i> {{ item.city }}
+                    </span>
+                </div>
+
+                {% if item.latitude and item.longitude %}
+                    <div class="rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700 shadow-sm relative z-0">
+                        <div id="map" 
+                            class="h-105 w-full"
+                            data-lat="{{ item.latitude }}"
+                            data-lng="{{ item.longitude }}"
+                            data-city="{{ item.city }}">
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-dashed border-slate-200 dark:border-slate-700 text-center text-slate-400 dark:text-slate-500 text-sm">
+                        <i class="fa-solid fa-map-location-dot text-3xl mb-2 block text-slate-300 dark:text-slate-600"></i>
+                        Map position is unavailable for: "{{ item.city }}".
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+
+        <div class="hidden md:block lg:col-span-1 lg:sticky lg:top-24 space-y-4 z-10">
+            <div class="bg-white dark:bg-gray-800 border border-slate-100 dark:border-slate-700 rounded-2xl shadow-xl shadow-slate-100/50 dark:shadow-none p-6 flex flex-col gap-4 text-left">
+                
+                <h3 class="font-bold text-slate-800 dark:text-white text-lg mb-1">Interested in this item?</h3>
+                
+                {% if request.user != item.user %}
+                    {% if item.status == "active" %}
+                        <a href="{% url 'start-chat-with-item' item.user.username item.id %}" 
+                        class="w-full bg-primary hover:bg-primary-dark text-white! font-bold py-3.5 px-4 rounded-xl text-center text-sm no-underline shadow-md shadow-primary/10 transition flex items-center justify-center gap-2 cursor-pointer border-0">
+                            <i class="fa-solid fa-comments"></i> Contact Author
+                        </a>
+                    {% else %}
+                        <div class="w-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-400 font-bold py-3.5 px-4 rounded-xl text-center text-sm flex items-center justify-center gap-2 cursor-not-allowed">
+                            <i class="fa-solid fa-handshake"></i> Reunited
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <div class="w-full bg-slate-50 dark:bg-slate-700 text-slate-400 dark:text-slate-500 font-bold py-3.5 px-4 rounded-xl text-center text-sm flex items-center justify-center gap-2 cursor-not-allowed border border-slate-100 dark:border-slate-700">
+                        <i class="fa-solid fa-user-shield text-slate-400 dark:text-slate-500"></i> Your Listing
+                    </div>
+                {% endif %}
+
+                {% if item.is_reward_paid and item.reward_amount > 0 %}
+                    <div class="p-4 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/30 rounded-2xl flex items-center gap-3 text-emerald-800 dark:text-emerald-300">
+                        <i class="fa-solid fa-money-bill-wave text-xl text-emerald-500 dark:text-emerald-400"></i>
+                        <div>
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-0.5">Guaranteed Reward</p>
+                            <p class="text-2xl font-black m-0 leading-none text-emerald-800 dark:text-white">€{{ item.reward_amount }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if item.user == request.user and not item.is_reward_paid and item.status == 'active' %}
+                    <div class="mt-2 pt-4 border-t border-slate-100 dark:border-slate-700">
+                        <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Motivate Finders</h4>
+                        <p class="text-[11px] text-slate-400 dark:text-slate-400 mb-4 leading-normal">Add a cash reward held securely by Stripe Checkout to speed up the search.</p>
+
+                        {% if user_wallet %}
+                            <div class="mb-4 p-3 bg-slate-50 dark:bg-slate-700 border border-slate-100 dark:border-slate-700 rounded-2xl flex items-center justify-between text-xs">
+                                <span class="text-slate-500 dark:text-slate-400 font-medium flex items-center gap-1.5">
+                                    <i class="fa-solid fa-wallet text-slate-400 dark:text-slate-500"></i> Balance:
+                                </span>
+                                {% if user_wallet.balance > 0 %}
+                                    <span class="font-black text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-2 py-0.5 rounded-md">€{{ user_wallet.balance }}</span>
+                                {% else %}
+                                    <span class="font-bold text-slate-400 dark:text-slate-500">€0.00</span>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                        <form action="{% url 'create-reward-session' item.id %}" method="POST" class="m-0">
+                            {% csrf_token %}
+                            <div class="grid grid-cols-3 gap-2 mb-3">
+                                <button type="button" onclick="document.getElementById('amt').value=10" class="py-2 text-xs font-bold border border-slate-200 dark:border-slate-700 rounded-xl bg-white dark:bg-gray-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200">€10</button>
+                                <button type="button" onclick="document.getElementById('amt').value=25" class="py-2 text-xs font-bold border border-slate-200 dark:border-slate-700 rounded-xl bg-white dark:bg-gray-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200">€25</button>
+                                <button type="button" onclick="document.getElementById('amt').value=50" class="py-2 text-xs font-bold border border-slate-200 dark:border-slate-700 rounded-xl bg-white dark:bg-gray-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200">€50</button>
+                            </div>
+                            
+                            <div class="relative mb-2">
+                                <input type="number" name="amount" id="amt" min="1" step="0.01" required placeholder="Or custom amount (€)" 
+                                        class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2.5 text-sm font-bold text-slate-800 dark:text-white focus:outline-none">
+                            </div>
+
+                            {% if user_wallet.balance > 0 %}
+                                <p class="text-[10px] text-slate-400 dark:text-slate-400 font-medium mb-4 leading-normal">
+                                    <i class="fa-solid fa-circle-info text-primary-light"></i> Your balance of <span class="font-bold text-slate-600 dark:text-slate-300">€{{ user_wallet.balance }}</span> will be used first. Remainder via card.
+                                </p>
+                            {% else %}
+                                <p class="text-[10px] text-slate-400 dark:text-slate-500 font-medium mb-4 leading-normal">
+                                    <i class="fa-solid fa-circle-info text-slate-300 dark:text-slate-600"></i> Payment will be processed via Stripe.
+                                </p>
+                            {% endif %}
+
+                            <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-xl text-xs border-0 cursor-pointer shadow-md transition-all flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-credit-card text-[10px]"></i> Pay Reward
+                            </button>
+                        </form>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md border-t border-slate-100 dark:border-slate-700 p-4 z-1050 shadow-[0_-8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_-8px_30px_rgb(0,0,0,0.3)] flex items-center justify-between gap-4">
+    <div class="flex flex-col text-left min-w-0">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Interested?</span>
+        <span class="text-sm font-extrabold text-slate-900 dark:text-white truncate max-w-37.5">{{ item.title }}</span>
+    </div>
+    
+    <div class="shrink-0">
+        {% if request.user != item.user %}
+            {% if item.status == "active" %}
+                <a href="{% url 'start-chat-with-item' item.user.username item.id %}" 
+                class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-5 rounded-xl text-xs transition duration-200 shadow-md shadow-primary/10 flex items-center gap-2 border-0 no-underline">
+                    <i class="fa-solid fa-comments text-sm"></i> Contact Author
+                </a>
+            {% else %}
+                <div class="bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-400 font-bold py-3 px-5 rounded-xl text-xs flex items-center gap-2 cursor-not-allowed">
+                    <i class="fa-solid fa-handshake text-sm"></i> Reunited
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 font-bold py-3 px-5 rounded-xl text-xs flex items-center gap-2 cursor-not-allowed">
+                <i class="fa-solid fa-user-shield text-sm"></i> Your Listing
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+    @media (max-w: 768px) {
+        footer { padding-bottom: 80px !important; }
+    }
+</style>
+{% endblock %}
+
+{% block javascript %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mapContainer = document.getElementById('map');
+        if (!mapContainer) return;
+
+        const lat = parseFloat(mapContainer.dataset.lat);
+        const lng = parseFloat(mapContainer.dataset.lng);
+        const city = mapContainer.dataset.city;
+
+        if (isNaN(lat) || isNaN(lng)) return;
+
+        const map = L.map('map', { scrollWheelZoom: false }).setView([lat, lng], 11);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        const nominatimUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(city)}&format=json&polygon_geojson=1&limit=1`;
+
+        fetch(nominatimUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.length > 0 && data[0].geojson) {
+                    const geojson = data[0].geojson;
+
+                    const boundaryLayer = L.geoJSON(geojson, {
+                        style: {
+                            color: '#326D73',
+                            weight: 2,
+                            opacity: 0.8,
+                            fillColor: '#818cf8',
+                            fillOpacity: 0.12
+                        }
+                    }).addTo(map);
+
+                    boundaryLayer.bindPopup(`
+                        <div class="p-1 font-sans">
+                            <div class="font-bold text-slate-800 text-sm">${city}</div>
+                            <div class="text-[11px] text-slate-400 mt-0.5">Approximate search boundary area</div>
+                        </div>
+                    `);
+
+                    map.fitBounds(boundaryLayer.getBounds(), { padding: [20, 20] });
+
+                } else {
+                    addFallbackMarker(map, lat, lng, city);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching city boundaries:', error);
+                addFallbackMarker(map, lat, lng, city);
+            });
+    });
+
+    function addFallbackMarker(map, lat, lng, city) {
+        map.setView([lat, lng], 13);
+        const marker = L.marker([lat, lng]).addTo(map);
+        marker.bindPopup(`
+            <div class="p-1 font-sans">
+                <div class="font-bold text-slate-800 text-sm">${city}</div>
+                <div class="text-[11px] text-slate-400 mt-0.5">Approximate location area</div>
+            </div>
+        `).openPopup();
+    }
+</script>
+{% endblock %}

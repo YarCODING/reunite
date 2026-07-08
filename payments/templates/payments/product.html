@@ -1,0 +1,31 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %} 
+
+<div class="max-w-4xl mx-auto px-8 py-24">
+    <div class="grid grid-cols-3 gap-6">
+        <div class="col-span-2 rounded-xl">
+            {% if product.images %}
+                <img src="{{ product.images.0 }}" alt="{{ product.name }}" class="rounded-xl w-full h-auto">
+            {% else %}
+                <p>No image available</p>
+            {% endif %}
+        </div>
+        <div class="pt-32">
+           <h2>{{ product.name }}</h2>
+           <p class="text-lg">€ {{ product_price }}</p>
+
+           <form enctype="multipart/form-data" method="post" role="product_page">
+            {% csrf_token %}
+            <input type="hidden" name="price_id" value="price_1ToKVpHHl6ggmM31DTyB19fV"> 
+            <input type="hidden" name="quantity" value="1"> 
+            <button type="submit" class="block! rounded-full! bg-black! hover:bg-neutral-500! active:scale-95 transition text-center px-24!" data-bind-href="pricing">Buy</button>
+           </form>
+           
+           <p class="pt-8 text-sm">{{ product.description }}</p>
+           <p class="text-sm hover:underline"><a href="{% url 'subscription' %}" target="_blank">Subscription</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

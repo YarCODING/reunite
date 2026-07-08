@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3F888F;
+  --color-primary-dark: #326D73;
+  --color-primary-light: #EDF6F7;
+  --color-hope: #f297bd;
+  --color-hope-dark: #ED6EA3;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+body {
+    font-family: 'Sora', sans-serif;
+}
+
+[x-cloak] { 
+    display: none !important; 
+}
+
+
+body {
+@apply bg-white text-gray-900 transition-colors duration-200;
+@apply dark:bg-gray-900 dark:text-gray-100;
+}
+
+h1, h2, h3, h4, h5, h6 {
+@apply text-gray-950 dark:text-white;
+}
+
+.dark input, 
+.dark select, 
+.dark textarea {
+    background-color: #374151 !important;
+    color: #f8fafc !important;
+    border-color: #4b5563 !important;
+}
+.dark input::placeholder,
+.dark textarea::placeholder {
+    color: #9ca3af !important;
+}
+
+
+.button.alert, button.alert { @apply bg-red-700 }
+.button.alert:hover, button.alert:hover { @apply bg-red-600 }
+.button-red { @apply bg-red-500 hover:bg-red-600 }
+.button-gray { @apply bg-gray-300 hover:bg-[#c3c9d0]! }
+
+.hoverlist > * { @apply hover:bg-gray-100 rounded-md transition duration-150; }
+.hoverlist > * > a { @apply flex items-center p-2; }
+.highlight { @apply bg-primary-light; }
+
+.allauth a { @apply underline underline-offset-2 }
+.allauth a:hover { @apply text-primary }
+.allauth form[action="/accounts/signup/"] ul { @apply hidden }
+.allauth form[action="/accounts/signup/"] ul.errorlist { @apply block }
+.allauth .helptext { @apply block mt-4 }
+.allauth button, [type='submit'], [type='button'] { @apply bg-primary hover:bg-primary-dark text-white font-bold px-6 py-4 inline-block rounded-lg shadow-lg transition-all cursor-pointer}
+.allauth h1 { @apply text-4xl font-bold mb-4 }
+
+input[type=file] { @apply bg-white pl-0 }
+.textarea, textarea, input { @apply w-full rounded-lg py-4 px-5 bg-gray-100 mb-4 }
+.errorlist { @apply p-1 pl-4 border-l-red-500 border-l-4 border-solid mb-2 text-red-500 }
+label[for="id_remember"] { @apply inline-block w-auto mr-2 }
+input[name="remember"] { @apply w-auto }
+
+.alert-info { @apply bg-blue-500 }
+.alert-success { @apply bg-green-500 }
+.alert-warning { @apply bg-amber-500 }
+.alert-danger { @apply bg-red-500 }

@@ -1,0 +1,83 @@
+<div class="group relative bg-white dark:bg-gray-800 border rounded-3xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 
+    {% if item.is_priority %}
+        border-hope dark:border-hope-dark shadow-pink-100/50 dark:shadow-none hover:shadow-pink-200/60 hover:border-pink-400 dark:hover:border-pink-500
+    {% else %}
+        border-gray-100 dark:border-gray-700 shadow-gray-100/40 dark:shadow-none hover:shadow-2xl hover:shadow-gray-200/50 dark:hover:shadow-none hover:border-gray-200/60 dark:hover:border-gray-700
+    {% endif %}
+    hover:-translate-y-1">
+
+    <a href="{% url 'item-detail' item.id %}" class="absolute inset-0 z-10" aria-label="{{ item.title }}"></a>
+    
+    <div class="relative aspect-4/3 bg-gray-50 dark:bg-gray-800 overflow-hidden border-b border-gray-100 dark:border-gray-700">
+        {% if item.image %}
+            <img src="{{ item.image.url }}" alt="{{ item.title }}" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
+            <div class="w-full h-full flex flex-col items-center justify-center text-gray-300 dark:text-gray-700 gap-2">
+                <i class="fa-solid fa-box-open text-4xl"></i>
+                <span class="text-xs font-semibold uppercase tracking-wider text-gray-400/70 dark:text-gray-500">No Image Provided</span>
+            </div>
+        {% endif %}
+
+        <div class="absolute top-4 left-4 flex gap-2">
+            {% if item.type == 'lost' %}
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-rose-50 dark:bg-rose-900 text-rose-600 dark:text-rose-400 border border-rose-100 dark:border-rose-900 shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span> Lost
+                </span>
+            {% else %}
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30 shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Found
+                </span>
+            {% endif %}
+
+            {% if item.is_priority %}
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-pink-50 dark:bg-pink-950/40 text-hope-dark dark:text-hope border border-pink-100 dark:border-pink-900/30 shadow-sm">
+                    <i class="fa-solid fa-hand-holding-heart text-[9px]"></i> Hope
+                </span>
+            {% endif %}
+        </div>
+
+        {% if item.status == 'reunited' %}
+        <div class="absolute top-4 right-4">
+            <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-primary text-white shadow-md">
+                <i class="fa-solid fa-handshake"></i> Reunited
+            </span>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="p-6 flex flex-col grow text-left pb-4">
+        <span class="text-[10px] font-extrabold uppercase tracking-widest text-primary dark:text-primary-light mb-2 block">
+            {{ item.get_category_display }}
+        </span>
+        
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white tracking-tight line-clamp-1 mb-2 group-hover:text-primary dark:group-hover:text-primary-light transition-colors">
+            {{ item.title }}
+        </h3>
+        
+        <p class="text-xs text-gray-400 dark:text-gray-400 font-medium line-clamp-2 leading-relaxed mb-6 grow">
+            {{ item.description|default:"No description provided by the user for this listing." }}
+        </p>
+        
+        <div class="flex items-center justify-between pt-4 border-t border-gray-50 dark:border-gray-700 text-[11px] font-semibold text-gray-400 dark:text-gray-500">
+            <div class="flex items-center gap-1">
+                <i class="fa-solid fa-location-dot text-gray-300 dark:text-gray-650"></i>
+                <span class="text-gray-600 dark:text-gray-350">{{ item.city }}</span>
+            </div>
+            <div class="flex items-center gap-1">
+                <i class="fa-solid fa-calendar-days text-gray-300 dark:text-gray-650"></i>
+                <span>{{ item.created_at|date:"M d, Y" }}</span>
+            </div>
+        </div>
+    </div>
+
+    {% if item.is_reward_paid and item.reward_amount > 0 and item.status != 'reunited' %}
+        <div class="w-full bg-emerald-600 dark:bg-emerald-700 px-6 py-3.5 flex items-center justify-between rounded-b-3xl border-t border-emerald-700/10 dark:border-emerald-800/20 relative z-20">
+            <span class="font-extrabold text-white text-xs uppercase tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-coins text-amber-300 text-sm"></i> Cash Reward:
+            </span>
+            <span class="font-black text-emerald-600 dark:text-emerald-700 bg-white px-3 py-1 rounded-xl text-sm shadow-md">
+                €{{ item.reward_amount }}
+            </span>
+        </div>
+    {% endif %}
+
+</div>

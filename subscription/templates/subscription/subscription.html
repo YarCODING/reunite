@@ -1,0 +1,186 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %} 
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 animate-fade-in">
+    
+    <!-- New Dedicated Subscription Hero Section -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-hope/10 text-hope-dark mb-4">
+            <i class="fa-solid fa-hand-holding-heart text-xs" style="color: #f297bd;"></i>
+            Upgrade Your Search Capabilities
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+            Maximize Your Chances of a <span class="text-hope-dark">Successful Return</span>
+        </h1>
+        <p class="text-lg text-slate-600 dark:text-slate-200 leading-relaxed">
+            {{ subscription.description }}
+        </p>
+    </div>
+
+    <!-- Main Grid: Graphics & Checkout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-20">
+        <!-- Left Side: Icon Container -->
+        <div class="lg:col-span-6 flex items-center justify-center py-12 lg:py-0">
+            <div class="transform hover:scale-105 transition-transform duration-300">
+                <i class="fa-solid fa-hand-holding-heart text-[160px] md:text-[220px] drop-shadow-sm" style="color: #f297bd;"></i>
+            </div>
+        </div>
+        
+        <!-- Right Side: Subscription Form -->
+        <div class="lg:col-span-6 bg-white dark:bg-gray-800 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 shadow-sm lg:sticky lg:top-6">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-950">{{ subscription.name }}</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 mt-1">Cancel anytime</p>
+                </div>
+                <div class="text-right">
+                    <span class="text-3xl font-black text-slate-900 dark:text-slate-50">{{ subscription.price_formatted }}</span>
+                    <span class="text-sm text-slate-500 dark:text-slate-300 block">/ month</span>
+                </div>
+            </div>
+
+            <!-- Quick Benefits List -->
+            <ul class="space-y-3 mb-8 text-sm text-slate-600 dark:text-slate-200">
+                <li class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-circle-check text-primary text-base shrink-0"></i>
+                    24/7 Priority Moderation
+                </li>
+                <li class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-circle-check text-primary text-base shrink-0"></i>
+                    Pinned to Top & Distinct Border
+                </li>
+                <li class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-circle-check text-primary text-base shrink-0"></i>
+                    Reward Fee Reduced to 2%
+                </li>
+            </ul>
+
+            {% if request.user.is_authenticated %}
+                
+                {% if request.user.has_premium %}
+                    <div class="space-y-3">
+                        <div class="w-full bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-center font-bold py-4 px-6 rounded-xl text-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-500 text-base"></i> You are already a Member
+                        </div>
+                        <a href="{% url 'my_sub' %}" class="w-full block rounded-xl bg-slate-50 dark:bg-gray-700 hover:bg-slate-100 dark:hover:bg-gray-600 text-slate-600 dark:text-gray-200 text-center py-4 font-semibold text-sm transition-all border border-slate-200 dark:border-gray-600 no-underline cursor-pointer">
+                            <i class="fa-solid fa-sliders mr-1"></i> Manage My Subscription
+                        </a>
+                    </div>
+                {% else %}
+                    <form enctype="multipart/form-data" method="post" role="subscription_page" class="space-y-4">
+                        {% csrf_token %}
+                        <input type="hidden" name="price_id" value="{{ subscription.price_id }}"> 
+                        <button type="submit" class="w-full block rounded-xl bg-primary hover:bg-primary-dark active:scale-[0.98] transition-all text-center py-4 font-semibold text-white shadow-md shadow-primary/20 border-0 cursor-pointer text-sm" data-bind-href="pricing">
+                            Subscribe
+                        </button>
+                    </form>
+                {% endif %}
+
+            {% else %}
+                <a href="{% url 'account_login' %}?next={{ request.path }}" class="w-full block rounded-xl bg-slate-500 hover:bg-slate-600 dark:bg-gray-700 dark:hover:bg-gray-600 text-center py-4 font-semibold text-white shadow-md no-underline text-sm border-0 cursor-pointer">
+                    Sign In to Subscribe
+                </a>
+            {% endif %}
+            
+            <p class="mt-4 text-center text-xs text-slate-400">
+                Secure payment. Part of the proceeds goes toward supporting our search community.
+            </p>
+        </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="mt-16">
+        <div class="text-center mb-10">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Compare Plans</h3>
+            <p class="text-sm text-slate-500 dark:text-gray-300 mt-2">See how the Hope subscription helps you solve cases more efficiently</p>
+        </div>
+
+        <div class="overflow-x-auto border border-slate-200 dark:border-gray-700 rounded-2xl shadow-sm bg-white dark:bg-gray-800">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-slate-50 dark:bg-gray-700/50 border-b border-slate-200 dark:border-gray-700">
+                        <th class="p-5 text-sm font-semibold text-slate-700 dark:text-gray-200 w-2/5">Features</th>
+                        <th class="p-5 text-sm font-semibold text-slate-500 dark:text-gray-400 text-center w-1/5">Basic (Free)</th>
+                        <th class="p-5 text-sm font-semibold text-hope-dark dark:text-hope text-center w-2/5 bg-hope/5 dark:bg-hope/10">
+                            <span class="inline-flex items-center gap-2 justify-center w-full">
+                                <i class="fa-solid fa-hand-holding-heart text-xs" style="color: #f297bd;"></i>
+                                Reunite Hope
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 dark:divide-gray-700 text-sm">
+                    <tr>
+                        <td class="p-5 text-slate-700 dark:text-gray-300">
+                            <strong class="block font-medium text-slate-900 dark:text-white">Monthly Listing Limit</strong>
+                            Maximum number of active posts about found items
+                        </td>
+                        <td class="p-5 text-center text-slate-500 dark:text-gray-400">2 listings</td>
+                        <td class="p-5 text-center bg-hope/5 dark:bg-hope/10 font-semibold text-slate-900 dark:text-white">Unlimited</td>
+                    </tr>
+
+                    <tr class="bg-slate-50/50 dark:bg-gray-700/30 font-medium">
+                        <td colspan="3" class="px-5 py-3 text-xs uppercase tracking-wider text-slate-400 dark:text-gray-400 border-b border-slate-100 dark:border-gray-700">
+                            For Those Who Lost an Item
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-5 text-slate-700 dark:text-gray-300">
+                            <strong class="block font-medium text-slate-900 dark:text-white">Listing Visibility</strong>
+                            Position in the explore feed and card appearance
+                        </td>
+                        <td class="p-5 text-center text-slate-500 dark:text-gray-400">Standard chronological order</td>
+                        <td class="p-5 text-center bg-hope/5 dark:bg-hope/10 font-semibold text-slate-900 dark:text-white">
+                            Pinned to the top & highlighted with a prominent custom border
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="p-5 text-slate-700 dark:text-gray-300">
+                            <strong class="block font-medium text-slate-900 dark:text-white">Publishing Speed</strong>
+                            Standard listing moderation queue
+                        </td>
+                        <td class="p-5 text-center text-slate-500 dark:text-gray-400">Up to 2 hours</td>
+                        <td class="p-5 text-center bg-hope/5 dark:bg-hope/10 font-semibold text-slate-900 dark:text-white">Instant (24/7 Priority)</td>
+                    </tr>
+                    <tr>
+                        <td class="p-5 text-slate-700 dark:text-gray-300">
+                            <strong class="block font-medium text-slate-900 dark:text-white">Listing Badge</strong>
+                            A distinct badge on your listing and profile to attract attention
+                        </td>
+                        <td class="p-5 text-center text-slate-400 dark:text-gray-500">—</td>
+                        <td class="p-5 text-center bg-hope/5 dark:bg-hope/10 text-hope-dark dark:text-hope font-medium">
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-hope/10 dark:bg-hope/20 text-xs border border-hope/20 dark:border-hope/30">
+                                <i class="fa-solid fa-hand-holding-heart text-[10px]" style="color: #f297bd;"></i> Hope Badge
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr class="bg-slate-50/50 dark:bg-gray-700/30 font-medium">
+                        <td colspan="3" class="px-5 py-3 text-xs uppercase tracking-wider text-slate-400 dark:text-gray-400 border-b border-slate-100 dark:border-gray-700">
+                            For Those Who Found an Item
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-5 text-slate-700 dark:text-gray-300">
+                            <strong class="block font-medium text-slate-900 dark:text-white">Reward Commission</strong>
+                            The percentage retained by the platform upon a successful return
+                        </td>
+                        <td class="p-5 text-center text-slate-500 dark:text-gray-400">10%</td>
+                        <td class="p-5 text-center bg-hope/5 dark:bg-hope/10 font-semibold text-green-600 dark:text-green-400">Only 2%</td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="p-5 text-slate-700 dark:text-gray-300">
+                            <strong class="block font-medium text-slate-900 dark:text-white">Archived Chat History</strong>
+                            Full access to chat history after the item is returned and the case is closed
+                        </td>
+                        <td class="p-5 text-center text-slate-400 dark:text-gray-500">Locked immediately</td>
+                        <td class="p-5 text-center bg-hope/5 dark:bg-hope/10 text-slate-900 dark:text-white">Full Lifetime Access</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

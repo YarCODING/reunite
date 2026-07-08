@@ -1,0 +1,116 @@
+<div class="item-line w-full border rounded-2xl p-4 mb-2 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm transition-all box-border
+    {% if item.status == 'reunited' %}
+        bg-slate-50/80 dark:bg-gray-800/40 border-slate-200/60 dark:border-gray-700/60 opacity-65 pointer-events-none select-none
+    {% else %}
+        bg-white dark:bg-gray-800 border-slate-100 dark:border-gray-700/80 hover:shadow-md hover:border-slate-200 dark:hover:border-gray-600
+    {% endif %}">
+
+    <div class="flex items-center relative gap-4 flex-1 min-w-0">
+
+        <a href="{% url 'item-detail' item.id %}" class="absolute inset-0 z-10" aria-label="{{ item.title }}"></a>
+
+        <div class="w-14 h-14 rounded-xl bg-slate-50 dark:bg-gray-700 overflow-hidden shrink-0 border border-slate-100 dark:border-gray-600 flex items-center justify-center relative">
+            {% if item.image %}
+                <img src="{{ item.image.url }}" alt="{{ item.title }}" class="w-full h-full object-cover {% if item.status == 'reunited' %}grayscale{% endif %}">
+            {% else %}
+                <i class="fa-solid fa-image text-slate-300 dark:text-gray-500 text-xl"></i>
+            {% endif %}
+        </div>
+        
+        <div class="flex flex-col min-w-0 text-left">
+            <h3 class="font-bold text-slate-800 dark:text-gray-200 text-sm sm:text-base truncate m-0 leading-tight {% if item.status == 'reunited' %}line-through text-slate-400 dark:text-gray-500{% endif %}">
+                {{ item.title }}
+            </h3>
+            <div class="flex items-center gap-2 mt-1 flex-wrap">
+                {% if item.status == 'reunited' %}
+                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-primary text-white shadow-sm">
+                        <i class="fa-solid fa-handshake text-[9px]"></i> Reunited
+                    </span>
+                {% else %}
+                    {% if item.type == 'lost' %}
+                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-rose-50 dark:bg-rose-950/30 text-rose-600 dark:text-rose-400 border border-rose-100 dark:border-rose-900/30 shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Lost
+                        </span>
+                    {% else %}
+                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30 shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Found
+                        </span>
+                    {% endif %}
+                {% endif %}
+                <span class="text-xs text-slate-400 dark:text-gray-400 font-medium truncate max-w-37.5">
+                    {{ item.get_category_display }}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex items-center shrink-0 md:justify-center md:w-36 text-left md:text-center min-h-5">
+        {% if item.is_reward_paid and item.reward_amount > 0 %}
+            {% if item.status == 'reunited' %}
+                <span class="text-slate-400 dark:text-gray-500 text-xs font-medium italic flex items-center gap-1">
+                    <i class="fa-solid fa-circle-check text-slate-300 dark:text-gray-600"></i> Reward Claimed
+                </span>
+            {% else %}
+                <span class="font-extrabold text-xs uppercase tracking-wider flex items-center gap-2 text-slate-500 dark:text-gray-400">
+                    <i class="fa-solid fa-money-bill-wave text-emerald-500 text-sm"></i> Cash Reward:
+                </span>
+                <span class="font-black text-emerald-600 dark:text-emerald-400 text-sm ml-1">
+                    €{{ item.reward_amount }}
+                </span>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div class="flex items-center shrink-0 md:justify-center md:w-36 text-left md:text-center">
+        {% if item.status == 'reunited' %}
+            <span class="text-slate-400 dark:text-gray-500 flex items-center gap-1 text-sm">
+                <i class="fa-solid fa-archive text-slate-300 dark:text-gray-600"></i> Archived
+            </span>
+        {% else %}
+            {% if item.is_approved %}
+                <span class="text-emerald-600 dark:text-emerald-400 flex items-center gap-1 text-sm">
+                    <i class="fa-solid fa-circle-check"></i> Approved & Live
+                </span>
+            {% else %}
+                <span class="text-amber-500 dark:text-amber-400 flex items-center gap-1 text-sm">
+                    <i class="fa-solid fa-hourglass-half"></i> Pending Moderation
+                </span>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div class="flex items-center justify-between md:justify-end gap-3 shrink-0 md:w-72 relative z-20">
+        
+        {% if item.user == request.user and item.status == 'active' %}
+            <div>
+                <form action="{% url 'cancel-search-self' item.id %}" method="POST" onsubmit="return confirm('Are you sure you found the item yourself? This will close the listing. Any paid reward will be fully refunded to your site Wallet.');" class="m-0">
+                    {% csrf_token %}
+                    <button type="submit" class="w-full bg-slate-100 dark:bg-gray-700 hover:bg-slate-200 dark:hover:bg-gray-600 text-slate-700 dark:text-gray-200 font-medium py-2.5 px-4 rounded-xl text-xs border-0 cursor-pointer transition flex items-center justify-center gap-1.5 whitespace-nowrap">
+                        <i class="fa-solid fa-circle-check text-emerald-500"></i> I Found It Myself
+                    </button>
+                </form>
+            </div>
+        {% endif %}
+
+        <div class="flex items-center gap-1.5 ml-auto">
+            {% if item.status != 'reunited' %}
+                <a href="{% url 'edit_item' item.id %}" 
+                   class="w-8 h-8 bg-slate-50 dark:bg-gray-700 hover:bg-slate-100 dark:hover:bg-gray-600 text-slate-500 dark:text-gray-400 rounded-xl flex items-center justify-center border border-slate-200/60 dark:border-gray-600 transition-all no-underline box-border"
+                   title="Edit item">
+                    <i class="fa-solid fa-pen text-xs"></i>
+                </a>
+            {% endif %}
+
+            <button hx-post="{% url 'delete_item' item.id %}"
+                    hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+                    hx-confirm="Are you sure you want to delete '{{ item.title }}'?"
+                    hx-target="closest .item-line"
+                    hx-swap="outerHTML swap:300ms"
+                    class="w-8 h-8 bg-rose-50 dark:bg-rose-950/40 hover:bg-rose-100 dark:hover:bg-rose-900/40 text-rose-500 dark:text-rose-400 rounded-xl flex items-center justify-center border-0 transition-all cursor-pointer box-border p-0 m-0"
+                    title="Delete item">
+                <i class="fa-solid fa-trash-can text-xs"></i>
+            </button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,83 @@
+{% extends 'layouts/box.html' %}
+
+{% block content %}
+
+{% if onboarding %}
+<h1 class="text-4xl font-bold mb-4 text-slate-900 dark:text-white">Complete your Profile</h1>
+{% else %}
+<h1 class="text-4xl font-bold mb-4 text-slate-900 dark:text-white">Edit your Profile</h1>
+{% endif %}
+
+<div class="text-center flex flex-col items-center">
+    <img id="avatar" class="w-36 h-36 rounded-full object-cover my-4 border border-slate-200 dark:border-gray-700" src="{{ user.profile.avatar.url }}" />
+    <div class="text-center max-w-md">
+        <h1 id="displayname" class="text-4xl font-bold mb-4 text-slate-900 dark:text-white">{{ user.profile.displayname|default:"" }}</h1>
+        <div class="text-gray-400 dark:text-gray-500 mb-2 -mt-3">@{{ user.username }}</div>
+    </div>
+</div>
+<form method="POST" enctype="multipart/form-data" class="dark:text-gray-200">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="bg-primary text-white font-bold px-6 py-4 inline-block rounded-lg shadow-lg transition-all cursor-pointer border-none hover:bg-primary-dark" >Submit</button>
+    {% if onboarding %}
+    <a class="bg-slate-200 hover:bg-slate-300 dark:bg-gray-700 dark:hover:bg-gray-600 ml-1 text-slate-700 dark:text-gray-200 font-bold px-6 py-4 inline-block rounded-lg shadow-lg transition-all cursor-pointer border-none no-underline" href="{% url 'home' %}">Skip</a>
+    {% else %}
+    <a class="bg-slate-200 hover:bg-slate-300 dark:bg-gray-700 dark:hover:bg-gray-600 ml-1 text-slate-700 dark:text-gray-200 font-bold px-6 py-4 inline-block rounded-lg shadow-lg transition-all cursor-pointer border-none no-underline" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
+    {% endif %}
+</form>
+
+<style>
+    form p {
+        margin-bottom: 1rem;
+    }
+    form label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: #475569;
+    }
+    .dark form label {
+        color: #94a3b8;
+    }
+    form input[type="text"], form input[type="email"], form textarea, form select {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        border: 1px solid #cbd5e1;
+        background-color: #ffffff;
+        color: #0f172a;
+    }
+    .dark form input[type="text"], .dark form input[type="email"], .dark form textarea, .dark form select {
+        background-color: #1f2937;
+        border-color: #374151;
+        color: #f3f4f6;
+    }
+</style>
+
+{% endblock %}
+
+{% block javascript %}
+<script>
+    
+    const fileInput = document.querySelector('input[type="file"]');
+
+    fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    const image = document.querySelector('#avatar');
+
+    if (file && file.type.includes('image')) {
+        const url = URL.createObjectURL(file);
+        image.src = url;
+    }
+    });
+
+    const display_nameInput = document.getElementById('id_displayname');
+    const display_nameOutput = document.getElementById('displayname');
+
+    display_nameInput.addEventListener('input', (event) => {
+        display_nameOutput.innerText = event.target.value;
+    });
+
+</script>
+
+{% endblock %}
