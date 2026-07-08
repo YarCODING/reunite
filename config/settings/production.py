@@ -6,6 +6,7 @@ DEBUG = False
 BASE_URL = os.environ.get('BASE_URL')
 
 ALLOWED_HOSTS = [host.strip() for host in os.environ.get('ALLOWED_HOSTS', '').split(',') if host.strip()]
+CSRF_TRUSTED_ORIGINS = ['https://reunite-app.onrender.com']
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
