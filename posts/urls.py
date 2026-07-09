@@ -4,7 +4,7 @@ from .views import rewards
 
 urlpatterns = [
     path("", items.index, name="home"),
-    path("/ping", items.ping, name="ping"),
+    path("ping/", items.ping, name="ping"),
     path("items/<int:item_id>/", items.item_detail, name="item-detail"),
     path("items/", items.item_list, name="items"),
     path("items/map/", items.all_items_map_view, name="map"),
