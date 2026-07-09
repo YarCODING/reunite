@@ -9,7 +9,6 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 SECRET_KEY = "django-insecure-wj+e88n4v5ax!$yjmm$arsg-$8@uhhrheegh17@@e3d!^*i8tg"
 
 INSTALLED_APPS += ['django_browser_reload']
-MIDDLEWARE += ['django_browser_reload.middleware.BrowserReloadMiddleware']
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases

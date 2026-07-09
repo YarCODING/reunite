@@ -196,3 +196,10 @@ def delete_item(request, item_id):
         return HttpResponse("")
         
     return redirect('dashboard')
+
+
+
+
+
+def ping(request):
+    return HttpResponse("pong", content_type="text/plain")
