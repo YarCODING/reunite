@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<h1 class="text-4xl font-bold mb-4">Delete Account</h1>
-<p>Are you sure you want to delete your account?</p>
+<h1 class="text-4xl font-bold mb-4">{% trans "Delete Account" %}</h1>
+<p>{% trans "Are you sure you want to delete your account?" %}</p>
 
 <form method='POST'>
     {% csrf_token %}
-    <button type="submit" class="button-red mt-6">Yes, I want to delete my account</button>
-    <a class="button button-gray ml-1" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
+    <button type="submit" class="button-red mt-6">{% trans "Yes, I want to delete my account" %}</button>
+    <a class="button button-gray ml-1" href="{{ request.META.HTTP_REFERER }}">{% trans "Cancel" %}</a>
 </form>
 
 {% endblock %}

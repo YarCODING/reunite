@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto bg-white/75 dark:bg-gray-900/75 backdrop-blur-lg border border-gray-200/50 dark:border-gray-800/50 rounded-none md:rounded-full shadow-xl shadow-gray-200/30 dark:shadow-gray-800/30 px-6 sm:px-8 h-16 flex justify-between items-center transition-all duration-300 hover:border-gray-300/60 dark:hover:border-gray-900/60">
         
         <div class="flex items-center gap-8">
-            <a href="/" class="flex items-center gap-2.5 group focus:outline-none">
+            <a href="{% url 'home' %}" class="flex items-center gap-2.5 group focus:outline-none">
                 <img src="{% static 'images/logo.png' %}" 
                     alt="Reunite Logo" 
                     class="h-8 w-auto transform transition group-hover:scale-105 block dark:hidden">
@@ -15,10 +15,10 @@
 
             <nav class="hidden md:flex items-center gap-6">
                 <a href="{% url 'items' %}" class="text-gray-600 dark:text-gray-100 hover:text-primary no-underline! font-medium text-xs tracking-wider transition-colors duration-200">
-                    Search Items
+                    {% trans "Search Items" %}
                 </a>
                 <a href="{% url 'start-chat' 'support' %}" class="text-gray-600 dark:text-gray-100 hover:text-primary no-underline! font-medium text-xs tracking-wider transition-colors duration-200">
-                    Support
+                    {% trans "Support" %}
                 </a>
                 <a href="{% url 'subscription' %}" class="text-hope hover:text-hope-dark no-underline! font-medium text-xs tracking-wider transition-colors duration-200">
                     Reunite Hope
@@ -31,6 +31,36 @@
             </nav>
         </div>
 
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+
+        <div x-data="{ langOpen: false }" class="relative inline-block text-left">
+            <button @click="langOpen = !langOpen" @click.away="langOpen = false" type="button" class="bg-transparent! text-gray-500! dark:text-gray-300! hover:bg-gray-100! dark:hover:bg-gray-800! hover:text-primary focus:outline-none rounded-full! text-xs font-bold uppercase tracking-wider p-2.5 shadow-none! flex items-center gap-1.5">
+                <span>{{ LANGUAGE_CODE }}</span>
+                <i class="fa-solid fa-chevron-down text-[9px] text-gray-400 transition-transform duration-300" :class="langOpen && 'rotate-180'"></i>
+            </button>
+
+            <div x-show="langOpen" 
+                x-cloak 
+                class="absolute right-0 top-full mt-3 border border-gray-200 dark:border-gray-700 shadow-xl rounded-2xl w-40 p-1.5 z-50 origin-top-right flex flex-col gap-1"
+                style="background-color: var(--tw-bg-opacity, #ffffff) !important; background: #ffffff;"
+                :style="$el.closest('.dark') || document.documentElement.classList.contains('dark') ? 'background-color: #111827 !important;' : 'background-color: #ffffff !important;'">
+                
+                {% for language in languages %}
+                    <a href="/{{ language.code }}{{ request.path|slice:'3:' }}"
+                    class="w-full text-left! justify-between! px-3 py-2 rounded-xl text-xs font-semibold tracking-wide border-0! transition-colors duration-150 flex items-center m-0 cursor-pointer no-underline!"
+                    style="background: transparent !important; display: flex !important;"
+                    :class="{% if language.code == LANGUAGE_CODE %} 'text-primary! font-bold bg-primary/10!' {% else %} 'text-gray-600 dark:text-gray-200 hover:bg-gray-100! dark:hover:bg-gray-800!' {% endif %}">
+                        <span>{{ language.name_local|capfirst }}</span>
+                        {% if language.code == LANGUAGE_CODE %}
+                            <i class="fa-solid fa-check text-[10px] text-primary! ml-2"></i>
+                        {% endif %}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        
         <div class="flex items-center gap-4">
 
             <button id="theme-toggle" type="button" class="bg-transparent! text-gray-500! dark:text-gray-300! hover:bg-gray-100! dark:hover:bg-gray-800! hover:text-primary focus:outline-none rounded-full! text-sm p-2.5 shadow-none!">
@@ -41,7 +71,7 @@
             {% if user.is_authenticated %}
                 <a href="{% url 'dashboard' %}" class="hidden sm:flex items-center gap-1.5 bg-primary hover:bg-primary-dark text-white no-underline! text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-full transition-all duration-200 shadow-sm shadow-primary/20">
                     <i class="fa-solid fa-plus text-[10px]"></i>
-                    Create Listing
+                    {% trans "Create Listing" %}
                 </a>
 
                 <a href="{% url 'chat-list' %}" class="p-2.5 text-gray-500 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition relative group" title="Messages">
@@ -63,7 +93,7 @@
                         <img class="h-8 w-8 rounded-full object-cover ring-2 ring-transparent group-hover:ring-primary/20 transition-all duration-200" src="{{ user.profile.avatar }}" alt="Avatar" />
                         
                         <div class="hidden lg:block text-left">
-                            <p class="text-[10px] text-gray-400 font-medium leading-none mb-0.5 m-0">Hello,</p>
+                            <p class="text-[10px] text-gray-400 font-medium leading-none mb-0.5 m-0">{% trans "Hello" %},</p>
                             <p class="text-xs font-bold text-gray-700 dark:text-gray-100 leading-none m-0 flex items-center gap-1.5">
                                 {{ user.profile.name }}
                                 
@@ -87,12 +117,12 @@
                         x-transition:leave-end="opacity-0 scale-95 -translate-y-2">
                         
                         <ul class="hoverlist [&>li>a]:justify-end [&>li]:dark:hover:bg-gray-800! text-xs font-semibold text-gray-600 dark:text-gray-100 tracking-wide">
-                            <li><a href="{% url 'profile' %}">My Profile</a></li>
-                            <li><a href="{% url 'profile-edit' %}">Edit Profile</a></li>
-                            <li><a href="{% url 'my_sub' %}">My Subscription</a></li>
-                            <li><a href="{% url 'profile-settings' %}">Settings</a></li>
+                            <li><a href="{% url 'profile' %}">{% trans "My Profile" %}</a></li>
+                            <li><a href="{% url 'profile-edit' %}">{% trans "Edit Profile" %}</a></li>
+                            <li><a href="{% url 'my_sub' %}">{% trans "My Subscription" %}</a></li>
+                            <li><a href="{% url 'profile-settings' %}">{% trans "Settings" %}</a></li>
                             <hr class="border-gray-100 dark:border-gray-700 my-1">
-                            <li><a href="{% url 'account_logout' %}" class="text-red-500 hover:text-red-600 no-underline! hover:bg-red-50">Log Out</a></li>
+                            <li><a href="{% url 'account_logout' %}" class="text-red-500 hover:text-red-600 no-underline! hover:bg-red-50">{% trans "Log Out" %}</a></li>
                         </ul>
                     </div>
 
@@ -100,11 +130,11 @@
 
             {% else %}
                 <a href="{% url 'account_login' %}" class="text-gray-600 dark:text-gray-100 hover:text-primary no-underline! font-bold text-xs uppercase tracking-wider transition-colors duration-200 px-3 py-2 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800">
-                    Login
+                    {% trans "Login" %}
                 </a>
 
                 <a href="{% url 'account_signup' %}?next={% url 'profile-onboarding' %}" class="bg-primary hover:bg-primary-dark text-white no-underline! text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full transition-all duration-200 shadow-md shadow-primary/10 hover:shadow-lg">
-                    Sign Up
+                    {% trans "Sign Up" %}
                 </a>
             {% endif %}
 

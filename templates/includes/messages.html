@@ -2,7 +2,7 @@
     {% if messages %}
     <div x-data="{ showMessage: false }">
         {% for message in messages %}
-        <div class="absolute left-0 right-0 max-w-xl mx-auto mt-4 px-4 z-[60]">
+        <div class="absolute left-0 right-0 max-w-xl mx-auto mt-4 px-4 z-60">
             <div x-cloak class="alert-{{ message.tags }} flex items-center py-3.5 pl-6 pr-4 text-white rounded-2xl shadow-xl backdrop-blur-md bg-opacity-95" role="alert"
                     x-show="showMessage" 
                     x-init="setTimeout(() => showMessage = true, 200), setTimeout(() => showMessage = false, 6000)"

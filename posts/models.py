@@ -3,19 +3,21 @@ from django.contrib.auth.models import User
 from geopy.geocoders import Nominatim
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.utils.translation import gettext_lazy as _
 
 class Item(models.Model):
     CATEGORY_CHOICES = [
-        ('electronics', 'Electronics & Gadgets'),
-        ('documents', 'IDs & Documents'),
-        ('keys', 'Keys'),
-        ('bags', 'Bags & Wallets'),
-        ('clothing', 'Clothing & Accessories'),
-        ('pets', 'Pets & Animals'),
-        ('transport', 'Sport & Leisure'),
-        ('kids', 'Kids & Baby'),
-        ('other', 'Miscellaneous'),
+        ('electronics', _('Electronics & Gadgets')),
+        ('documents', _('IDs & Documents')),
+        ('keys', _('Keys')),
+        ('bags', _('Bags & Wallets')),
+        ('clothing', _('Clothing & Accessories')),
+        ('pets', _('Pets & Animals')),
+        ('transport', _('Sport & Leisure')),
+        ('kids', _('Kids & Baby')),
+        ('other', _('Miscellaneous')),
     ]
+
 
     TYPE_CHOICES = [
         ('lost', 'Lost'),

@@ -13,9 +13,9 @@
     {% endif %}
 
     <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-3">
-        <i class="fa-solid fa-circle-plus text-primary"></i> Report New Item
+        <i class="fa-solid fa-circle-plus text-primary"></i> {% trans "Report New Item" %}
     </h2>
-    <p class="text-sm text-gray-400 dark:text-gray-500 mb-8">Please provide detailed information about the item below.</p>
+    <p class="text-sm text-gray-400 dark:text-gray-500 mb-8">{% trans "Please provide detailed information about the item below." %}</p>
 
     <form hx-post="{% url 'dashboard_add' %}" 
           hx-target="#dashboard-content" 
@@ -24,36 +24,36 @@
         {% csrf_token %}
         
         <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Item Title</label>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">{% trans "Item Title" %}</label>
             {{ form.title }}
             {% if form.title.errors %}<p class="text-rose-500 text-xs mt-1">{{ form.title.errors.0 }}</p>{% endif %}
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Listing Type</label>
+                <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">{% trans "Listing Type" %}</label>
                 {{ form.type }}
             </div>
             <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Category</label>
+                <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">{% trans "Category" %}</label>
                 {{ form.category }}
             </div>
         </div>
 
         <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">City / Location</label>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">{% trans "City / Location" %}</label>
             {{ form.city }}
             {% if form.city.errors %}<p class="text-rose-500 text-xs mt-1">{{ form.city.errors.0 }}</p>{% endif %}
         </div>
 
         <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Detailed Description</label>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">{% trans "Detailed Description" %}</label>
             {{ form.description }}
             {% if form.description.errors %}<p class="text-rose-500 text-xs mt-1">{{ form.description.errors.0 }}</p>{% endif %}
         </div>
 
         <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Attach Image</label>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">{% trans "Attach Image" %}</label>
             <div class="mt-1 flex justify-center px-6 pt-6 pb-6 border-2 border-gray-200 dark:border-gray-600 border-dashed rounded-2xl hover:border-primary/50 dark:hover:border-primary/50 transition relative bg-gray-50/30 dark:bg-gray-700/20">
                 <div class="space-y-1 text-center">
                     <i class="fa-solid fa-cloud-arrow-up text-gray-400 dark:text-gray-500 text-2xl mb-2 block"></i>
@@ -69,11 +69,11 @@
         <div class="pt-4">
             {% if limit_error %}
                 <button type="button" disabled class="w-full md:w-auto min-w-55 bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-bold py-3.5 px-6 rounded-xl shadow-none flex items-center justify-center gap-2 cursor-not-allowed border-0 text-sm">
-                    <i class="fa-solid fa-lock"></i> Limit Reached
+                    <i class="fa-solid fa-lock"></i> {% trans "Limit Reached" %}
                 </button>
             {% else %}
                 <button type="submit" class="w-full md:w-auto min-w-55 bg-primary hover:bg-primary-dark text-white font-bold py-3.5 px-6 rounded-xl transition duration-200 shadow-lg shadow-primary/20 flex items-center justify-center gap-2 cursor-pointer border-0 text-sm">
-                    <i class="fa-solid fa-paper-plane"></i> Submit
+                    <i class="fa-solid fa-paper-plane"></i> {% trans "Submit" %}
                 </button>
             {% endif %}
         </div>

@@ -3,8 +3,8 @@
 {% block content %}
 <div class="max-w-xl mx-auto py-12 px-4">
     <div class="bg-white dark:bg-gray-800 border border-slate-100 dark:border-gray-700 rounded-3xl p-8 shadow-sm text-left">
-        <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-1">Edit Listing</h2>
-        <p class="text-sm text-slate-400 dark:text-gray-500 mb-6">Modify the details of your reported item.</p>
+        <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-1">{% trans "Edit Listing" %}</h2>
+        <p class="text-sm text-slate-400 dark:text-gray-500 mb-6">{% trans "Modify the details of your reported item." %}</p>
         
         <form method="POST" enctype="multipart/form-data" class="flex flex-col gap-4">
             {% csrf_token %}
@@ -13,10 +13,10 @@
             
             <div class="flex items-center gap-3 mt-4">
                 <button type="submit" class="flex-1 h-11 bg-primary hover:bg-primary-dark text-white font-bold text-sm rounded-xl transition-all border-0 cursor-pointer">
-                    Save Changes
+                    {% trans "Save Changes" %}
                 </button>
                 <a href="{% url 'dashboard' %}" class="px-5 h-11 bg-slate-100 dark:bg-gray-700 hover:bg-slate-200 dark:hover:bg-gray-600 text-slate-500 dark:text-gray-300 rounded-xl font-medium text-sm flex items-center justify-center no-underline border-0">
-                    Cancel
+                    {% trans "Cancel" %}
                 </a>
             </div>
         </form>

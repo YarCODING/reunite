@@ -1,0 +1,1024 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-12 16:52+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: .\chats\templates\chats\chat.html:52
+#: .\posts\templates\posts\item_card.html:23
+#: .\posts\templates\posts\item_detail.html:13
+#: .\posts\templates\posts\item_line.html:32
+msgid "Lost"
+msgstr "Втрачено"
+
+#: .\chats\templates\chats\chat.html:56
+#: .\posts\templates\posts\item_card.html:27
+#: .\posts\templates\posts\item_detail.html:17
+#: .\posts\templates\posts\item_line.html:36
+#: .\posts\templates\posts\item_list.html:12
+msgid "Found"
+msgstr "Знайдено"
+
+#: .\chats\templates\chats\chat.html:79
+msgid "<span id='online-count' class='pr-1 text-primary'></span> others online"
+msgstr ""
+"<span id='online-count' class='pr-1 text-primary'></span> інших в мережі"
+
+#: .\chats\templates\chats\chat.html:91
+msgid "Verified: Item Found here"
+msgstr "Підтверджено: річ знайдено тут"
+
+#: .\chats\templates\chats\chats_list.html:7
+msgid "Chats"
+msgstr "Чати"
+
+#: .\chats\templates\chats\chats_list.html:8
+msgid "Manage your active and closed conversations regarding items."
+msgstr "Керуйте своїми активними та закритими розмовами щодо речей."
+
+#: .\chats\templates\chats\chats_list.html:19
+msgid "General Public Chat"
+msgstr "Загальний публічний чат"
+
+#: .\chats\templates\chats\chats_list.html:20
+msgid "Open space for all community members"
+msgstr "Відкритий простір для всіх учасників спільноти"
+
+#: .\chats\templates\chats\chats_list.html:25
+msgid "Global"
+msgstr "Глобальний"
+
+#: .\chats\templates\chats\chats_list.html:80
+msgid "No item attached"
+msgstr "Річ не прикріплено"
+
+#: .\chats\templates\chats\chats_list.html:91
+msgid "No private conversations yet."
+msgstr "Приватних розмов поки немає."
+
+#: .\chats\templates\chats\chats_list.html:92
+msgid "Chats will appear here once someone reaches out about an item."
+msgstr "Чати з'являться тут, щойно хтось зв'яжеться з вами щодо речі."
+
+#: .\chats\templates\chats\premium_lock.html:12
+msgid "Chat Archive Locked"
+msgstr "Архів чату заблоковано"
+
+#: .\chats\templates\chats\premium_lock.html:16
+#, python-format
+msgid ""
+"\n"
+"                This conversation regarding <span class=\"font-semibold text-"
+"slate-800 dark:text-gray-200\">\"%(title)s\"</span> has been closed. Full "
+"access to archived chats is exclusive to <span class=\"font-bold text-"
+"pink-500 dark:text-pink-400\">Reunite Hope</span> subscribers.\n"
+"            "
+msgstr ""
+"\n"
+"                Цю розмову щодо <span class=\"font-semibold text-slate-800 "
+"dark:text-gray-200\">\"%(title)s\"</span> було закрито. Повний доступ до "
+"архівованих чатів надається виключно підписникам <span class=\"font-bold "
+"text-pink-500 dark:text-pink-400\">Reunite Hope</span>.\n"
+"            "
+
+#: .\chats\templates\chats\premium_lock.html:23
+msgid "Upgrade to Premium"
+msgstr "Оновити до Premium"
+
+#: .\chats\templates\chats\premium_lock.html:27
+msgid "Back to Chats"
+msgstr "Назад до чатів"
+
+#: .\posts\models.py:10
+msgid "Electronics & Gadgets"
+msgstr "Електроніка та гаджети"
+
+#: .\posts\models.py:11
+msgid "IDs & Documents"
+msgstr "Посвідчення особи та документи"
+
+#: .\posts\models.py:12
+msgid "Keys"
+msgstr "Ключі"
+
+#: .\posts\models.py:13
+msgid "Bags & Wallets"
+msgstr "Сумки та гаманці"
+
+#: .\posts\models.py:14
+msgid "Clothing & Accessories"
+msgstr "Одяг та аксесуари"
+
+#: .\posts\models.py:15
+msgid "Pets & Animals"
+msgstr "Тварини"
+
+#: .\posts\models.py:16
+msgid "Sport & Leisure"
+msgstr "Спорт та дозвілля"
+
+#: .\posts\models.py:17
+msgid "Kids & Baby"
+msgstr "Діти та немовлята"
+
+#: .\posts\models.py:18
+msgid "Miscellaneous"
+msgstr "Різне"
+
+#: .\posts\templates\posts\dashboard.html:7
+msgid "Your Dashboard"
+msgstr "Ваша панель управління"
+
+#: .\posts\templates\posts\dashboard.html:8
+msgid "Manage your reported posts or create a new one."
+msgstr "Керуйте своїми опублікованими оголошеннями або створіть нове."
+
+#: .\posts\templates\posts\dashboard.html:17
+msgid "Control Panel"
+msgstr "Панель керування"
+
+#: .\posts\templates\posts\dashboard.html:27
+msgid "My Listings"
+msgstr "Мої оголошення"
+
+#: .\posts\templates\posts\dashboard.html:36
+#: .\posts\templates\posts\partials\dashboard_form.html:16
+msgid "Report New Item"
+msgstr "Повідомити про нову річ"
+
+#: .\posts\templates\posts\edit_item.html:6
+msgid "Edit Listing"
+msgstr "Редагувати оголошення"
+
+#: .\posts\templates\posts\edit_item.html:7
+msgid "Modify the details of your reported item."
+msgstr "Змініть деталі вашої оголошеної речі."
+
+#: .\posts\templates\posts\edit_item.html:16
+msgid "Save Changes"
+msgstr "Зберегти зміни"
+
+#: .\posts\templates\posts\edit_item.html:19
+#: .\templates\partials\email_form.html:8
+#: .\users\templates\users\profile_delete.html:11
+#: .\users\templates\users\profile_edit.html:25
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: .\posts\templates\posts\index.html:13
+msgid "Smart & Safe Network"
+msgstr "Розумна та безпечна мережа"
+
+#: .\posts\templates\posts\index.html:17
+msgid ""
+"Bring What’s <span class='text-primary dark:text-primary-dark'>Lost</span> "
+"Back to Where It's <span class='text-primary-dark dark:text-primary'>Loved</"
+"span>"
+msgstr ""
+"Поверніть те, що <span class='text-primary dark:text-primary-dark'>втрачено</"
+"span>, туди, де його <span class='text-primary-dark dark:text-"
+"primary'>люблять</span>"
+
+#: .\posts\templates\posts\index.html:26
+msgid "Report Lost Item"
+msgstr "Повідомити про втрату"
+
+#: .\posts\templates\posts\index.html:29
+msgid "Browse All Listings"
+msgstr "Переглянути всі оголошення"
+
+#: .\posts\templates\posts\index.html:36
+msgid "Success Rate"
+msgstr "Рівень успіху"
+
+#: .\posts\templates\posts\index.html:40
+msgid "Active Search"
+msgstr "Активний пошук"
+
+#: .\posts\templates\posts\index.html:44
+msgid "Reunited Items"
+msgstr "Повернуті речі"
+
+#: .\posts\templates\posts\index.html:54
+msgid "Why Choose Us"
+msgstr "Чому обирають нас"
+
+#: .\posts\templates\posts\index.html:55
+msgid "Engineered for Safe Return"
+msgstr "Створено для безпечного повернення"
+
+#: .\posts\templates\posts\index.html:56
+msgid ""
+"We built a set of intelligent tools to protect your privacy while maximizing "
+"the chances of finding your items."
+msgstr ""
+"Ми розробили набір інтелектуальних інструментів, щоб захистити вашу "
+"конфіденційність і максимально підвищити шанси знайти ваші речі."
+
+#: .\posts\templates\posts\index.html:64
+msgid "Privacy First Chat"
+msgstr "Чат із пріоритетом конфіденційності"
+
+#: .\posts\templates\posts\index.html:65
+msgid ""
+"Communicate securely with finders through our encrypted internal messaging "
+"system without ever revealing your personal phone number or email."
+msgstr ""
+"Безпечно спілкуйтеся з тими, хто знайшов річ, через нашу зашифровану "
+"внутрішню систему повідомлень, не розкриваючи свій особистий номер телефону "
+"чи email."
+
+#: .\posts\templates\posts\index.html:72
+msgid "Smart Geo-Targeting"
+msgstr "Розумний геотаргетинг"
+
+#: .\posts\templates\posts\index.html:73
+msgid ""
+"Pinpoint exactly where an item was last seen. Our smart mapping architecture "
+"helps local communities look in exactly the right places."
+msgstr ""
+"Точно вказуйте, де річ бачили востаннє. Наша розумна архітектура карт "
+"допомагає місцевим спільнотам шукати саме там, де потрібно."
+
+#: .\posts\templates\posts\index.html:81
+msgid ""
+"Our background cross-referencing engine alerts you immediately the moment "
+"someone submits a 'Found' report matching your 'Lost' item description."
+msgstr ""
+"Наша фонова система перехресного порівняння миттєво сповістить вас, щойно "
+"хтось надішле оголошення про «Знахідку», яке відповідає опису вашої "
+"«Втраченої» речі."
+
+#: .\posts\templates\posts\index.html:91
+msgid "Simple Steps"
+msgstr "Прості кроки"
+
+#: .\posts\templates\posts\index.html:92
+msgid "How Does Reunite Work?"
+msgstr "Як працює Reunite?"
+
+#: .\posts\templates\posts\index.html:102
+msgid "Publish a Report"
+msgstr "Опублікувати оголошення"
+
+#: .\posts\templates\posts\index.html:103
+msgid ""
+"Create a listing with details, area tags, and photos. It takes less than 2 "
+"minutes to broadcast to the network."
+msgstr ""
+"Створіть оголошення з деталями, мітками місцевості та фотографіями. Це займе "
+"менше 2 хвилин, щоб розповсюдити інформацію в мережі."
+
+#: .\posts\templates\posts\index.html:110
+msgid "Verify & Connect"
+msgstr "Перевірте та зв'яжіться"
+
+#: .\posts\templates\posts\index.html:111
+msgid ""
+"Once a potential match is found, use our secure text system to verify item "
+"ownership safely through security questions."
+msgstr ""
+"Щойно знайдено потенційний збіг, скористайтеся нашою безпечною системою "
+"повідомлень, щоб підтвердити право власності за допомогою контрольних "
+"запитань."
+
+#: .\posts\templates\posts\index.html:118
+msgid "Safely Reunite"
+msgstr "Безпечне повернення"
+
+#: .\posts\templates\posts\index.html:119
+msgid ""
+"Arrange to meet up in a public, well-lit safe exchange spot to successfully "
+"hand over your recovered property."
+msgstr ""
+"Домовтеся про зустріч у громадському, добре освітленому та безпечному місці, "
+"щоб успішно передати знайдене майно."
+
+#: .\posts\templates\posts\index.html:130
+msgid "Live Feed"
+msgstr "Стрічка новин"
+
+#: .\posts\templates\posts\index.html:131
+msgid "Latest Active Reports"
+msgstr "Останні активні оголошення"
+
+#: .\posts\templates\posts\index.html:132
+msgid "Help your neighbors find what they are looking for."
+msgstr "Допоможіть сусідам знайти те, що вони шукають."
+
+#: .\posts\templates\posts\index.html:135
+msgid "See All Reports"
+msgstr "Переглянути всі оголошення"
+
+#: .\posts\templates\posts\index.html:145
+msgid "No active reports found"
+msgstr "Активних оголошень не знайдено"
+
+#: .\posts\templates\posts\index.html:146
+msgid "Be the first one to create a safe report listing!"
+msgstr ""
+"Станьте першим, хто створить безпечне оголошення про пошук чи знахідку!"
+
+#: .\posts\templates\posts\index.html:157
+msgid "Success Stories"
+msgstr "Історії успіху"
+
+#: .\posts\templates\posts\index.html:158
+msgid "Heartwarming Reunions"
+msgstr "Зворушливі повернення"
+
+#: .\posts\templates\posts\index.html:167
+msgid "Found my keys in 2 hours!"
+msgstr "Знайшов свої ключі за 2 години!"
+
+#: .\posts\templates\posts\index.html:168
+msgid ""
+"I dropped my car keys while jogging in Central Park. Posted a report here, "
+"and someone found them and contacted me via secure chat within two hours. "
+"Absolute lifesaver!"
+msgstr ""
+"Я впустив ключі від машини під час пробіжки в Центральному парку. "
+"Опублікував тут оголошення, і вже за дві години хтось знайшов їх та "
+"зв'язався зі мною через безпечний чат. Справжній рятівник!"
+
+#: .\posts\templates\posts\index.html:174
+msgid "Lost Car Keys"
+msgstr "Загублені ключі від авто"
+
+#: .\posts\templates\posts\index.html:184
+msgid "Max is back home safely"
+msgstr "Макс благополучно повернувся додому"
+
+#: .\posts\templates\posts\index.html:185
+msgid ""
+"Our golden retriever Max escaped through the backyard fence. The community "
+"support here was outstanding. A neighbor three blocks away posted a photo of "
+"him under 'Found Pets'."
+msgstr ""
+"Наш золотистий ретривер Макс утік через паркан заднього двору. Підтримка "
+"спільноти тут була неймовірною. Сусід через три квартали опублікував його "
+"фото в розділі «Знайдені тварини»."
+
+#: .\posts\templates\posts\index.html:191
+msgid "Lost Golden Retriever"
+msgstr "Загублений золотистий ретривер"
+
+#: .\posts\templates\posts\index.html:201
+msgid "Safe and secure exchange"
+msgstr "Безпечний та надійний обмін"
+
+#: .\posts\templates\posts\index.html:202
+msgid ""
+"Found an expensive camera setup at a cafe. I was worried about scams, but "
+"the built-in messaging let me verify the rightful owner safely by asking "
+"them about the specific lens serial number."
+msgstr ""
+"Знайшов у кафе дорогий комплект фотообладнання. Я хвилювався через можливе "
+"шахрайство, але вбудована система повідомлень дозволила мені безпечно "
+"перевірити справжнього власника, запитавши його про серійний номер "
+"конкретного об'єктива."
+
+#: .\posts\templates\posts\index.html:208
+msgid "Found DSLR Camera"
+msgstr "Знайдено дзеркальну камеру"
+
+#: .\posts\templates\posts\item_card.html:16
+msgid "No Image Provided"
+msgstr "Зображення не надано"
+
+#: .\posts\templates\posts\item_card.html:41
+#: .\posts\templates\posts\item_detail.html:27
+#: .\posts\templates\posts\item_detail.html:151
+#: .\posts\templates\posts\item_detail.html:238
+#: .\posts\templates\posts\item_line.html:27
+msgid "Reunited"
+msgstr "Повернуто власникам"
+
+#: .\posts\templates\posts\item_card.html:75
+msgid "Cash Reward"
+msgstr "Грошова винагорода"
+
+#: .\posts\templates\posts\item_detail.html:31
+msgid "Active"
+msgstr "Активно"
+
+#: .\posts\templates\posts\item_detail.html:42
+msgid "Published on"
+msgstr "Опубліковано"
+
+#: .\posts\templates\posts\item_detail.html:52
+msgid "No image provided"
+msgstr "Зображення не надано"
+
+#: .\posts\templates\posts\item_detail.html:64
+#: .\posts\templates\posts\item_line.html:76
+msgid "Pending Moderation"
+msgstr "Очікує на модерацію"
+
+#: .\posts\templates\posts\item_detail.html:67
+msgid ""
+"This listing is temporary hidden from the public catalog. A moderator will "
+"review it shortly."
+msgstr ""
+"Це оголошення тимчасово приховано із загального каталогу. Модератор "
+"перевірить його найближчим часом."
+
+#: .\posts\templates\posts\item_detail.html:74
+msgid "Description"
+msgstr "Опис"
+
+#: .\posts\templates\posts\item_detail.html:79
+msgid "No description available for this item."
+msgstr "Опис для цієї речі відсутній."
+
+#: .\posts\templates\posts\item_detail.html:85
+msgid "Listed By"
+msgstr "Опублікував(-ла)"
+
+#: .\posts\templates\posts\item_detail.html:103
+msgid "Community Member"
+msgstr "Учасник спільноти"
+
+#: .\posts\templates\posts\item_detail.html:105
+msgid "Staff Member"
+msgstr "Персонал"
+
+#: .\posts\templates\posts\item_detail.html:113
+msgid "Location"
+msgstr "Місцезнаходження"
+
+#: .\posts\templates\posts\item_detail.html:131
+msgid "Map position is unavailable for:"
+msgstr "Позиція на карті недоступна для:"
+
+#: .\posts\templates\posts\item_detail.html:141
+msgid "Interested in this item?"
+msgstr "Цікавить ця річ?"
+
+#: .\posts\templates\posts\item_detail.html:147
+#: .\posts\templates\posts\item_detail.html:234
+msgid "Contact Author"
+msgstr "Зв'язатися з автором"
+
+#: .\posts\templates\posts\item_detail.html:156
+#: .\posts\templates\posts\item_detail.html:243
+msgid "Your Listing"
+msgstr "Ваше оголошення"
+
+#: .\posts\templates\posts\item_detail.html:164
+msgid "Guaranteed Reward"
+msgstr "Гарантована винагорода"
+
+#: .\posts\templates\posts\item_detail.html:172
+msgid "Motivate Finders"
+msgstr "Мотивуйте тих, хто шукає"
+
+#: .\posts\templates\posts\item_detail.html:173
+msgid ""
+"Add a cash reward held securely by Stripe Checkout to speed up the search."
+msgstr ""
+"Додайте грошову винагороду, яка надійно утримується через Stripe Checkout, "
+"щоб прискорити пошук."
+
+#: .\posts\templates\posts\item_detail.html:178
+msgid "Balance:"
+msgstr "Баланс:"
+
+#: .\posts\templates\posts\item_detail.html:203
+msgid ""
+"Your balance of <span class='font-bold text-slate-600 dark:text-slate-300'>€"
+"{{ user_wallet.balance }}</span> will be used first. Remainder via card."
+msgstr ""
+"Ваш баланс у розмірі <span class='font-bold text-slate-600 dark:text-"
+"slate-300'>€{{ user_wallet.balance }}</span> буде використано першим. "
+"Залишок — карткою."
+
+#: .\posts\templates\posts\item_detail.html:207
+msgid "Payment will be processed via Stripe."
+msgstr "Платіж буде оброблено через Stripe."
+
+#: .\posts\templates\posts\item_detail.html:212
+msgid "Pay Reward"
+msgstr "Виплатити винагороду"
+
+#: .\posts\templates\posts\item_detail.html:225
+msgid "Interested?"
+msgstr "Цікавить?"
+
+#: .\posts\templates\posts\item_detail.html:295
+msgid "Approximate search boundary area"
+msgstr "Приблизна межа зони пошуку"
+
+#: .\posts\templates\posts\item_detail.html:317
+msgid "Approximate location area"
+msgstr "Приблизна зона розташування"
+
+#: .\posts\templates\posts\item_line.html:51
+msgid "Reward Claimed"
+msgstr "Винагороду отримано"
+
+#: .\posts\templates\posts\item_line.html:55
+msgid "Cash Reward:"
+msgstr "Грошова винагорода:"
+
+#: .\posts\templates\posts\item_line.html:67
+msgid "Archived"
+msgstr "В архіві"
+
+#: .\posts\templates\posts\item_line.html:72
+msgid "Approved & Live"
+msgstr "Схвалено та опубліковано"
+
+#: .\posts\templates\posts\item_line.html:89
+msgid "I Found It Myself"
+msgstr "Я знайшов(-ла) це самостійно"
+
+#: .\posts\templates\posts\item_list.html:8
+msgid "Explore Listings"
+msgstr "Переглянути оголошення"
+
+#: .\posts\templates\posts\item_list.html:9
+msgid "Search and filter reported lost and found items."
+msgstr "Пошук та фільтрація оголошень про втрачені та знайдені речі."
+
+#: .\posts\templates\posts\item_list.html:20
+msgid "Categories"
+msgstr "Категорії"
+
+#: .\posts\templates\posts\item_list.html:35
+msgid "Type"
+msgstr "Тип"
+
+#: .\posts\templates\posts\item_list.html:38
+msgid "All Types"
+msgstr "Всі типи"
+
+#: .\posts\templates\posts\item_list.html:48
+msgid "City"
+msgstr "Місто"
+
+#: .\posts\templates\posts\item_list.html:56
+msgid "Enter city name..."
+msgstr "Введіть назву міста..."
+
+#: .\posts\templates\posts\item_list.html:65
+msgid "Apply"
+msgstr "Застосувати"
+
+#: .\posts\templates\posts\item_list.html:90
+msgid "No matching items"
+msgstr "Нічого не знайдено"
+
+#: .\posts\templates\posts\item_list.html:92
+msgid ""
+"We couldn't find anything matching your search criteria. Try adjusting the "
+"filters or resetting them."
+msgstr ""
+"Ми не змогли знайти нічого за вашим запитом. Спробуйте змінити фільтри або "
+"скинути їх."
+
+#: .\posts\templates\posts\item_list.html:96
+msgid "Reset All Filters"
+msgstr "Скинути всі фільтри"
+
+#: .\posts\templates\posts\map.html:8
+msgid "Explore items on the global map"
+msgstr "Переглядайте речі на глобальній карті"
+
+#: .\posts\templates\posts\map.html:9
+msgid "Find lost property and report discoveries worldwide."
+msgstr "Знаходьте втрачене майно та повідомляйте про знахідки по всьому світу."
+
+#: .\posts\templates\posts\map.html:68
+msgid "Active listings:"
+msgstr "Активні оголошення:"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:18
+msgid "Please provide detailed information about the item below."
+msgstr "Будь ласка, надайте детальну інформацію про річ нижче."
+
+#: .\posts\templates\posts\partials\dashboard_form.html:27
+msgid "Item Title"
+msgstr "Назва речі"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:34
+msgid "Listing Type"
+msgstr "Тип оголошення"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:38
+msgid "Category"
+msgstr "Категорія"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:44
+msgid "City / Location"
+msgstr "Місто / Локація"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:50
+msgid "Detailed Description"
+msgstr "Детальний опис"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:56
+msgid "Attach Image"
+msgstr "Прикріпити зображення"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:72
+msgid "Limit Reached"
+msgstr "Ліміт вичерпано"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:76
+#: .\templates\partials\email_form.html:4
+#: .\users\templates\users\profile_edit.html:21
+msgid "Submit"
+msgstr "Надіслати"
+
+#: .\posts\templates\posts\partials\dashboard_items.html:11
+msgid "No listings found"
+msgstr "Оголошень не знайдено"
+
+#: .\posts\templates\posts\partials\dashboard_items.html:12
+msgid "You haven't reported any items yet."
+msgstr "Ви ще не подавали жодного оголошення про речі."
+
+#: .\posts\templates\posts\wallet.html:19
+msgid "My Wallet"
+msgstr "Мій гаманець"
+
+#: .\posts\templates\posts\wallet.html:20
+msgid "Earned from safely returning items back to the owners."
+msgstr "Зароблено на безпечному поверненні речей їхнім власникам."
+
+#: .\posts\templates\posts\wallet.html:23
+msgid "Available Balance"
+msgstr "Доступний баланс"
+
+#: .\posts\templates\posts\wallet.html:31
+msgid "Withdraw Funds"
+msgstr "Вивести кошти"
+
+#: .\posts\templates\posts\wallet.html:35
+msgid "Wallet Empty"
+msgstr "Гаманець порожній"
+
+#: .\posts\templates\posts\wallet.html:42
+msgid "Withdrawal History"
+msgstr "Історія виведення коштів"
+
+#: .\posts\templates\posts\wallet.html:52
+msgid "Processing"
+msgstr "Обробляється"
+
+#: .\posts\templates\posts\wallet.html:54
+msgid "Paid"
+msgstr "Виплачено"
+
+#: .\posts\templates\posts\wallet.html:56
+msgid "Cancelled"
+msgstr "Скасовано"
+
+#: .\posts\views\items.py:14
+msgid ""
+"Reunite is a modern, community-driven platform designed to reconnect lost "
+"belongings with their rightful owners. Safe, secure, and fast."
+msgstr ""
+"Reunite — це сучасна платформа, що працює на базі спільноти, розроблена для "
+"відновлення зв’язку втрачених речей з їхніми законними власниками. Безпечно, "
+"надійно та швидко."
+
+#: .\subscription\templates\subscription\my-sub.html:6
+#: .\templates\includes\header.html:122
+msgid "My Subscription"
+msgstr "Моя підписка"
+
+#: .\subscription\templates\subscription\my-sub.html:21
+msgid "Subscribed since:"
+msgstr "Підписка діє з:"
+
+#: .\subscription\templates\subscription\my-sub.html:25
+msgid "Next charge date:"
+msgstr "Дата наступного списання:"
+
+#: .\subscription\templates\subscription\my-sub.html:29
+msgid "Cancelled. Access until:"
+msgstr "Скасовано. Доступ до:"
+
+#: .\subscription\templates\subscription\my-sub.html:46
+msgid "Cancel Subscription"
+msgstr "Скасувати підписку"
+
+#: .\subscription\templates\subscription\my-sub.html:54
+msgid "You are not subscribed to any plan."
+msgstr "Ви не підписані на жоден тарифний план."
+
+#: .\subscription\templates\subscription\my-sub.html:55
+msgid "Choose Plan"
+msgstr "Обрати тариф"
+
+#: .\subscription\templates\subscription\subscription.html:10
+msgid "Upgrade Your Search Capabilities"
+msgstr "Розширте свои можливості пошуку"
+
+#: .\subscription\templates\subscription\subscription.html:13
+msgid ""
+"Maximize Your Chances of a <span class='text-hope-dark'>Successful Return</"
+"span>"
+msgstr ""
+"Максимізуйте свої шанси на <span class='text-hope-dark'>успішне повернення</"
+"span>"
+
+#: .\subscription\templates\subscription\subscription.html:34
+msgid "Cancel anytime"
+msgstr "Скасування в будь-який час"
+
+#: .\subscription\templates\subscription\subscription.html:38
+msgid "/ month"
+msgstr "/ місяць"
+
+#: .\subscription\templates\subscription\subscription.html:46
+msgid "24/7 Priority Moderation"
+msgstr "24/7 пріоритетна модерація"
+
+#: .\subscription\templates\subscription\subscription.html:50
+msgid "Pinned to Top & Distinct Border"
+msgstr "Закріплено вгорі та особлива рамка"
+
+#: .\subscription\templates\subscription\subscription.html:54
+#, python-format
+msgid "Reward Fee Reduced to 2%%"
+msgstr "Комісія з винагороди знижена до 2%%"
+
+#: .\subscription\templates\subscription\subscription.html:63
+msgid "You are already a Member"
+msgstr "Ви вже є учасником"
+
+#: .\subscription\templates\subscription\subscription.html:66
+msgid "Manage My Subscription"
+msgstr "Керувати моєю підпискою"
+
+#: .\subscription\templates\subscription\subscription.html:74
+msgid "Subscribe"
+msgstr "Підписатися"
+
+#: .\subscription\templates\subscription\subscription.html:81
+msgid "Sign In to Subscribe"
+msgstr "Увійдіть, щоб підписатися"
+
+#: .\subscription\templates\subscription\subscription.html:86
+msgid ""
+"Secure payment. Part of the proceeds goes toward supporting our search "
+"community."
+msgstr ""
+"Безпечна оплата. Частина коштів йде на підтримку нашої пошукової спільноти."
+
+#: .\subscription\templates\subscription\subscription.html:94
+msgid "Compare Plans"
+msgstr "Порівняти тарифи"
+
+#: .\subscription\templates\subscription\subscription.html:95
+msgid "See how the Hope subscription helps you solve cases more efficiently"
+msgstr ""
+"Дізнайтеся, як підписка Hope допомагає вам ефективніше вирішувати випадки"
+
+#: .\subscription\templates\subscription\subscription.html:102
+msgid "Features"
+msgstr "Можливості"
+
+#: .\subscription\templates\subscription\subscription.html:103
+msgid "Basic (Free)"
+msgstr "Базовий (Безкоштовно)"
+
+#: .\subscription\templates\subscription\subscription.html:115
+msgid "Monthly Listing Limit"
+msgstr "Щомісячний ліміт оголошень"
+
+#: .\subscription\templates\subscription\subscription.html:116
+msgid "Maximum number of active posts about found items"
+msgstr "Максимальна кількість активних оголошень про знайдені речі"
+
+#: .\subscription\templates\subscription\subscription.html:118
+msgid "2 listings"
+msgstr "2 оголошення"
+
+#: .\subscription\templates\subscription\subscription.html:124
+msgid "For Those Who Lost an Item"
+msgstr "Для тих, хто втратив річ"
+
+#: .\subscription\templates\subscription\subscription.html:129
+msgid "Listing Visibility"
+msgstr "Видимість оголошення"
+
+#: .\subscription\templates\subscription\subscription.html:130
+msgid "Position in the explore feed and card appearance"
+msgstr "Позиція у стрічці пошуку та вигляд картки"
+
+#: .\subscription\templates\subscription\subscription.html:132
+msgid "Standard chronological order"
+msgstr "Стандартний хронологічний порядок"
+
+#: .\subscription\templates\subscription\subscription.html:134
+msgid "Pinned to the top & highlighted with a prominent custom border"
+msgstr "Закріплено вгорі та виділено яскравою індивідуальною рамкою"
+
+#: .\subscription\templates\subscription\subscription.html:139
+msgid "Publishing Speed"
+msgstr "Швидкість публікації"
+
+#: .\subscription\templates\subscription\subscription.html:140
+msgid "Standard listing moderation queue"
+msgstr "Стандартна черга модерації оголошень"
+
+#: .\subscription\templates\subscription\subscription.html:142
+msgid "Up to 2 hours"
+msgstr "До 2 годин"
+
+#: .\subscription\templates\subscription\subscription.html:143
+msgid "Instant (24/7 Priority)"
+msgstr "Миттєво (24/7 Пріоритет)"
+
+#: .\subscription\templates\subscription\subscription.html:147
+msgid "Listing Badge"
+msgstr "Бейдж оголошення"
+
+#: .\subscription\templates\subscription\subscription.html:148
+msgid "A distinct badge on your listing and profile to attract attention"
+msgstr "Особливий бейдж на вашому оголошенні та профілі для привернення уваги"
+
+#: .\subscription\templates\subscription\subscription.html:153
+msgid "Hope Badge"
+msgstr "Бейдж Hope"
+
+#: .\subscription\templates\subscription\subscription.html:160
+msgid "For Those Who Found an Item"
+msgstr "Для тих, хто знайшов річ"
+
+#: .\subscription\templates\subscription\subscription.html:166
+msgid "Reward Commission"
+msgstr "Комісія з винагороди"
+
+#: .\subscription\templates\subscription\subscription.html:167
+msgid "The percentage retained by the platform upon a successful return"
+msgstr "Відсоток, який утримує платформа після успішного повернення речі"
+
+#: .\subscription\templates\subscription\subscription.html:170
+#, python-format
+msgid "Only 2%%"
+msgstr "Лише 2%%"
+
+#: .\subscription\templates\subscription\subscription.html:175
+msgid "Archived Chat History"
+msgstr "Історія чату в архіві"
+
+#: .\subscription\templates\subscription\subscription.html:176
+msgid ""
+"Full access to chat history after the item is returned and the case is closed"
+msgstr ""
+"Повний доступ до історії чату після того, як річ повернуто, а справу закрито"
+
+#: .\subscription\templates\subscription\subscription.html:178
+msgid "Locked immediately"
+msgstr "Блокується негайно"
+
+#: .\subscription\templates\subscription\subscription.html:179
+msgid "Full Lifetime Access"
+msgstr "Повний довічний доступ"
+
+#: .\templates\404.html:6
+msgid "Page not found"
+msgstr "Сторінку не знайдено"
+
+#: .\templates\404.html:8
+msgid "Error 404: This page doesn't exist or is unavailable"
+msgstr "Помилка 404: Ця сторінка не існує або недоступна"
+
+#: .\templates\includes\header.html:18
+msgid "Search Items"
+msgstr "Пошук речей"
+
+#: .\templates\includes\header.html:21
+msgid "Support"
+msgstr "Підтримка"
+
+#: .\templates\includes\header.html:74
+msgid "Create Listing"
+msgstr "Створити оголошення"
+
+#: .\templates\includes\header.html:96
+msgid "Hello"
+msgstr "Вітаємо"
+
+#: .\templates\includes\header.html:120
+msgid "My Profile"
+msgstr "Мій профіль"
+
+#: .\templates\includes\header.html:121
+msgid "Edit Profile"
+msgstr "Редагувати профіль"
+
+#: .\templates\includes\header.html:123
+msgid "Settings"
+msgstr "Налаштування"
+
+#: .\templates\includes\header.html:125
+msgid "Log Out"
+msgstr "Вийти"
+
+#: .\templates\includes\header.html:133
+msgid "Login"
+msgstr "Увійти"
+
+#: .\templates\includes\header.html:137
+msgid "Sign Up"
+msgstr "Зареєструватися"
+
+#: .\users\templates\users\profile.html:17
+msgid "Creator"
+msgstr "Творець"
+
+#: .\users\templates\users\profile.html:21
+msgid "Staff"
+msgstr "Персонал"
+
+#: .\users\templates\users\profile.html:28
+msgid "Chat with me"
+msgstr "Написати мені"
+
+#: .\users\templates\users\profile_delete.html:5
+#: .\users\templates\users\profile_settings.html:43
+msgid "Delete Account"
+msgstr "Видалити аккаунт"
+
+#: .\users\templates\users\profile_delete.html:6
+msgid "Are you sure you want to delete your account?"
+msgstr "Ви впевнені, що хочете видалити свій обліковий запис?"
+
+#: .\users\templates\users\profile_delete.html:10
+msgid "Yes, I want to delete my account"
+msgstr "Так, я хочу видалити свій обліковий запис"
+
+#: .\users\templates\users\profile_edit.html:6
+msgid "Complete your Profile"
+msgstr "Заповніть свій профіль"
+
+#: .\users\templates\users\profile_edit.html:8
+msgid "Edit your Profile"
+msgstr "Редагувати свій профіль"
+
+#: .\users\templates\users\profile_edit.html:23
+msgid "Skip"
+msgstr "Пропустити"
+
+#: .\users\templates\users\profile_settings.html:5
+msgid "Account Settings"
+msgstr "Налаштування облікового запису"
+
+#: .\users\templates\users\profile_settings.html:11
+msgid "Email address"
+msgstr "Електронна адреса"
+
+#: .\users\templates\users\profile_settings.html:14
+msgid "No Email"
+msgstr "Немає email"
+
+#: .\users\templates\users\profile_settings.html:21
+msgid "Edit"
+msgstr "Редагувати"
+
+#: .\users\templates\users\profile_settings.html:30
+msgid "Verified"
+msgstr "Підтверджено"
+
+#: .\users\templates\users\profile_settings.html:31
+msgid "Not verified"
+msgstr "Не підтверджено"
+
+#: .\users\templates\users\profile_settings.html:36
+msgid "Verify"
+msgstr "Підтвердити"
+
+#: .\users\templates\users\profile_settings.html:46
+msgid "Once deleted, account is gone. Forever."
+msgstr "Після видалення обліковий запис зникне. Назавжди."
+
+#: .\users\templates\users\profile_settings.html:50
+msgid "Staff cannot be deleted."
+msgstr "Облікові записи персоналу не можна видалити."
+
+#: .\users\templates\users\profile_settings.html:53
+msgid "Delete"
+msgstr "Видалити"

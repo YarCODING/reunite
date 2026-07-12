@@ -11,7 +11,7 @@
 @variant dark (&:where(.dark, .dark *));
 
 body {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Sora', 'Manrope', sans-serif;
 }
 
 [x-cloak] { 

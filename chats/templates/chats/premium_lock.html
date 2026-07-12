@@ -9,20 +9,22 @@
         </div>
 
         <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mb-3">
-            Chat Archive Locked
+            {% trans "Chat Archive Locked" %}
         </h2>
         
         <p class="text-sm text-slate-500 dark:text-gray-400 max-w-md leading-relaxed mb-8">
-            This conversation regarding <span class="font-semibold text-slate-800 dark:text-gray-200">"{{ chat_group.item.title }}"</span> has been closed. Full access to archived chats is exclusive to <span class="font-bold text-pink-500 dark:text-pink-400">Reunite Hope</span> subscribers.
+            {% blocktranslate with title=chat_group.item.title %}
+                This conversation regarding <span class="font-semibold text-slate-800 dark:text-gray-200">"{{ title }}"</span> has been closed. Full access to archived chats is exclusive to <span class="font-bold text-pink-500 dark:text-pink-400">Reunite Hope</span> subscribers.
+            {% endblocktranslate %}
         </p>
 
         <div class="flex flex-col sm:flex-row items-center gap-4 w-full max-w-sm">
             <a href="{% url 'subscription' %}" class="w-full text-white! bg-linear-to-r from-hope to-hope-dark hover:from-[#BD5882] hover:to-[#8E4261] font-bold py-3.5 px-6 rounded-2xl shadow-lg shadow-pink-200 dark:shadow-none transition-all text-sm no-underline flex items-center justify-center gap-2 cursor-pointer border-0">
-                <i class="fa-solid fa-hand-holding-heart"></i> Upgrade to Premium
+                <i class="fa-solid fa-hand-holding-heart"></i> {% trans "Upgrade to Premium" %}
             </a>
             
             <a href="{% url 'chat-list' %}" class="w-full text-slate-600 dark:text-gray-300 bg-slate-50 dark:bg-gray-700 hover:bg-slate-100 dark:hover:bg-gray-600 font-semibold py-3.5 px-6 rounded-2xl transition-all text-sm no-underline flex items-center justify-center gap-2 cursor-pointer border border-slate-200 dark:border-gray-600">
-                <i class="fa-solid fa-arrow-left"></i> Back to Chats
+                <i class="fa-solid fa-arrow-left"></i> {% trans "Back to Chats" %}
             </a>
         </div>
 

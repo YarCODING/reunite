@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.utils.translation import gettext_lazy as _
 from django.db.models import Count, Avg
 from django.http import HttpResponse
 from django.contrib import messages
@@ -10,8 +11,9 @@ from ..forms import ItemForm
 import decimal
 
 def index(request):
+    desc = _("Reunite is a modern, community-driven platform designed to reconnect lost belongings with their rightful owners. Safe, secure, and fast.")
     featured_items = Item.objects.filter(is_approved=True).filter(status='active').order_by('-is_priority', '-created_at')[:3]
-    return render(request, 'posts/index.html', {'items': featured_items})
+    return render(request, 'posts/index.html', {'items': featured_items, 'desc':desc})
 
 
 

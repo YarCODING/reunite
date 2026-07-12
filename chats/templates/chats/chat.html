@@ -49,11 +49,11 @@
                                 <div class="mt-1">
                                     {% if chat_group.item.type == 'lost' %}
                                         <span class="inline-flex items-center gap-1 px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-rose-50 dark:bg-rose-950/30 text-rose-600 dark:text-rose-400 border border-rose-100 dark:border-rose-900/30 shadow-sm">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Lost
+                                            <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> {% trans "Lost" %}
                                         </span>
                                     {% else %}
                                         <span class="inline-flex items-center gap-1 px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30 shadow-sm">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Found
+                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> {% trans "Found" %}
                                         </span>
                                     {% endif %}
                                 </div>
@@ -76,7 +76,7 @@
                 <div class="flex items-center gap-2.5 w-full justify-center text-slate-700 dark:text-gray-300 font-semibold text-sm">
                     <div id="online-icon" class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
                     <div class="flex items-center text-slate-800 dark:text-white font-bold tracking-tight">
-                        <span id="online-count" class="pr-1 text-primary"></span> others online
+                        {% trans "<span id='online-count' class='pr-1 text-primary'></span> others online" %}
                     </div>
                 </div>
             {% endif %}
@@ -88,7 +88,7 @@
                 <form action="{% url 'confirm-reunite' chat_group.group_name %}" method="POST" onsubmit="return confirm('Are you sure this user found your item? This will award them the payouts.');">
                     {% csrf_token %}
                     <button type="submit" class="bg-emerald-600! hover:bg-emerald-700! text-white! text-xs font-bold px-4! py-2! rounded-xl border-0 cursor-pointer flex items-center gap-1.5 ml-auto shadow-sm">
-                        <i class="fa-solid fa-handshake"></i> Verified: Item Found here
+                        <i class="fa-solid fa-handshake"></i> {% trans "Verified: Item Found here" %}
                     </button>
                 </form>
             </div>

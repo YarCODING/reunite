@@ -10,11 +10,11 @@
                 <div class="flex flex-wrap items-center gap-2">
                     {% if item.type == 'lost' %}
                         <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 border border-rose-100 dark:border-rose-900/30 shadow-sm">
-                            <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span> Lost
+                            <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span> {% trans "Lost" %}
                         </span>
                     {% else %}
                         <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30 shadow-sm">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Found
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> {% trans "Found" %}
                         </span>
                     {% endif %}
 
@@ -24,11 +24,11 @@
 
                     {% if item.status == 'reunited' %}
                         <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-primary text-white shadow-md">
-                            <i class="fa-solid fa-handshake"></i> Reunited
+                            <i class="fa-solid fa-handshake"></i> {% trans "Reunited" %}
                         </span>
                     {% else %}
                         <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-900/30 shadow-sm">
-                            Active
+                            {% trans "Active" %}
                         </span>
                     {% endif %}
                 </div>
@@ -39,7 +39,7 @@
                 
                 <div class="text-xs text-slate-400 dark:text-slate-400 flex items-center gap-1.5">
                     <i class="fa-regular fa-calendar-days"></i>
-                    <span>Published on {{ item.created_at|date:"F d, Y · H:i" }}</span>
+                    <span>{% trans "Published on" %} {{ item.created_at|date:"F d, Y · H:i" }}</span>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
                 {% else %}
                     <div class="flex flex-col items-center justify-center text-slate-300 dark:text-slate-600 py-20 gap-3 w-full">
                         <i class="fa-solid fa-box-open text-6xl"></i>
-                        <span class="text-sm font-medium text-slate-400 dark:text-slate-500">No image provided</span>
+                        <span class="text-sm font-medium text-slate-400 dark:text-slate-500">{% trans "No image provided" %}</span>
                     </div>
                 {% endif %}
             </div>
@@ -61,28 +61,28 @@
                     </div>
                     <div class="space-y-0.5">
                         <h4 class="font-extrabold text-sm tracking-wider uppercase text-amber-800 dark:text-amber-400">
-                            Pending Moderation
+                            {% trans "Pending Moderation" %}
                         </h4>
                         <p class="text-xs text-amber-700/90 dark:text-amber-300/80 leading-relaxed">
-                            This listing is temporary hidden from the public catalog. A moderator will review it shortly.
+                            {% trans "This listing is temporary hidden from the public catalog. A moderator will review it shortly." %}
                         </p>
                     </div>
                 </div>
             {% endif %}
 
             <div class="space-y-2 pt-2">
-                <h2 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Description</h2>
+                <h2 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">{% trans "Description" %}</h2>
                 <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                     {% if item.description %}
                         {{ item.description }}
                     {% else %}
-                        <span class="italic text-slate-400 dark:text-slate-500">No description available for this item.</span>
+                        <span class="italic text-slate-400 dark:text-slate-500">{% trans "No description available for this item." %}</span>
                     {% endif %}
                 </p>
             </div>
 
             <div class="space-y-2 pt-2">
-                <h2 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Listed By</h2>
+                <h2 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">{% trans "Listed By" %}</h2>
                 <div class="relative inline-flex items-center gap-3 p-3 bg-white dark:bg-gray-800 border border-slate-100 dark:border-slate-700 rounded-xl min-w-55 shadow-sm">
                     <a href="{% url 'profile' item.user.username %}" class="absolute inset-0 z-10" aria-label="{{ item.user.username }}"></a>
 
@@ -100,9 +100,9 @@
                             </p>
                         </div>
                         {% if not item.user.is_staff %}
-                        <span class="text-[11px] text-slate-400 dark:text-slate-500">Community Member</span>
+                        <span class="text-[11px] text-slate-400 dark:text-slate-500">{% trans "Community Member" %}</span>
                         {% else %}
-                        <span class="text-[11px] text-blue-700 dark:text-blue-400">Staff Member</span>
+                        <span class="text-[11px] text-blue-700 dark:text-blue-400">{% trans "Staff Member" %}</span>
                         {% endif %}
                     </div>
                 </div>
@@ -110,7 +110,7 @@
 
             <div class="space-y-3 pt-2">
                 <div class="flex items-center justify-between">
-                    <h2 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Location</h2>
+                    <h2 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">{% trans "Location" %}</h2>
                     <span class="text-xs font-bold text-slate-600 dark:text-slate-300 bg-white dark:bg-gray-800 border border-slate-100 dark:border-slate-700 px-2.5 py-1 rounded-md shadow-sm">
                         <i class="fa-solid fa-location-dot text-slate-400 dark:text-slate-500 mr-1"></i> {{ item.city }}
                     </span>
@@ -128,7 +128,7 @@
                 {% else %}
                     <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-dashed border-slate-200 dark:border-slate-700 text-center text-slate-400 dark:text-slate-500 text-sm">
                         <i class="fa-solid fa-map-location-dot text-3xl mb-2 block text-slate-300 dark:text-slate-600"></i>
-                        Map position is unavailable for: "{{ item.city }}".
+                        {% trans "Map position is unavailable for:" %} "{{ item.city }}".
                     </div>
                 {% endif %}
             </div>
@@ -138,22 +138,22 @@
         <div class="hidden md:block lg:col-span-1 lg:sticky lg:top-24 space-y-4 z-10">
             <div class="bg-white dark:bg-gray-800 border border-slate-100 dark:border-slate-700 rounded-2xl shadow-xl shadow-slate-100/50 dark:shadow-none p-6 flex flex-col gap-4 text-left">
                 
-                <h3 class="font-bold text-slate-800 dark:text-white text-lg mb-1">Interested in this item?</h3>
+                <h3 class="font-bold text-slate-800 dark:text-white text-lg mb-1">{% trans "Interested in this item?" %}</h3>
                 
                 {% if request.user != item.user %}
                     {% if item.status == "active" %}
                         <a href="{% url 'start-chat-with-item' item.user.username item.id %}" 
                         class="w-full bg-primary hover:bg-primary-dark text-white! font-bold py-3.5 px-4 rounded-xl text-center text-sm no-underline shadow-md shadow-primary/10 transition flex items-center justify-center gap-2 cursor-pointer border-0">
-                            <i class="fa-solid fa-comments"></i> Contact Author
+                            <i class="fa-solid fa-comments"></i> {% trans "Contact Author" %}
                         </a>
                     {% else %}
                         <div class="w-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-400 font-bold py-3.5 px-4 rounded-xl text-center text-sm flex items-center justify-center gap-2 cursor-not-allowed">
-                            <i class="fa-solid fa-handshake"></i> Reunited
+                            <i class="fa-solid fa-handshake"></i> {% trans "Reunited" %}
                         </div>
                     {% endif %}
                 {% else %}
                     <div class="w-full bg-slate-50 dark:bg-slate-700 text-slate-400 dark:text-slate-500 font-bold py-3.5 px-4 rounded-xl text-center text-sm flex items-center justify-center gap-2 cursor-not-allowed border border-slate-100 dark:border-slate-700">
-                        <i class="fa-solid fa-user-shield text-slate-400 dark:text-slate-500"></i> Your Listing
+                        <i class="fa-solid fa-user-shield text-slate-400 dark:text-slate-500"></i> {% trans "Your Listing" %}
                     </div>
                 {% endif %}
 
@@ -161,7 +161,7 @@
                     <div class="p-4 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/30 rounded-2xl flex items-center gap-3 text-emerald-800 dark:text-emerald-300">
                         <i class="fa-solid fa-money-bill-wave text-xl text-emerald-500 dark:text-emerald-400"></i>
                         <div>
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-0.5">Guaranteed Reward</p>
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-0.5">{% trans "Guaranteed Reward" %}</p>
                             <p class="text-2xl font-black m-0 leading-none text-emerald-800 dark:text-white">€{{ item.reward_amount }}</p>
                         </div>
                     </div>
@@ -169,13 +169,13 @@
 
                 {% if item.user == request.user and not item.is_reward_paid and item.status == 'active' %}
                     <div class="mt-2 pt-4 border-t border-slate-100 dark:border-slate-700">
-                        <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Motivate Finders</h4>
-                        <p class="text-[11px] text-slate-400 dark:text-slate-400 mb-4 leading-normal">Add a cash reward held securely by Stripe Checkout to speed up the search.</p>
+                        <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">{% trans "Motivate Finders" %}</h4>
+                        <p class="text-[11px] text-slate-400 dark:text-slate-400 mb-4 leading-normal">{% trans "Add a cash reward held securely by Stripe Checkout to speed up the search." %}</p>
 
                         {% if user_wallet %}
                             <div class="mb-4 p-3 bg-slate-50 dark:bg-slate-700 border border-slate-100 dark:border-slate-700 rounded-2xl flex items-center justify-between text-xs">
                                 <span class="text-slate-500 dark:text-slate-400 font-medium flex items-center gap-1.5">
-                                    <i class="fa-solid fa-wallet text-slate-400 dark:text-slate-500"></i> Balance:
+                                    <i class="fa-solid fa-wallet text-slate-400 dark:text-slate-500"></i> {% trans "Balance:" %}
                                 </span>
                                 {% if user_wallet.balance > 0 %}
                                     <span class="font-black text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-2 py-0.5 rounded-md">€{{ user_wallet.balance }}</span>
@@ -200,16 +200,16 @@
 
                             {% if user_wallet.balance > 0 %}
                                 <p class="text-[10px] text-slate-400 dark:text-slate-400 font-medium mb-4 leading-normal">
-                                    <i class="fa-solid fa-circle-info text-primary-light"></i> Your balance of <span class="font-bold text-slate-600 dark:text-slate-300">€{{ user_wallet.balance }}</span> will be used first. Remainder via card.
+                                    <i class="fa-solid fa-circle-info text-primary-light"></i> {% trans "Your balance of <span class='font-bold text-slate-600 dark:text-slate-300'>€{{ user_wallet.balance }}</span> will be used first. Remainder via card." %}
                                 </p>
                             {% else %}
                                 <p class="text-[10px] text-slate-400 dark:text-slate-500 font-medium mb-4 leading-normal">
-                                    <i class="fa-solid fa-circle-info text-slate-300 dark:text-slate-600"></i> Payment will be processed via Stripe.
+                                    <i class="fa-solid fa-circle-info text-slate-300 dark:text-slate-600"></i> {% trans "Payment will be processed via Stripe." %}
                                 </p>
                             {% endif %}
 
                             <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-xl text-xs border-0 cursor-pointer shadow-md transition-all flex items-center justify-center gap-1.5">
-                                <i class="fa-solid fa-credit-card text-[10px]"></i> Pay Reward
+                                <i class="fa-solid fa-credit-card text-[10px]"></i> {% trans "Pay Reward" %}
                             </button>
                         </form>
                     </div>
@@ -222,7 +222,7 @@
 
 <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md border-t border-slate-100 dark:border-slate-700 p-4 z-1050 shadow-[0_-8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_-8px_30px_rgb(0,0,0,0.3)] flex items-center justify-between gap-4">
     <div class="flex flex-col text-left min-w-0">
-        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Interested?</span>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">{% trans "Interested?" %}</span>
         <span class="text-sm font-extrabold text-slate-900 dark:text-white truncate max-w-37.5">{{ item.title }}</span>
     </div>
     
@@ -231,16 +231,16 @@
             {% if item.status == "active" %}
                 <a href="{% url 'start-chat-with-item' item.user.username item.id %}" 
                 class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-5 rounded-xl text-xs transition duration-200 shadow-md shadow-primary/10 flex items-center gap-2 border-0 no-underline">
-                    <i class="fa-solid fa-comments text-sm"></i> Contact Author
+                    <i class="fa-solid fa-comments text-sm"></i> {% trans "Contact Author" %}
                 </a>
             {% else %}
                 <div class="bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-400 font-bold py-3 px-5 rounded-xl text-xs flex items-center gap-2 cursor-not-allowed">
-                    <i class="fa-solid fa-handshake text-sm"></i> Reunited
+                    <i class="fa-solid fa-handshake text-sm"></i> {% trans "Reunited" %}
                 </div>
             {% endif %}
         {% else %}
             <div class="bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 font-bold py-3 px-5 rounded-xl text-xs flex items-center gap-2 cursor-not-allowed">
-                <i class="fa-solid fa-user-shield text-sm"></i> Your Listing
+                <i class="fa-solid fa-user-shield text-sm"></i> {% trans "Your Listing" %}
             </div>
         {% endif %}
     </div>
@@ -292,7 +292,7 @@
                     boundaryLayer.bindPopup(`
                         <div class="p-1 font-sans">
                             <div class="font-bold text-slate-800 text-sm">${city}</div>
-                            <div class="text-[11px] text-slate-400 mt-0.5">Approximate search boundary area</div>
+                            <div class="text-[11px] text-slate-400 mt-0.5">{% trans "Approximate search boundary area" %}</div>
                         </div>
                     `);
 
@@ -314,7 +314,7 @@
         marker.bindPopup(`
             <div class="p-1 font-sans">
                 <div class="font-bold text-slate-800 text-sm">${city}</div>
-                <div class="text-[11px] text-slate-400 mt-0.5">Approximate location area</div>
+                <div class="text-[11px] text-slate-400 mt-0.5">{% trans "Approximate location area" %}</div>
             </div>
         `).openPopup();
     }

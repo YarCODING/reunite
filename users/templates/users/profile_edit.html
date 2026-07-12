@@ -3,9 +3,9 @@
 {% block content %}
 
 {% if onboarding %}
-<h1 class="text-4xl font-bold mb-4 text-slate-900 dark:text-white">Complete your Profile</h1>
+<h1 class="text-4xl font-bold mb-4 text-slate-900 dark:text-white">{% trans "Complete your Profile" %}</h1>
 {% else %}
-<h1 class="text-4xl font-bold mb-4 text-slate-900 dark:text-white">Edit your Profile</h1>
+<h1 class="text-4xl font-bold mb-4 text-slate-900 dark:text-white">{% trans "Edit your Profile" %}</h1>
 {% endif %}
 
 <div class="text-center flex flex-col items-center">
@@ -18,11 +18,11 @@
 <form method="POST" enctype="multipart/form-data" class="dark:text-gray-200">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="bg-primary text-white font-bold px-6 py-4 inline-block rounded-lg shadow-lg transition-all cursor-pointer border-none hover:bg-primary-dark" >Submit</button>
+    <button type="submit" class="bg-primary text-white font-bold px-6 py-4 inline-block rounded-lg shadow-lg transition-all cursor-pointer border-none hover:bg-primary-dark" >{% trans "Submit" %}</button>
     {% if onboarding %}
-    <a class="bg-slate-200 hover:bg-slate-300 dark:bg-gray-700 dark:hover:bg-gray-600 ml-1 text-slate-700 dark:text-gray-200 font-bold px-6 py-4 inline-block rounded-lg shadow-lg transition-all cursor-pointer border-none no-underline" href="{% url 'home' %}">Skip</a>
+    <a class="bg-slate-200 hover:bg-slate-300 dark:bg-gray-700 dark:hover:bg-gray-600 ml-1 text-slate-700 dark:text-gray-200 font-bold px-6 py-4 inline-block rounded-lg shadow-lg transition-all cursor-pointer border-none no-underline" href="{% url 'home' %}">{% trans "Skip" %}</a>
     {% else %}
-    <a class="bg-slate-200 hover:bg-slate-300 dark:bg-gray-700 dark:hover:bg-gray-600 ml-1 text-slate-700 dark:text-gray-200 font-bold px-6 py-4 inline-block rounded-lg shadow-lg transition-all cursor-pointer border-none no-underline" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
+    <a class="bg-slate-200 hover:bg-slate-300 dark:bg-gray-700 dark:hover:bg-gray-600 ml-1 text-slate-700 dark:text-gray-200 font-bold px-6 py-4 inline-block rounded-lg shadow-lg transition-all cursor-pointer border-none no-underline" href="{{ request.META.HTTP_REFERER }}">{% trans "Cancel" %}</a>
     {% endif %}
 </form>
 

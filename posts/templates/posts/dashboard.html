@@ -4,8 +4,8 @@
 <div class="max-w-[75vw] mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full text-left">
     
     <div class="mb-8">
-        <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Your Dashboard</h1>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Manage your reported posts or create a new one.</p>
+        <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">{% trans "Your Dashboard" %}</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">{% trans "Manage your reported posts or create a new one." %}</p>
     </div>
 
     <div class="db-grid" 
@@ -14,7 +14,7 @@
         
         <aside class="db-sidebar bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-3xl p-5 shadow-xl shadow-gray-100/30 dark:shadow-none">
             <div class="px-4 py-2 mb-2">
-                <p class="text-[10px] font-extrabold uppercase tracking-widest text-gray-400 dark:text-gray-500">Control Panel</p>
+                <p class="text-[10px] font-extrabold uppercase tracking-widest text-gray-400 dark:text-gray-500">{% trans "Control Panel" %}</p>
             </div>
             
             <nav class="space-y-1">
@@ -24,7 +24,7 @@
                         :class="activeTab === 'list' ? 'bg-primary/10 dark:bg-primary/20 text-primary font-bold' : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-white font-medium'"
                         class="w-full flex items-center gap-3 px-4 py-3 rounded-2xl transition duration-200 text-left text-sm cursor-pointer border-0">
                     <i class="fa-solid fa-rectangle-list text-base"></i>
-                    <span>My Listings</span>
+                    <span>{% trans "My Listings" %}</span>
                 </button>
 
                 <button hx-get="{% url 'dashboard_add' %}" 
@@ -33,7 +33,7 @@
                         :class="activeTab === 'add' ? 'bg-primary/10 dark:bg-primary/20 text-primary font-bold' : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-white font-medium'"
                         class="w-full flex items-center gap-3 px-4 py-3 rounded-2xl transition duration-200 text-left text-sm cursor-pointer border-0">
                     <i class="fa-solid fa-circle-plus text-base"></i>
-                    <span>Report New Item</span>
+                    <span>{% trans "Report New Item" %}</span>
                 </button>
             </nav>
         </aside>

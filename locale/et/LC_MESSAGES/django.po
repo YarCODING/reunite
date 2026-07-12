@@ -1,0 +1,1016 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-12 16:52+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\chats\templates\chats\chat.html:52
+#: .\posts\templates\posts\item_card.html:23
+#: .\posts\templates\posts\item_detail.html:13
+#: .\posts\templates\posts\item_line.html:32
+msgid "Lost"
+msgstr "Kadunud"
+
+#: .\chats\templates\chats\chat.html:56
+#: .\posts\templates\posts\item_card.html:27
+#: .\posts\templates\posts\item_detail.html:17
+#: .\posts\templates\posts\item_line.html:36
+#: .\posts\templates\posts\item_list.html:12
+msgid "Found"
+msgstr "Leitud"
+
+#: .\chats\templates\chats\chat.html:79
+msgid "<span id='online-count' class='pr-1 text-primary'></span> others online"
+msgstr ""
+"<span id='online-count' class='pr-1 text-primary'></span> teist kasutajat on "
+"veebis"
+
+#: .\chats\templates\chats\chat.html:91
+msgid "Verified: Item Found here"
+msgstr "Kinnitatud: Ese leiti siit"
+
+#: .\chats\templates\chats\chats_list.html:7
+msgid "Chats"
+msgstr "Vestlused"
+
+#: .\chats\templates\chats\chats_list.html:8
+msgid "Manage your active and closed conversations regarding items."
+msgstr "Halda oma aktiivseid ja suletud vestlusi esemete kohta."
+
+#: .\chats\templates\chats\chats_list.html:19
+msgid "General Public Chat"
+msgstr "Üldine avalik vestlus"
+
+#: .\chats\templates\chats\chats_list.html:20
+msgid "Open space for all community members"
+msgstr "Avatud ala kõigile kogukonna liikmetele"
+
+#: .\chats\templates\chats\chats_list.html:25
+msgid "Global"
+msgstr "Globaalne"
+
+#: .\chats\templates\chats\chats_list.html:80
+msgid "No item attached"
+msgstr "Eset pole lisatud"
+
+#: .\chats\templates\chats\chats_list.html:91
+msgid "No private conversations yet."
+msgstr "Eravestlusi veel pole."
+
+#: .\chats\templates\chats\chats_list.html:92
+msgid "Chats will appear here once someone reaches out about an item."
+msgstr "Vestlused ilmuvad siia, kui keegi võtab mõne eseme asjus ühendust."
+
+#: .\chats\templates\chats\premium_lock.html:12
+msgid "Chat Archive Locked"
+msgstr "Vestluse arhiiv on lukustatud"
+
+#: .\chats\templates\chats\premium_lock.html:16
+#, python-format
+msgid ""
+"\n"
+"                This conversation regarding <span class=\"font-semibold text-"
+"slate-800 dark:text-gray-200\">\"%(title)s\"</span> has been closed. Full "
+"access to archived chats is exclusive to <span class=\"font-bold text-"
+"pink-500 dark:text-pink-400\">Reunite Hope</span> subscribers.\n"
+"            "
+msgstr ""
+"\n"
+"                See vestlus eseme <span class=\"font-semibold text-slate-800 "
+"dark:text-gray-200\">\"%(title)s\"</span> kohta on suletud. Täielik "
+"juurdepääs arhiivitud vestlustele on saadaval ainult <span class=\"font-bold "
+"text-pink-500 dark:text-pink-400\">Reunite Hope</span> tellijatele.\n"
+"            "
+
+#: .\chats\templates\chats\premium_lock.html:23
+msgid "Upgrade to Premium"
+msgstr "Uuenda Premium-paketile"
+
+#: .\chats\templates\chats\premium_lock.html:27
+msgid "Back to Chats"
+msgstr "Tagasi vestlustesse"
+
+#: .\posts\models.py:10
+msgid "Electronics & Gadgets"
+msgstr "Elektroonika ja vidinad"
+
+#: .\posts\models.py:11
+msgid "IDs & Documents"
+msgstr "ID-kaardid ja dokumendid"
+
+#: .\posts\models.py:12
+msgid "Keys"
+msgstr "Võtmed"
+
+#: .\posts\models.py:13
+msgid "Bags & Wallets"
+msgstr "Kotid ja rahakotid"
+
+#: .\posts\models.py:14
+msgid "Clothing & Accessories"
+msgstr "Riided ja aksessuaarid"
+
+#: .\posts\models.py:15
+msgid "Pets & Animals"
+msgstr "Lemmikloomad ja loomad"
+
+#: .\posts\models.py:16
+msgid "Sport & Leisure"
+msgstr "Sport ja vaba aeg"
+
+#: .\posts\models.py:17
+msgid "Kids & Baby"
+msgstr "Lapsed ja beebid"
+
+#: .\posts\models.py:18
+msgid "Miscellaneous"
+msgstr "Muu"
+
+#: .\posts\templates\posts\dashboard.html:7
+msgid "Your Dashboard"
+msgstr "Sinu töölaud"
+
+#: .\posts\templates\posts\dashboard.html:8
+msgid "Manage your reported posts or create a new one."
+msgstr "Halda oma teatisi või loo uus."
+
+#: .\posts\templates\posts\dashboard.html:17
+msgid "Control Panel"
+msgstr "Juhtpaneel"
+
+#: .\posts\templates\posts\dashboard.html:27
+msgid "My Listings"
+msgstr "Minu kuulutused"
+
+#: .\posts\templates\posts\dashboard.html:36
+#: .\posts\templates\posts\partials\dashboard_form.html:16
+msgid "Report New Item"
+msgstr "Teata uuest esemest"
+
+#: .\posts\templates\posts\edit_item.html:6
+msgid "Edit Listing"
+msgstr "Muuda kuulutust"
+
+#: .\posts\templates\posts\edit_item.html:7
+msgid "Modify the details of your reported item."
+msgstr "Muuda oma teatatud eseme andmeid."
+
+#: .\posts\templates\posts\edit_item.html:16
+msgid "Save Changes"
+msgstr "Salvesta muudatused"
+
+#: .\posts\templates\posts\edit_item.html:19
+#: .\templates\partials\email_form.html:8
+#: .\users\templates\users\profile_delete.html:11
+#: .\users\templates\users\profile_edit.html:25
+msgid "Cancel"
+msgstr "Tühista"
+
+#: .\posts\templates\posts\index.html:13
+msgid "Smart & Safe Network"
+msgstr "Nutikas ja turvaline võrgustik"
+
+#: .\posts\templates\posts\index.html:17
+msgid ""
+"Bring What’s <span class='text-primary dark:text-primary-dark'>Lost</span> "
+"Back to Where It's <span class='text-primary-dark dark:text-primary'>Loved</"
+"span>"
+msgstr ""
+"Too see, mis on <span class='text-primary dark:text-primary-dark'>kadunud</"
+"span>, tagasi sinna, kus seda <span class='text-primary-dark dark:text-"
+"primary'>armastatakse</span>"
+
+#: .\posts\templates\posts\index.html:26
+msgid "Report Lost Item"
+msgstr "Teata kaotatud asjast"
+
+#: .\posts\templates\posts\index.html:29
+msgid "Browse All Listings"
+msgstr "Sirvi kõiki kuulutusi"
+
+#: .\posts\templates\posts\index.html:36
+msgid "Success Rate"
+msgstr "Eduprotsent"
+
+#: .\posts\templates\posts\index.html:40
+msgid "Active Search"
+msgstr "Aktiivne otsing"
+
+#: .\posts\templates\posts\index.html:44
+msgid "Reunited Items"
+msgstr "Omanikuni tagasi jõudnud asjad"
+
+#: .\posts\templates\posts\index.html:54
+msgid "Why Choose Us"
+msgstr "Miks valida meid"
+
+#: .\posts\templates\posts\index.html:55
+msgid "Engineered for Safe Return"
+msgstr "Loodud turvaliseks tagastamiseks"
+
+#: .\posts\templates\posts\index.html:56
+msgid ""
+"We built a set of intelligent tools to protect your privacy while maximizing "
+"the chances of finding your items."
+msgstr ""
+"Oleme loonud nutikad tööriistad, mis kaitsevad sinu privaatsust, suurendades "
+"samal ajal maksimaalselt asjade leidmise tõenäosust."
+
+#: .\posts\templates\posts\index.html:64
+msgid "Privacy First Chat"
+msgstr "Privaatsust esikohale seadev vestlus"
+
+#: .\posts\templates\posts\index.html:65
+msgid ""
+"Communicate securely with finders through our encrypted internal messaging "
+"system without ever revealing your personal phone number or email."
+msgstr ""
+"Suhtle leidjatega turvaliselt läbi meie krüpteeritud sisesõnumite süsteemi, "
+"avaldamata kunagi oma isiklikku telefoninumbrit või e-posti aadressi."
+
+#: .\posts\templates\posts\index.html:72
+msgid "Smart Geo-Targeting"
+msgstr "Nutikas geotargeting"
+
+#: .\posts\templates\posts\index.html:73
+msgid ""
+"Pinpoint exactly where an item was last seen. Our smart mapping architecture "
+"helps local communities look in exactly the right places."
+msgstr ""
+"Määra täpselt koht, kus asja viimati nähti. Meie nutikas kaardiarhitektuur "
+"aitab kohalikel kogukondadel otsida just õigetest kohtadest."
+
+#: .\posts\templates\posts\index.html:81
+msgid ""
+"Our background cross-referencing engine alerts you immediately the moment "
+"someone submits a 'Found' report matching your 'Lost' item description."
+msgstr ""
+"Meie taustal töötav võrdlussüsteem teavitab sind koheselt, kui keegi "
+"sisestab leitud asja teatise, mis ühtib sinu kaotatud asja kirjeldusega."
+
+#: .\posts\templates\posts\index.html:91
+msgid "Simple Steps"
+msgstr "Lihtsad sammud"
+
+#: .\posts\templates\posts\index.html:92
+msgid "How Does Reunite Work?"
+msgstr "Kuidas Reunite töötab?"
+
+#: .\posts\templates\posts\index.html:102
+msgid "Publish a Report"
+msgstr "Avalda teatis"
+
+#: .\posts\templates\posts\index.html:103
+msgid ""
+"Create a listing with details, area tags, and photos. It takes less than 2 "
+"minutes to broadcast to the network."
+msgstr ""
+"Loo kuulutus koos üksikasjade, piirkonnatähiste ja fotodega. Võrgustikus "
+"levitamiseks kulub vähem kui 2 minutit."
+
+#: .\posts\templates\posts\index.html:110
+msgid "Verify & Connect"
+msgstr "Kinnita ja võta ühendust"
+
+#: .\posts\templates\posts\index.html:111
+msgid ""
+"Once a potential match is found, use our secure text system to verify item "
+"ownership safely through security questions."
+msgstr ""
+"Kui potentsiaalne vaste on leitud, kasuta meie turvalist sõnumisüsteemi, et "
+"kontrollküsimuste abil kindlalt asja kuuluvust kontrollida."
+
+#: .\posts\templates\posts\index.html:118
+msgid "Safely Reunite"
+msgstr "Turvaline tagastamine"
+
+#: .\posts\templates\posts\index.html:119
+msgid ""
+"Arrange to meet up in a public, well-lit safe exchange spot to successfully "
+"hand over your recovered property."
+msgstr ""
+"Leppige kokku kohtumine avalikus, hästi valgustatud ja turvalises "
+"vahetuspunktis, et leitud vara edukalt üle anda."
+
+#: .\posts\templates\posts\index.html:130
+msgid "Live Feed"
+msgstr "Reaalajas voog"
+
+#: .\posts\templates\posts\index.html:131
+msgid "Latest Active Reports"
+msgstr "Viimased aktiivsed teatised"
+
+#: .\posts\templates\posts\index.html:132
+msgid "Help your neighbors find what they are looking for."
+msgstr "Aita oma naabritel leida seda, mida nad otsivad."
+
+#: .\posts\templates\posts\index.html:135
+msgid "See All Reports"
+msgstr "Vaata kõiki teatisi"
+
+#: .\posts\templates\posts\index.html:145
+msgid "No active reports found"
+msgstr "Aktiivseid teatisi ei leitud"
+
+#: .\posts\templates\posts\index.html:146
+msgid "Be the first one to create a safe report listing!"
+msgstr "Ole esimene, kes loob turvalise teatise kuulutuse!"
+
+#: .\posts\templates\posts\index.html:157
+msgid "Success Stories"
+msgstr "Edulood"
+
+#: .\posts\templates\posts\index.html:158
+msgid "Heartwarming Reunions"
+msgstr "Südantsoojendavad taasühinemised"
+
+#: .\posts\templates\posts\index.html:167
+msgid "Found my keys in 2 hours!"
+msgstr "Leidsin oma võtmed 2 tunniga!"
+
+#: .\posts\templates\posts\index.html:168
+msgid ""
+"I dropped my car keys while jogging in Central Park. Posted a report here, "
+"and someone found them and contacted me via secure chat within two hours. "
+"Absolute lifesaver!"
+msgstr ""
+"Kaotasin auto võtmed Central Parkis sörkides. Postitasin siia teatise ning "
+"keegi leidis need ja võttis minuga turvalise vestluse kaudu kahe tunni "
+"jooksul ühendust. Tõeline elupäästja!"
+
+#: .\posts\templates\posts\index.html:174
+msgid "Lost Car Keys"
+msgstr "Kaotatud autovõtmed"
+
+#: .\posts\templates\posts\index.html:184
+msgid "Max is back home safely"
+msgstr "Max on turvaliselt kodus tagasi"
+
+#: .\posts\templates\posts\index.html:185
+msgid ""
+"Our golden retriever Max escaped through the backyard fence. The community "
+"support here was outstanding. A neighbor three blocks away posted a photo of "
+"him under 'Found Pets'."
+msgstr ""
+"Meie kuldne retriiver Max pääses läbi tagahoovi aia plehku. Kogukonna toetus "
+"siin oli erakordne. Kolme kvartali kaugusel elav naaber postitas tema foto "
+"leitud lemmikloomade alla."
+
+#: .\posts\templates\posts\index.html:191
+msgid "Lost Golden Retriever"
+msgstr "Kaotatud kuldne retriiver"
+
+#: .\posts\templates\posts\index.html:201
+msgid "Safe and secure exchange"
+msgstr "Turvaline ja kindel vahetus"
+
+#: .\posts\templates\posts\index.html:202
+msgid ""
+"Found an expensive camera setup at a cafe. I was worried about scams, but "
+"the built-in messaging let me verify the rightful owner safely by asking "
+"them about the specific lens serial number."
+msgstr ""
+"Leidsin kohvikust kalli kaamerakomplekti. Kartsin kelmusi, kuid "
+"sisseehitatud sõnumisüsteem võimaldas mul õiget omanikku turvaliselt "
+"kontrollida, küsending temalt objektiivi konkreetset seerianumbrit."
+
+#: .\posts\templates\posts\index.html:208
+msgid "Found DSLR Camera"
+msgstr "Leitud peegelkaamera"
+
+#: .\posts\templates\posts\item_card.html:16
+msgid "No Image Provided"
+msgstr "Pilt puudub"
+
+#: .\posts\templates\posts\item_card.html:41
+#: .\posts\templates\posts\item_detail.html:27
+#: .\posts\templates\posts\item_detail.html:151
+#: .\posts\templates\posts\item_detail.html:238
+#: .\posts\templates\posts\item_line.html:27
+msgid "Reunited"
+msgstr "Taasühinenud"
+
+#: .\posts\templates\posts\item_card.html:75
+msgid "Cash Reward"
+msgstr "Rahaline vaevatasu"
+
+#: .\posts\templates\posts\item_detail.html:31
+msgid "Active"
+msgstr "Aktiivne"
+
+#: .\posts\templates\posts\item_detail.html:42
+msgid "Published on"
+msgstr "Avaldatud"
+
+#: .\posts\templates\posts\item_detail.html:52
+msgid "No image provided"
+msgstr "Pilti pole lisatud"
+
+#: .\posts\templates\posts\item_detail.html:64
+#: .\posts\templates\posts\item_line.html:76
+msgid "Pending Moderation"
+msgstr "Ootab modereerimist"
+
+#: .\posts\templates\posts\item_detail.html:67
+msgid ""
+"This listing is temporary hidden from the public catalog. A moderator will "
+"review it shortly."
+msgstr ""
+"See kuulutus on ajutiselt avalikust kataloogist peidetud. Moderaator vaatab "
+"selle peagi üle."
+
+#: .\posts\templates\posts\item_detail.html:74
+msgid "Description"
+msgstr "Kirjeldus"
+
+#: .\posts\templates\posts\item_detail.html:79
+msgid "No description available for this item."
+msgstr "Selle eseme kohta puudub kirjeldus."
+
+#: .\posts\templates\posts\item_detail.html:85
+msgid "Listed By"
+msgstr "Kuulutuse sisestaja"
+
+#: .\posts\templates\posts\item_detail.html:103
+msgid "Community Member"
+msgstr "Kogukonna liige"
+
+#: .\posts\templates\posts\item_detail.html:105
+msgid "Staff Member"
+msgstr "Meeskonna liige"
+
+#: .\posts\templates\posts\item_detail.html:113
+msgid "Location"
+msgstr "Asukoht"
+
+#: .\posts\templates\posts\item_detail.html:131
+msgid "Map position is unavailable for:"
+msgstr "Kaardiasukoht pole saadaval järgmisele:"
+
+#: .\posts\templates\posts\item_detail.html:141
+msgid "Interested in this item?"
+msgstr "Oled sellest esemest huvitatud?"
+
+#: .\posts\templates\posts\item_detail.html:147
+#: .\posts\templates\posts\item_detail.html:234
+msgid "Contact Author"
+msgstr "Võta autoriga ühendust"
+
+#: .\posts\templates\posts\item_detail.html:156
+#: .\posts\templates\posts\item_detail.html:243
+msgid "Your Listing"
+msgstr "Sinu kuulutus"
+
+#: .\posts\templates\posts\item_detail.html:164
+msgid "Guaranteed Reward"
+msgstr "Garanteeritud vaevatasu"
+
+#: .\posts\templates\posts\item_detail.html:172
+msgid "Motivate Finders"
+msgstr "Motiveeri leidjaid"
+
+#: .\posts\templates\posts\item_detail.html:173
+msgid ""
+"Add a cash reward held securely by Stripe Checkout to speed up the search."
+msgstr ""
+"Otsingu kiirendamiseks lisa rahaline vaevatasu, mida hoiustatakse "
+"turvaliselt Stripe Checkouti kaudu."
+
+#: .\posts\templates\posts\item_detail.html:178
+msgid "Balance:"
+msgstr "Saldo:"
+
+#: .\posts\templates\posts\item_detail.html:203
+msgid ""
+"Your balance of <span class='font-bold text-slate-600 dark:text-slate-300'>€"
+"{{ user_wallet.balance }}</span> will be used first. Remainder via card."
+msgstr ""
+"Esmalt kasutatakse sinu saldot <span class='font-bold text-slate-600 "
+"dark:text-slate-300'>€{{ user_wallet.balance }}</span>. Ülejäänud summa "
+"tasutakse kaardiga."
+
+#: .\posts\templates\posts\item_detail.html:207
+msgid "Payment will be processed via Stripe."
+msgstr "Makset töödeldakse Stripe'i kaudu."
+
+#: .\posts\templates\posts\item_detail.html:212
+msgid "Pay Reward"
+msgstr "Maksa vaevatasu"
+
+#: .\posts\templates\posts\item_detail.html:225
+msgid "Interested?"
+msgstr "Oled huvitatud?"
+
+#: .\posts\templates\posts\item_detail.html:295
+msgid "Approximate search boundary area"
+msgstr "Ligikaudne otsinguala piir"
+
+#: .\posts\templates\posts\item_detail.html:317
+msgid "Approximate location area"
+msgstr "Ligikaudne asukohapiirkond"
+
+#: .\posts\templates\posts\item_line.html:51
+msgid "Reward Claimed"
+msgstr "Vaevatasu välja nõutud"
+
+#: .\posts\templates\posts\item_line.html:55
+msgid "Cash Reward:"
+msgstr "Rahaline vaevatasu:"
+
+#: .\posts\templates\posts\item_line.html:67
+msgid "Archived"
+msgstr "Arhiivitud"
+
+#: .\posts\templates\posts\item_line.html:72
+msgid "Approved & Live"
+msgstr "Kinnitatud ja avalik"
+
+#: .\posts\templates\posts\item_line.html:89
+msgid "I Found It Myself"
+msgstr "Leidsin selle ise"
+
+#: .\posts\templates\posts\item_list.html:8
+msgid "Explore Listings"
+msgstr "Avasta kuulutusi"
+
+#: .\posts\templates\posts\item_list.html:9
+msgid "Search and filter reported lost and found items."
+msgstr "Otsi ja filtreeri teatatud kaotatud ja leitud esemeid."
+
+#: .\posts\templates\posts\item_list.html:20
+msgid "Categories"
+msgstr "Kategooriad"
+
+#: .\posts\templates\posts\item_list.html:35
+msgid "Type"
+msgstr "Tüüp"
+
+#: .\posts\templates\posts\item_list.html:38
+msgid "All Types"
+msgstr "Kõik tüübid"
+
+#: .\posts\templates\posts\item_list.html:48
+msgid "City"
+msgstr "Linn"
+
+#: .\posts\templates\posts\item_list.html:56
+msgid "Enter city name..."
+msgstr "Sisesta linna nimi..."
+
+#: .\posts\templates\posts\item_list.html:65
+msgid "Apply"
+msgstr "Rakenda"
+
+#: .\posts\templates\posts\item_list.html:90
+msgid "No matching items"
+msgstr "Vasteid ei leitud"
+
+#: .\posts\templates\posts\item_list.html:92
+msgid ""
+"We couldn't find anything matching your search criteria. Try adjusting the "
+"filters or resetting them."
+msgstr ""
+"Me ei leidnud midagi, mis vastaks sinu otsingukriteeriumitele. Proovi "
+"filtreid muuta või need lähtestada."
+
+#: .\posts\templates\posts\item_list.html:96
+msgid "Reset All Filters"
+msgstr "Lähtesta kõik filtrid"
+
+#: .\posts\templates\posts\map.html:8
+msgid "Explore items on the global map"
+msgstr "Avasta esemeid globaalselt kaardilt"
+
+#: .\posts\templates\posts\map.html:9
+msgid "Find lost property and report discoveries worldwide."
+msgstr "Leia kaotatud vara ja teata leidudest üle maailma."
+
+#: .\posts\templates\posts\map.html:68
+msgid "Active listings:"
+msgstr "Aktiivsed kuulutused:"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:18
+msgid "Please provide detailed information about the item below."
+msgstr "Palun esita allpool üksikasjalik teave eseme kohta."
+
+#: .\posts\templates\posts\partials\dashboard_form.html:27
+msgid "Item Title"
+msgstr "Eseme pealkiri"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:34
+msgid "Listing Type"
+msgstr "Kuulutuse tüüp"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:38
+msgid "Category"
+msgstr "Kategooria"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:44
+msgid "City / Location"
+msgstr "Linn / Asukoht"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:50
+msgid "Detailed Description"
+msgstr "Üksikasjalik kirjeldus"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:56
+msgid "Attach Image"
+msgstr "Lisa pilt"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:72
+msgid "Limit Reached"
+msgstr "Limiit on täis"
+
+#: .\posts\templates\posts\partials\dashboard_form.html:76
+#: .\templates\partials\email_form.html:4
+#: .\users\templates\users\profile_edit.html:21
+msgid "Submit"
+msgstr "Saada"
+
+#: .\posts\templates\posts\partials\dashboard_items.html:11
+msgid "No listings found"
+msgstr "Kuulutusi ei leitud"
+
+#: .\posts\templates\posts\partials\dashboard_items.html:12
+msgid "You haven't reported any items yet."
+msgstr "Sa ei ole veel ühestki esemest teatanud."
+
+#: .\posts\templates\posts\wallet.html:19
+msgid "My Wallet"
+msgstr "Minu rahakott"
+
+#: .\posts\templates\posts\wallet.html:20
+msgid "Earned from safely returning items back to the owners."
+msgstr "Teenitud esemete turvalise tagastamise eest omanikele."
+
+#: .\posts\templates\posts\wallet.html:23
+msgid "Available Balance"
+msgstr "Saadaval olev jääk"
+
+#: .\posts\templates\posts\wallet.html:31
+msgid "Withdraw Funds"
+msgstr "Võta raha välja"
+
+#: .\posts\templates\posts\wallet.html:35
+msgid "Wallet Empty"
+msgstr "Rahakott on tühi"
+
+#: .\posts\templates\posts\wallet.html:42
+msgid "Withdrawal History"
+msgstr "Väljamaksete ajalugu"
+
+#: .\posts\templates\posts\wallet.html:52
+msgid "Processing"
+msgstr "Töötlemisel"
+
+#: .\posts\templates\posts\wallet.html:54
+msgid "Paid"
+msgstr "Makstud"
+
+#: .\posts\templates\posts\wallet.html:56
+msgid "Cancelled"
+msgstr "Tühistatud"
+
+#: .\posts\views\items.py:14
+msgid ""
+"Reunite is a modern, community-driven platform designed to reconnect lost "
+"belongings with their rightful owners. Safe, secure, and fast."
+msgstr ""
+"Reunite on kaasaegne ja kogukonnapõhine platvorm, mis on loodud kadunud "
+"asjade taasühendamiseks nende õigusjärgsete omanikega. Turvaline, kindel ja "
+"kiire."
+
+#: .\subscription\templates\subscription\my-sub.html:6
+#: .\templates\includes\header.html:122
+msgid "My Subscription"
+msgstr "Minu tellimus"
+
+#: .\subscription\templates\subscription\my-sub.html:21
+msgid "Subscribed since:"
+msgstr "Tellija alates:"
+
+#: .\subscription\templates\subscription\my-sub.html:25
+msgid "Next charge date:"
+msgstr "Järgmine maksepäev:"
+
+#: .\subscription\templates\subscription\my-sub.html:29
+msgid "Cancelled. Access until:"
+msgstr "Tühistatud. Juurdepääs kuni:"
+
+#: .\subscription\templates\subscription\my-sub.html:46
+msgid "Cancel Subscription"
+msgstr "Tühista tellimus"
+
+#: .\subscription\templates\subscription\my-sub.html:54
+msgid "You are not subscribed to any plan."
+msgstr "Sa ei ole ühegi paketiga liitunud."
+
+#: .\subscription\templates\subscription\my-sub.html:55
+msgid "Choose Plan"
+msgstr "Vali pakett"
+
+#: .\subscription\templates\subscription\subscription.html:10
+msgid "Upgrade Your Search Capabilities"
+msgstr "Tõsta oma otsinguvõimekust"
+
+#: .\subscription\templates\subscription\subscription.html:13
+msgid ""
+"Maximize Your Chances of a <span class='text-hope-dark'>Successful Return</"
+"span>"
+msgstr ""
+"Suurenda maksimaalselt oma võimalusi <span class='text-hope-dark'>edukaks "
+"tagastamiseks</span>"
+
+#: .\subscription\templates\subscription\subscription.html:34
+msgid "Cancel anytime"
+msgstr "Tühista igal ajal"
+
+#: .\subscription\templates\subscription\subscription.html:38
+msgid "/ month"
+msgstr "/ kuu"
+
+#: .\subscription\templates\subscription\subscription.html:46
+msgid "24/7 Priority Moderation"
+msgstr "24/7 prioriteetne modereerimine"
+
+#: .\subscription\templates\subscription\subscription.html:50
+msgid "Pinned to Top & Distinct Border"
+msgstr "Kinnitatud üles ja eristuv raam"
+
+#: .\subscription\templates\subscription\subscription.html:54
+#, python-format
+msgid "Reward Fee Reduced to 2%%"
+msgstr "Vaevatasu teenustasu vähendatud 2%%-le"
+
+#: .\subscription\templates\subscription\subscription.html:63
+msgid "You are already a Member"
+msgstr "Sa oled juba liige"
+
+#: .\subscription\templates\subscription\subscription.html:66
+msgid "Manage My Subscription"
+msgstr "Halda minu tellimust"
+
+#: .\subscription\templates\subscription\subscription.html:74
+msgid "Subscribe"
+msgstr "Telli"
+
+#: .\subscription\templates\subscription\subscription.html:81
+msgid "Sign In to Subscribe"
+msgstr "Logi sisse, et tellida"
+
+#: .\subscription\templates\subscription\subscription.html:86
+msgid ""
+"Secure payment. Part of the proceeds goes toward supporting our search "
+"community."
+msgstr "Turvaline makse. Osa tulust läheb meie otsingukogukonna toetamiseks."
+
+#: .\subscription\templates\subscription\subscription.html:94
+msgid "Compare Plans"
+msgstr "Võrdle pakette"
+
+#: .\subscription\templates\subscription\subscription.html:95
+msgid "See how the Hope subscription helps you solve cases more efficiently"
+msgstr "Vaata, kuidas Hope tellimus aitab sul juhtumeid tõhusamalt lahendada"
+
+#: .\subscription\templates\subscription\subscription.html:102
+msgid "Features"
+msgstr "Funktsioonid"
+
+#: .\subscription\templates\subscription\subscription.html:103
+msgid "Basic (Free)"
+msgstr "Tavaline (Tasuta)"
+
+#: .\subscription\templates\subscription\subscription.html:115
+msgid "Monthly Listing Limit"
+msgstr "Kuulutuste kuulimiit"
+
+#: .\subscription\templates\subscription\subscription.html:116
+msgid "Maximum number of active posts about found items"
+msgstr "Maksimaalne aktiivsete leitud asjade teatiste arv"
+
+#: .\subscription\templates\subscription\subscription.html:118
+msgid "2 listings"
+msgstr "2 kuulutust"
+
+#: .\subscription\templates\subscription\subscription.html:124
+msgid "For Those Who Lost an Item"
+msgstr "Esmajoones neile, kes midagi kaotasid"
+
+#: .\subscription\templates\subscription\subscription.html:129
+msgid "Listing Visibility"
+msgstr "Kuulutuse nähtavus"
+
+#: .\subscription\templates\subscription\subscription.html:130
+msgid "Position in the explore feed and card appearance"
+msgstr "Asukoht otsinguvoos ja kaardi välimus"
+
+#: .\subscription\templates\subscription\subscription.html:132
+msgid "Standard chronological order"
+msgstr "Tavaline kronoloogiline järjekord"
+
+#: .\subscription\templates\subscription\subscription.html:134
+msgid "Pinned to the top & highlighted with a prominent custom border"
+msgstr "Kinnitatud üles ja esile tõstetud silmapaistva kohandatud raamiga"
+
+#: .\subscription\templates\subscription\subscription.html:139
+msgid "Publishing Speed"
+msgstr "Avaldamise kiirus"
+
+#: .\subscription\templates\subscription\subscription.html:140
+msgid "Standard listing moderation queue"
+msgstr "Tavaline kuulutuste modereerimise järjekord"
+
+#: .\subscription\templates\subscription\subscription.html:142
+msgid "Up to 2 hours"
+msgstr "Kuni 2 tundi"
+
+#: .\subscription\templates\subscription\subscription.html:143
+msgid "Instant (24/7 Priority)"
+msgstr "Kohene (24/7 prioriteet)"
+
+#: .\subscription\templates\subscription\subscription.html:147
+msgid "Listing Badge"
+msgstr "Kuulutuse märk"
+
+#: .\subscription\templates\subscription\subscription.html:148
+msgid "A distinct badge on your listing and profile to attract attention"
+msgstr "Eristuv märk sinu kuulutusel ja profiilil tähelepanu tõmbamiseks"
+
+#: .\subscription\templates\subscription\subscription.html:153
+msgid "Hope Badge"
+msgstr "Hope-märk"
+
+#: .\subscription\templates\subscription\subscription.html:160
+msgid "For Those Who Found an Item"
+msgstr "Esmajoones neile, kes midagi leidsid"
+
+#: .\subscription\templates\subscription\subscription.html:166
+msgid "Reward Commission"
+msgstr "Vaevatasu vahendustasu"
+
+#: .\subscription\templates\subscription\subscription.html:167
+msgid "The percentage retained by the platform upon a successful return"
+msgstr "Platvormi poolt eduka tagastamise korral kinni peetav protsent"
+
+#: .\subscription\templates\subscription\subscription.html:170
+#, python-format
+msgid "Only 2%%"
+msgstr "Ainult 2%%"
+
+#: .\subscription\templates\subscription\subscription.html:175
+msgid "Archived Chat History"
+msgstr "Arhiivitud vestluste ajalugu"
+
+#: .\subscription\templates\subscription\subscription.html:176
+msgid ""
+"Full access to chat history after the item is returned and the case is closed"
+msgstr ""
+"Täielik juurdepääs vestlusajaloole pärast eseme tagastamist ja juhtumi "
+"sulgemist"
+
+#: .\subscription\templates\subscription\subscription.html:178
+msgid "Locked immediately"
+msgstr "Lukustatakse koheselt"
+
+#: .\subscription\templates\subscription\subscription.html:179
+msgid "Full Lifetime Access"
+msgstr "Täielik eluaegne juurdepääs"
+
+#: .\templates\404.html:6
+msgid "Page not found"
+msgstr "Lehekülge ei leitud"
+
+#: .\templates\404.html:8
+msgid "Error 404: This page doesn't exist or is unavailable"
+msgstr "Tõrge 404: Seda lehekülge pole olemas või see on kättesaamatu"
+
+#: .\templates\includes\header.html:18
+msgid "Search Items"
+msgstr "Otsi asju"
+
+#: .\templates\includes\header.html:21
+msgid "Support"
+msgstr "Tugi"
+
+#: .\templates\includes\header.html:74
+msgid "Create Listing"
+msgstr "Loo kuulutus"
+
+#: .\templates\includes\header.html:96
+msgid "Hello"
+msgstr "Tere"
+
+#: .\templates\includes\header.html:120
+msgid "My Profile"
+msgstr "Minu profiil"
+
+#: .\templates\includes\header.html:121
+msgid "Edit Profile"
+msgstr "Muuda profiili"
+
+#: .\templates\includes\header.html:123
+msgid "Settings"
+msgstr "Seaded"
+
+#: .\templates\includes\header.html:125
+msgid "Log Out"
+msgstr "Logi välja"
+
+#: .\templates\includes\header.html:133
+msgid "Login"
+msgstr "Logi sisse"
+
+#: .\templates\includes\header.html:137
+msgid "Sign Up"
+msgstr "Registreeru"
+
+#: .\users\templates\users\profile.html:17
+msgid "Creator"
+msgstr "Looja"
+
+#: .\users\templates\users\profile.html:21
+msgid "Staff"
+msgstr "Personal"
+
+#: .\users\templates\users\profile.html:28
+msgid "Chat with me"
+msgstr "Vestle minuga"
+
+#: .\users\templates\users\profile_delete.html:5
+#: .\users\templates\users\profile_settings.html:43
+msgid "Delete Account"
+msgstr "Kustuta konto"
+
+#: .\users\templates\users\profile_delete.html:6
+msgid "Are you sure you want to delete your account?"
+msgstr "Kas oled kindel, et soovid oma konto kustutada?"
+
+#: .\users\templates\users\profile_delete.html:10
+msgid "Yes, I want to delete my account"
+msgstr "Jah, soovin oma konto kustutada"
+
+#: .\users\templates\users\profile_edit.html:6
+msgid "Complete your Profile"
+msgstr "Täida oma profiil"
+
+#: .\users\templates\users\profile_edit.html:8
+msgid "Edit your Profile"
+msgstr "Muuda oma profiili"
+
+#: .\users\templates\users\profile_edit.html:23
+msgid "Skip"
+msgstr "Jäta vahele"
+
+#: .\users\templates\users\profile_settings.html:5
+msgid "Account Settings"
+msgstr "Konto seaded"
+
+#: .\users\templates\users\profile_settings.html:11
+msgid "Email address"
+msgstr "E-posti aadress"
+
+#: .\users\templates\users\profile_settings.html:14
+msgid "No Email"
+msgstr "E-posti aadress puudub"
+
+#: .\users\templates\users\profile_settings.html:21
+msgid "Edit"
+msgstr "Muuda"
+
+#: .\users\templates\users\profile_settings.html:30
+msgid "Verified"
+msgstr "Kinnitatud"
+
+#: .\users\templates\users\profile_settings.html:31
+msgid "Not verified"
+msgstr "Kinnitamata"
+
+#: .\users\templates\users\profile_settings.html:36
+msgid "Verify"
+msgstr "Kinnita"
+
+#: .\users\templates\users\profile_settings.html:46
+msgid "Once deleted, account is gone. Forever."
+msgstr "Pärast kustutamist on konto läinud. Igaveseks."
+
+#: .\users\templates\users\profile_settings.html:50
+msgid "Staff cannot be deleted."
+msgstr "Personali kontosid ei saa kustutada."
+
+#: .\users\templates\users\profile_settings.html:53
+msgid "Delete"
+msgstr "Kustuta"

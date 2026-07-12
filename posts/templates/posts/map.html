@@ -5,8 +5,8 @@
     
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <div>
-            <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Explore items on the global map</h1>
-            <p class="text-sm text-slate-400 mt-1">Find lost property and report discoveries worldwide.</p>
+            <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">{% trans "Explore items on the global map" %}</h1>
+            <p class="text-sm text-slate-400 mt-1">{% trans "Find lost property and report discoveries worldwide." %}</p>
         </div>
     </div>
 
@@ -65,7 +65,7 @@
                 <div class="p-2 font-sans min-w-[180px]">
                     <div class="font-bold text-slate-800 text-base dark:text-gray-950">${cityData.city}</div>
                     <div class="text-sm text-slate-600 dark:text-slate-300 mt-1 mb-3">
-                        Active listings: <span class="font-semibold text-primary dark:text-primary-dark">${cityData.count}</span>
+                        {% trans "Active listings:" %} <span class="font-semibold text-primary dark:text-primary-dark">${cityData.count}</span>
                     </div>
                     <a href="/items/?type=&city=${encodeURIComponent(cityData.city)}" 
                     class="inline-flex items-center justify-center w-full px-3 py-1.5 text-xs font-medium text-white! bg-primary hover:bg-primary-dark rounded transition-colors text-center no-underline">
