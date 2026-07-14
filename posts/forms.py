@@ -1,5 +1,6 @@
 from django import forms
 from .models import Item
+from django.utils.translation import gettext_lazy as _
 
 class ItemForm(forms.ModelForm):
     class Meta:
@@ -14,14 +15,14 @@ class ItemForm(forms.ModelForm):
         )
         
         widgets = {
-            'title': forms.TextInput(attrs={'class': INPUT_CLASSES, 'placeholder': 'e.g., iPhone 13 Pro Max'}),
+            'title': forms.TextInput(attrs={'class': INPUT_CLASSES, 'placeholder': _('e.g., iPhone 13 Pro Max')}),
             'type': forms.Select(attrs={'class': INPUT_CLASSES}),
             'category': forms.Select(attrs={'class': INPUT_CLASSES}),
-            'city': forms.TextInput(attrs={'class': INPUT_CLASSES, 'placeholder': 'e.g., Berlin'}),
+            'city': forms.TextInput(attrs={'class': INPUT_CLASSES, 'placeholder': _('e.g., Berlin')}),
             'description': forms.Textarea(attrs={
                 'class': INPUT_CLASSES, 
                 'rows': 4, 
-                'placeholder': 'Provide details (color, serial numbers, unique marks)...'
+                'placeholder': _('Provide details (color, serial numbers, unique marks)...')
             }),
             'image': forms.FileInput(attrs={
                 'class': "w-full text-sm text-gray-500 dark:text-gray-400 "
@@ -30,4 +31,13 @@ class ItemForm(forms.ModelForm):
                          "file:bg-primary/10 dark:file:bg-primary/20 file:text-primary dark:file:text-primary "
                          "hover:file:bg-primary/20 dark:hover:file:bg-primary/30 file:cursor-pointer transition"
             }),
+        }
+
+        labels = {
+            'title': _('Title'),
+            'type': _('Type'),
+            'category': _('Category'),
+            'city': _('City'),
+            'description': _('Description'),
+            'image': _('Image'),
         }

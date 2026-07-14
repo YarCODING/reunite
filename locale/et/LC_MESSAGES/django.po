@@ -1,16 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
+# Estonian translation file for project "Reunite"
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Yaroslav Zaitsev <20011aric@gmail.com>, 2026.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-12 16:52+0300\n"
+"POT-Creation-Date: 2026-07-14 14:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Yaroslav Zaitsev <20011aric@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -18,14 +18,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\chats\templates\chats\chat.html:52
+#: .\chats\forms.py:14
+msgid "Add message ..."
+msgstr "Lisa sõnum ..."
+
+#: .\chats\templates\chats\chat.html:52 .\posts\models.py:24
 #: .\posts\templates\posts\item_card.html:23
 #: .\posts\templates\posts\item_detail.html:13
 #: .\posts\templates\posts\item_line.html:32
 msgid "Lost"
 msgstr "Kadunud"
 
-#: .\chats\templates\chats\chat.html:56
+#: .\chats\templates\chats\chat.html:56 .\posts\models.py:25
 #: .\posts\templates\posts\item_card.html:27
 #: .\posts\templates\posts\item_detail.html:17
 #: .\posts\templates\posts\item_line.html:36
@@ -104,41 +108,89 @@ msgstr "Uuenda Premium-paketile"
 msgid "Back to Chats"
 msgstr "Tagasi vestlustesse"
 
-#: .\posts\models.py:10
+#: .\posts\forms.py:18
+msgid "nt iPhone 13 Pro Max"
+msgstr ""
+
+#: .\posts\forms.py:21
+msgid "e.g., Berlin"
+msgstr "nt Tallinn"
+
+#: .\posts\forms.py:25
+msgid "Provide details (color, serial numbers, unique marks)..."
+msgstr "Esitage üksikasjad (värv, seerianumbrid, unikaalsed märgid)..."
+
+#: .\posts\forms.py:37
+msgid "Title"
+msgstr "Pealkiri"
+
+#: .\posts\forms.py:38 .\posts\templates\posts\item_list.html:35
+msgid "Type"
+msgstr "Tüüp"
+
+#: .\posts\forms.py:39 .\posts\templates\posts\partials\dashboard_form.html:38
+msgid "Category"
+msgstr "Kategooria"
+
+#: .\posts\forms.py:40 .\posts\templates\posts\item_list.html:48
+msgid "City"
+msgstr "Linn"
+
+#: .\posts\forms.py:41 .\posts\templates\posts\item_detail.html:74
+msgid "Description"
+msgstr "Kirjeldus"
+
+#: .\posts\forms.py:42 .\users\forms.py:18
+msgid "Image"
+msgstr "Pilt"
+
+#: .\posts\models.py:11
 msgid "Electronics & Gadgets"
 msgstr "Elektroonika ja vidinad"
 
-#: .\posts\models.py:11
+#: .\posts\models.py:12
 msgid "IDs & Documents"
 msgstr "ID-kaardid ja dokumendid"
 
-#: .\posts\models.py:12
+#: .\posts\models.py:13
 msgid "Keys"
 msgstr "Võtmed"
 
-#: .\posts\models.py:13
+#: .\posts\models.py:14
 msgid "Bags & Wallets"
 msgstr "Kotid ja rahakotid"
 
-#: .\posts\models.py:14
+#: .\posts\models.py:15
 msgid "Clothing & Accessories"
 msgstr "Riided ja aksessuaarid"
 
-#: .\posts\models.py:15
+#: .\posts\models.py:16
 msgid "Pets & Animals"
 msgstr "Lemmikloomad ja loomad"
 
-#: .\posts\models.py:16
+#: .\posts\models.py:17
 msgid "Sport & Leisure"
 msgstr "Sport ja vaba aeg"
 
-#: .\posts\models.py:17
+#: .\posts\models.py:18
 msgid "Kids & Baby"
 msgstr "Lapsed ja beebid"
 
-#: .\posts\models.py:18
+#: .\posts\models.py:19
 msgid "Miscellaneous"
 msgstr "Muu"
+
+#: .\posts\models.py:29 .\posts\templates\posts\item_detail.html:31
+msgid "Active"
+msgstr "Aktiivne"
+
+#: .\posts\models.py:30 .\posts\templates\posts\item_card.html:41
+#: .\posts\templates\posts\item_detail.html:27
+#: .\posts\templates\posts\item_detail.html:151
+#: .\posts\templates\posts\item_detail.html:238
+#: .\posts\templates\posts\item_line.html:27
+msgid "Reunited"
+msgstr "Taasühinenud"
 
 #: .\posts\templates\posts\dashboard.html:7
 msgid "Your Dashboard"
@@ -253,6 +305,10 @@ msgid ""
 msgstr ""
 "Määra täpselt koht, kus asja viimati nähti. Meie nutikas kaardiarhitektuur "
 "aitab kohalikel kogukondadel otsida just õigetest kohtadest."
+
+#: .\posts\templates\posts\index.html:80
+msgid "Instant Match Alerts"
+msgstr "Kiirteavitused sobivuste kohta"
 
 #: .\posts\templates\posts\index.html:81
 msgid ""
@@ -396,21 +452,9 @@ msgstr "Leitud peegelkaamera"
 msgid "No Image Provided"
 msgstr "Pilt puudub"
 
-#: .\posts\templates\posts\item_card.html:41
-#: .\posts\templates\posts\item_detail.html:27
-#: .\posts\templates\posts\item_detail.html:151
-#: .\posts\templates\posts\item_detail.html:238
-#: .\posts\templates\posts\item_line.html:27
-msgid "Reunited"
-msgstr "Taasühinenud"
-
 #: .\posts\templates\posts\item_card.html:75
 msgid "Cash Reward"
 msgstr "Rahaline vaevatasu"
-
-#: .\posts\templates\posts\item_detail.html:31
-msgid "Active"
-msgstr "Aktiivne"
 
 #: .\posts\templates\posts\item_detail.html:42
 msgid "Published on"
@@ -432,10 +476,6 @@ msgid ""
 msgstr ""
 "See kuulutus on ajutiselt avalikust kataloogist peidetud. Moderaator vaatab "
 "selle peagi üle."
-
-#: .\posts\templates\posts\item_detail.html:74
-msgid "Description"
-msgstr "Kirjeldus"
 
 #: .\posts\templates\posts\item_detail.html:79
 msgid "No description available for this item."
@@ -555,17 +595,9 @@ msgstr "Otsi ja filtreeri teatatud kaotatud ja leitud esemeid."
 msgid "Categories"
 msgstr "Kategooriad"
 
-#: .\posts\templates\posts\item_list.html:35
-msgid "Type"
-msgstr "Tüüp"
-
 #: .\posts\templates\posts\item_list.html:38
 msgid "All Types"
 msgstr "Kõik tüübid"
-
-#: .\posts\templates\posts\item_list.html:48
-msgid "City"
-msgstr "Linn"
 
 #: .\posts\templates\posts\item_list.html:56
 msgid "Enter city name..."
@@ -614,10 +646,6 @@ msgstr "Eseme pealkiri"
 #: .\posts\templates\posts\partials\dashboard_form.html:34
 msgid "Listing Type"
 msgstr "Kuulutuse tüüp"
-
-#: .\posts\templates\posts\partials\dashboard_form.html:38
-msgid "Category"
-msgstr "Kategooria"
 
 #: .\posts\templates\posts\partials\dashboard_form.html:44
 msgid "City / Location"
@@ -685,7 +713,30 @@ msgstr "Makstud"
 msgid "Cancelled"
 msgstr "Tühistatud"
 
-#: .\posts\views\items.py:14
+#: .\posts\utils.py:66
+msgid "Match found!"
+msgstr "Sobivus leitud!"
+
+#: .\posts\utils.py:68
+#, python-brace-format
+msgid ""
+"Hello!\n"
+"\n"
+"AI checked new listings and believes that the item from the listing "
+"'{lost_title}' might match the found item '{found_title}'.\n"
+"\n"
+"Take a look at the description of the found item:\n"
+"{found_description}"
+msgstr ""
+"Tere!\n"
+"\n"
+"Tehisintellekt kontrollis uusi kuulutusi ja usub, et ese kuulutusest "
+"'{lost_title}' võib kattuda leitud esemega '{found_title}'.\n"
+"\n"
+"Vaata leitud eseme kirjeldust:\n"
+"{found_description}"
+
+#: .\posts\views\items.py:15
 msgid ""
 "Reunite is a modern, community-driven platform designed to reconnect lost "
 "belongings with their rightful owners. Safe, secure, and fast."
@@ -695,7 +746,7 @@ msgstr ""
 "kiire."
 
 #: .\subscription\templates\subscription\my-sub.html:6
-#: .\templates\includes\header.html:122
+#: .\templates\includes\header.html:123
 msgid "My Subscription"
 msgstr "Minu tellimus"
 
@@ -867,9 +918,8 @@ msgid "The percentage retained by the platform upon a successful return"
 msgstr "Platvormi poolt eduka tagastamise korral kinni peetav protsent"
 
 #: .\subscription\templates\subscription\subscription.html:170
-#, python-format
-msgid "Only 2%%"
-msgstr "Ainult 2%%"
+msgid "Only 2%"
+msgstr "Ainult 2%"
 
 #: .\subscription\templates\subscription\subscription.html:175
 msgid "Archived Chat History"
@@ -906,37 +956,53 @@ msgstr "Otsi asju"
 msgid "Support"
 msgstr "Tugi"
 
-#: .\templates\includes\header.html:74
+#: .\templates\includes\header.html:75
 msgid "Create Listing"
 msgstr "Loo kuulutus"
 
-#: .\templates\includes\header.html:96
+#: .\templates\includes\header.html:97
 msgid "Hello"
 msgstr "Tere"
 
-#: .\templates\includes\header.html:120
+#: .\templates\includes\header.html:121
 msgid "My Profile"
 msgstr "Minu profiil"
 
-#: .\templates\includes\header.html:121
+#: .\templates\includes\header.html:122
 msgid "Edit Profile"
 msgstr "Muuda profiili"
 
-#: .\templates\includes\header.html:123
+#: .\templates\includes\header.html:124
 msgid "Settings"
 msgstr "Seaded"
 
-#: .\templates\includes\header.html:125
+#: .\templates\includes\header.html:126
 msgid "Log Out"
 msgstr "Logi välja"
 
-#: .\templates\includes\header.html:133
+#: .\templates\includes\header.html:134
 msgid "Login"
 msgstr "Logi sisse"
 
-#: .\templates\includes\header.html:137
+#: .\templates\includes\header.html:138
 msgid "Sign Up"
 msgstr "Registreeru"
+
+#: .\users\forms.py:13
+msgid "Add display name"
+msgstr "Lisa kuvatav nimi"
+
+#: .\users\forms.py:14
+msgid "Add information"
+msgstr "Lisa teavet"
+
+#: .\users\forms.py:19
+msgid "Display name"
+msgstr "Kuvatav nimi"
+
+#: .\users\forms.py:20
+msgid "Info"
+msgstr "Info"
 
 #: .\users\templates\users\profile.html:17
 msgid "Creator"

@@ -4,6 +4,7 @@ from geopy.geocoders import Nominatim
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
+from pgvector.django import VectorField
 
 class Item(models.Model):
     CATEGORY_CHOICES = [
@@ -20,13 +21,13 @@ class Item(models.Model):
 
 
     TYPE_CHOICES = [
-        ('lost', 'Lost'),
-        ('found', 'Found'),
+        ('lost', _('Lost')),
+        ('found', _('Found')),
     ]
 
     STATUS_CHOICES = [
-        ('active', 'Active'),
-        ('reunited', 'Reunited')
+        ('active', _('Active')),
+        ('reunited', _('Reunited'))
     ]
 
     title = models.CharField(max_length=60)
@@ -57,6 +58,8 @@ class Item(models.Model):
     
     finder = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='found_items')
 
+    embedding = VectorField(dimensions=1024, null=True, blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
@@ -69,7 +72,7 @@ class Item(models.Model):
             
             if is_new or old_city != self.city:
                 try:
-                    geolocator = Nominatim(user_agent="reunite_lost_and_found")
+                    geolocator = Nominatim(user_agent="reunite_lost_and_found", timeout=10)
                     location = geolocator.geocode(self.city)
                     if location:
                         self.latitude = location.latitude

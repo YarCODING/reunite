@@ -22,7 +22,7 @@ class ItemAdmin(admin.ModelAdmin):
             'fields': ('reward_amount',)
         }),
         ('Service information', {
-            'fields': ('created_at','latitude', 'longitude', 'is_reward_paid'),
+            'fields': ('created_at','latitude', 'longitude', 'is_reward_paid', 'embedding'),
             'classes': ('collapse',),
         }),
     )

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-12 16:52+0300\n"
+"POT-Creation-Date: 2026-07-14 14:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,14 +18,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\chats\templates\chats\chat.html:52
+#: .\chats\forms.py:14
+msgid "Add message ..."
+msgstr ""
+
+#: .\chats\templates\chats\chat.html:52 .\posts\models.py:24
 #: .\posts\templates\posts\item_card.html:23
 #: .\posts\templates\posts\item_detail.html:13
 #: .\posts\templates\posts\item_line.html:32
 msgid "Lost"
 msgstr ""
 
-#: .\chats\templates\chats\chat.html:56
+#: .\chats\templates\chats\chat.html:56 .\posts\models.py:25
 #: .\posts\templates\posts\item_card.html:27
 #: .\posts\templates\posts\item_detail.html:17
 #: .\posts\templates\posts\item_line.html:36
@@ -96,40 +100,88 @@ msgstr ""
 msgid "Back to Chats"
 msgstr ""
 
-#: .\posts\models.py:10
-msgid "Electronics & Gadgets"
+#: .\posts\forms.py:18
+msgid "e.g., iPhone 13 Pro Max"
+msgstr ""
+
+#: .\posts\forms.py:21
+msgid "e.g., Berlin"
+msgstr ""
+
+#: .\posts\forms.py:25
+msgid "Provide details (color, serial numbers, unique marks)..."
+msgstr ""
+
+#: .\posts\forms.py:37
+msgid "Title"
+msgstr ""
+
+#: .\posts\forms.py:38 .\posts\templates\posts\item_list.html:35
+msgid "Type"
+msgstr ""
+
+#: .\posts\forms.py:39 .\posts\templates\posts\partials\dashboard_form.html:38
+msgid "Category"
+msgstr ""
+
+#: .\posts\forms.py:40 .\posts\templates\posts\item_list.html:48
+msgid "City"
+msgstr ""
+
+#: .\posts\forms.py:41 .\posts\templates\posts\item_detail.html:74
+msgid "Description"
+msgstr ""
+
+#: .\posts\forms.py:42 .\users\forms.py:18
+msgid "Image"
 msgstr ""
 
 #: .\posts\models.py:11
-msgid "IDs & Documents"
+msgid "Electronics & Gadgets"
 msgstr ""
 
 #: .\posts\models.py:12
-msgid "Keys"
+msgid "IDs & Documents"
 msgstr ""
 
 #: .\posts\models.py:13
-msgid "Bags & Wallets"
+msgid "Keys"
 msgstr ""
 
 #: .\posts\models.py:14
-msgid "Clothing & Accessories"
+msgid "Bags & Wallets"
 msgstr ""
 
 #: .\posts\models.py:15
-msgid "Pets & Animals"
+msgid "Clothing & Accessories"
 msgstr ""
 
 #: .\posts\models.py:16
-msgid "Sport & Leisure"
+msgid "Pets & Animals"
 msgstr ""
 
 #: .\posts\models.py:17
-msgid "Kids & Baby"
+msgid "Sport & Leisure"
 msgstr ""
 
 #: .\posts\models.py:18
+msgid "Kids & Baby"
+msgstr ""
+
+#: .\posts\models.py:19
 msgid "Miscellaneous"
+msgstr ""
+
+#: .\posts\models.py:29 .\posts\templates\posts\item_detail.html:31
+msgid "Active"
+msgstr ""
+
+#: .\posts\models.py:30 .\posts\templates\posts\item_card.html:41
+#: .\posts\templates\posts\item_detail.html:27
+#: .\posts\templates\posts\item_detail.html:151
+#: .\posts\templates\posts\item_detail.html:238
+#: .\posts\templates\posts\item_line.html:27
+msgid "Reunited"
 msgstr ""
 
 #: .\posts\templates\posts\dashboard.html:7
@@ -235,6 +287,10 @@ msgstr ""
 msgid ""
 "Pinpoint exactly where an item was last seen. Our smart mapping architecture "
 "helps local communities look in exactly the right places."
+msgstr ""
+
+#: .\posts\templates\posts\index.html:80
+msgid "Instant Match Alerts"
 msgstr ""
 
 #: .\posts\templates\posts\index.html:81
@@ -362,20 +418,8 @@ msgstr ""
 msgid "No Image Provided"
 msgstr ""
 
-#: .\posts\templates\posts\item_card.html:41
-#: .\posts\templates\posts\item_detail.html:27
-#: .\posts\templates\posts\item_detail.html:151
-#: .\posts\templates\posts\item_detail.html:238
-#: .\posts\templates\posts\item_line.html:27
-msgid "Reunited"
-msgstr ""
-
 #: .\posts\templates\posts\item_card.html:75
 msgid "Cash Reward"
-msgstr ""
-
-#: .\posts\templates\posts\item_detail.html:31
-msgid "Active"
 msgstr ""
 
 #: .\posts\templates\posts\item_detail.html:42
@@ -395,10 +439,6 @@ msgstr ""
 msgid ""
 "This listing is temporary hidden from the public catalog. A moderator will "
 "review it shortly."
-msgstr ""
-
-#: .\posts\templates\posts\item_detail.html:74
-msgid "Description"
 msgstr ""
 
 #: .\posts\templates\posts\item_detail.html:79
@@ -514,16 +554,8 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: .\posts\templates\posts\item_list.html:35
-msgid "Type"
-msgstr ""
-
 #: .\posts\templates\posts\item_list.html:38
 msgid "All Types"
-msgstr ""
-
-#: .\posts\templates\posts\item_list.html:48
-msgid "City"
 msgstr ""
 
 #: .\posts\templates\posts\item_list.html:56
@@ -570,10 +602,6 @@ msgstr ""
 
 #: .\posts\templates\posts\partials\dashboard_form.html:34
 msgid "Listing Type"
-msgstr ""
-
-#: .\posts\templates\posts\partials\dashboard_form.html:38
-msgid "Category"
 msgstr ""
 
 #: .\posts\templates\posts\partials\dashboard_form.html:44
@@ -642,7 +670,23 @@ msgstr ""
 msgid "Cancelled"
 msgstr ""
 
-#: .\posts\views\items.py:14
+#: .\posts\utils.py:66
+msgid "Match found!"
+msgstr ""
+
+#: .\posts\utils.py:68
+#, python-brace-format
+msgid ""
+"Hello!\n"
+"\n"
+"AI checked new listings and believes that the item from the listing "
+"'{lost_title}' might match the found item '{found_title}'.\n"
+"\n"
+"Take a look at the description of the found item:\n"
+"{found_description}"
+msgstr ""
+
+#: .\posts\views\items.py:15
 msgid ""
 "Reunite is a modern, community-driven platform designed to reconnect lost "
 "belongings with their rightful owners. Safe, secure, and fast."
@@ -651,7 +695,7 @@ msgstr ""
 "belongings with their rightful owners. Safe, secure, and fast."
 
 #: .\subscription\templates\subscription\my-sub.html:6
-#: .\templates\includes\header.html:122
+#: .\templates\includes\header.html:123
 msgid "My Subscription"
 msgstr ""
 
@@ -858,36 +902,52 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: .\templates\includes\header.html:74
+#: .\templates\includes\header.html:75
 msgid "Create Listing"
 msgstr ""
 
-#: .\templates\includes\header.html:96
+#: .\templates\includes\header.html:97
 msgid "Hello"
 msgstr ""
 
-#: .\templates\includes\header.html:120
+#: .\templates\includes\header.html:121
 msgid "My Profile"
 msgstr ""
 
-#: .\templates\includes\header.html:121
+#: .\templates\includes\header.html:122
 msgid "Edit Profile"
 msgstr ""
 
-#: .\templates\includes\header.html:123
+#: .\templates\includes\header.html:124
 msgid "Settings"
 msgstr ""
 
-#: .\templates\includes\header.html:125
+#: .\templates\includes\header.html:126
 msgid "Log Out"
 msgstr ""
 
-#: .\templates\includes\header.html:133
+#: .\templates\includes\header.html:134
 msgid "Login"
 msgstr ""
 
-#: .\templates\includes\header.html:137
+#: .\templates\includes\header.html:138
 msgid "Sign Up"
+msgstr ""
+
+#: .\users\forms.py:13
+msgid "Add display name"
+msgstr ""
+
+#: .\users\forms.py:14
+msgid "Add information"
+msgstr ""
+
+#: .\users\forms.py:19
+msgid "Display name"
+msgstr ""
+
+#: .\users\forms.py:20
+msgid "Info"
 msgstr ""
 
 #: .\users\templates\users\profile.html:17

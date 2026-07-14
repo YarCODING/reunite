@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from django import forms
 from .models import *
+from django.utils.translation import gettext_lazy as _
 
 class ChatmessageCreateForm(ModelForm):
     class Meta:
@@ -10,5 +11,5 @@ class ChatmessageCreateForm(ModelForm):
             'body': '',
         }
         widgets = {
-            'body' : forms.TextInput(attrs={'placeholder': 'Add message ...', 'class': 'p-4 text-black', 'maxlength' : '300', 'autofocus': True }),
+            'body' : forms.TextInput(attrs={'placeholder': _('Add message ...'), 'class': 'p-4 text-black', 'maxlength' : '300', 'autofocus': True }),
         }

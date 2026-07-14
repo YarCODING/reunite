@@ -48,7 +48,8 @@
                 :style="$el.closest('.dark') || document.documentElement.classList.contains('dark') ? 'background-color: #111827 !important;' : 'background-color: #ffffff !important;'">
                 
                 {% for language in languages %}
-                    <a href="/{{ language.code }}{{ request.path|slice:'3:' }}"
+                    <a href="#"
+                    onclick="event.preventDefault(); changeLanguage('{{ language.code }}')"
                     class="w-full text-left! justify-between! px-3 py-2 rounded-xl text-xs font-semibold tracking-wide border-0! transition-colors duration-150 flex items-center m-0 cursor-pointer no-underline!"
                     style="background: transparent !important; display: flex !important;"
                     :class="{% if language.code == LANGUAGE_CODE %} 'text-primary! font-bold bg-primary/10!' {% else %} 'text-gray-600 dark:text-gray-200 hover:bg-gray-100! dark:hover:bg-gray-800!' {% endif %}">
@@ -141,3 +142,21 @@
         </div>
     </div>
 </header>
+
+<script>
+function changeLanguage(langCode) {
+    let currentPath = window.location.pathname;
+    
+    const availableLangs = ['en', 'uk', 'et']; 
+    
+    let pathSegments = currentPath.split('/');
+    
+    if (availableLangs.includes(pathSegments[1])) {
+        pathSegments[1] = langCode;
+    } else {
+        pathSegments.splice(1, 0, langCode);
+    }
+    
+    window.location.pathname = pathSegments.join('/');
+}
+</script>

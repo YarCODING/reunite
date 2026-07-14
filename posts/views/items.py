@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_GET, require_http_methods, require_POST
 from ..models import Item, Wallet
 from ..forms import ItemForm
+from ..utils import check_matches_and_notify
 import decimal
 
 def index(request):
@@ -98,7 +99,7 @@ def dashboard_list(request):
 @login_required
 @require_http_methods(["GET", "POST"])
 def dashboard_add(request):
-    FREE_POST_LIMIT = 3
+    FREE_POST_LIMIT = 2
     
     if request.method == "POST":
         form = ItemForm(request.POST, request.FILES)
@@ -129,6 +130,10 @@ def dashboard_add(request):
                 item.is_approved = False
             
             item.save()
+
+            # AI
+            check_matches_and_notify(item)
+
             items = Item.objects.filter(user=request.user).order_by('-created_at')
             
             response = render(request, 'posts/partials/dashboard_items.html', {'items': items})

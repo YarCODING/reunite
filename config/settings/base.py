@@ -146,6 +146,7 @@ MEDIA_URL = '/media/'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_CHARSET = 'utf-8'
 
 LOGIN_REDIRECT_URL = '/'
 
@@ -153,6 +154,9 @@ ACCOUNT_LOGIN_METHODS = {'email'}
 ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Reunite: '
+
+
+HF_API_KEY = os.environ.get("HF_API_KEY")
 
 
 LOGGING = {
