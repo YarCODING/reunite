@@ -27,7 +27,11 @@
     <link rel="stylesheet" href="{% static 'css/dist/styles.css' %}">
 
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+    {% if IS_DEVELOPMENT %}
+        <link rel="icon" type="image/x-icon" href="{% static 'images/favicon-dev.png' %}">
+    {% else %}
+        <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+    {% endif %}
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,6 +54,13 @@
         </div>
     </footer>
 
+    {% if IS_DEVELOPMENT %}
+        <div class="fixed bottom-4 left-4 z-50 pointer-events-none select-none flex items-center gap-1.5 bg-[#FF7900] text-slate-900 dark:text-white text-[11px] font-black px-3 py-1.5 rounded-xl shadow-lg border border-amber-600/20 uppercase tracking-wider">
+            <i class="fa-solid fa-code text-xs"></i>
+            <span>Development</span>
+        </div>
+    {% endif %}
+    
     <script>
         var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
@@ -87,6 +98,7 @@
     </script>
 
     {% block javascript %}{% endblock %}
+
 
 </body>
 </html>

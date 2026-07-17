@@ -21,6 +21,4 @@ urlpatterns += i18n_patterns(
     path('payment/', include('payments.urls')),
     path('subscription/', include('subscription.urls')),
     path('@<username>/', profile_view, name='profile'),
-
-    prefix_default_language=False, 
 )
