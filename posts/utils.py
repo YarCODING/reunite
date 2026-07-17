@@ -1,5 +1,6 @@
 import requests
 import time
+from django.utils import translation
 from django.core.mail import EmailMessage
 from django.conf import settings
 from pgvector.django import CosineDistance
@@ -62,27 +63,30 @@ def check_matches_and_notify(new_post):
     for post in matches:
         lost_post = new_post if new_post.type == 'lost' else post
         found_post = post if new_post.type == 'lost' else new_post
+
+        user_lang = lost_post.user.profile.lang
         
-        subject = _("Match found!")
-        body = _(
-            "Hello!\n\n"
-            "AI checked new listings and believes that the item from the listing '{lost_title}' "
-            "might match the found item '{found_title}'.\n\n"
-            "Take a look at the description of the found item:\n{found_description}"
-        ).format(
-            lost_title=lost_post.title,
-            found_title=found_post.title,
-            found_description=found_post.description
-        )
-        
-        email = EmailMessage(
-            subject=subject,
-            body=body,
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            to=[lost_post.user.email],
-        )
-        
-        email.content_subtype = "plain"
-        email.encoding = "utf-8"
-        
-        email.send(fail_silently=True)
+        with translation.override(user_lang):
+            subject = _("Match found!")
+            body = _(
+                "Hello!\n\n"
+                "AI checked new listings and believes that the item from the listing '{lost_title}' "
+                "might match the found item '{found_title}'.\n\n"
+                "Take a look at the description of the found item:\n{found_description}"
+            ).format(
+                lost_title=lost_post.title,
+                found_title=found_post.title,
+                found_description=found_post.description
+            )
+            
+            email = EmailMessage(
+                subject=subject,
+                body=body,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[lost_post.user.email],
+            )
+            
+            email.content_subtype = "plain"
+            email.encoding = "utf-8"
+            
+            email.send(fail_silently=True)

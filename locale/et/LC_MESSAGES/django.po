@@ -109,8 +109,8 @@ msgid "Back to Chats"
 msgstr "Tagasi vestlustesse"
 
 #: .\posts\forms.py:18
-msgid "nt iPhone 13 Pro Max"
-msgstr ""
+msgid "e.g., iPhone 13 Pro Max"
+msgstr "nt iPhone 13 Pro Max"
 
 #: .\posts\forms.py:21
 msgid "e.g., Berlin"

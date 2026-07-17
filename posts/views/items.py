@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.translation import gettext_lazy as _
+from django.db.models import Q
 from django.db.models import Count, Avg
 from django.http import HttpResponse
 from django.contrib import messages
@@ -24,6 +25,9 @@ def item_list(request):
     selected_categories = request.GET.getlist('category', '')
     selected_type = request.GET.get('type', '')
     selected_city = request.GET.get('city', '')
+    search_query = request.GET.get('q', '')
+    date_from = request.GET.get('date_from', '')
+    date_to = request.GET.get('date_to', '')
 
     if selected_categories:
         items = items.filter(category__in=selected_categories)
@@ -34,6 +38,17 @@ def item_list(request):
     if selected_city:
         items = items.filter(city__icontains=selected_city)
 
+    if search_query:
+        items = items.filter(
+            Q(title__icontains=search_query) | Q(description__icontains=search_query)
+        )
+
+    if date_from:
+        items = items.filter(created_at__date__gte=date_from)
+
+    if date_to:
+        items = items.filter(created_at__date__lte=date_to)
+
     return render(request, 'posts/item_list.html', {
         'items': items,
         'item_categories': Item.CATEGORY_CHOICES,
@@ -42,6 +57,10 @@ def item_list(request):
         'selected_categories': selected_categories,
         'selected_type': selected_type,
         'selected_city': selected_city,
+        
+        'search_query': search_query,
+        'date_from': date_from,
+        'date_to': date_to,
     })
 
 

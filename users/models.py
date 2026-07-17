@@ -7,6 +7,7 @@ class Profile(models.Model):
     image = models.ImageField(upload_to='avatars/', null=True, blank=True)
     displayname = models.CharField(max_length=20, null=True, blank=True)
     info = models.TextField(null=True, blank=True)
+    lang = models.CharField(max_length=10, default='en')
 
     def __str__(self):
         return str(self.user)
