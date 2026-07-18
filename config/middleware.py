@@ -7,7 +7,7 @@ class SaveUserLanguageMiddleware:
     def __call__(self, request):
         response = self.get_response(request)
 
-        if request.user.is_authenticated and hasattr(request, 'LANGUAGE_CODE'):
+        if response.status_code < 400 and request.user.is_authenticated and hasattr(request, 'LANGUAGE_CODE'):
             try:
                 profile = getattr(request.user, 'profile', None)
                 
@@ -17,8 +17,8 @@ class SaveUserLanguageMiddleware:
                     if profile.lang != short_lang:
                         profile.lang = short_lang
                         profile.save(update_fields=['lang'])
-                    
-            except Exception as e:
-                print(f"Error with saving language: {e}")
+                        
+            except Exception:
+                pass
 
         return response

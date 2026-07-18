@@ -120,7 +120,6 @@ def stripe_webhook(request):
                 item.is_reward_paid = True
                 item.save()
                 
-                print(f"--- SUCCESS: Reward for Item {item_id} successfully activated via Webhook! ---")
                 return HttpResponse(status=200)
                 
             except Item.DoesNotExist:

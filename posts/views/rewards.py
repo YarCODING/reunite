@@ -1,6 +1,7 @@
 import decimal
 import stripe
 from django.conf import settings
+from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
@@ -52,6 +53,9 @@ def create_reward_payment_session(request, item_id):
 
         amount_in_cents = int(stripe_charge * 100)
 
+        success_path = reverse('dashboard') + '?payment=success'
+        cancel_path = reverse('dashboard') + '?payment=cancel'
+
         checkout_session = stripe.checkout.Session.create(
             customer_email=request.user.email,
             payment_method_types=['card'],
@@ -73,8 +77,8 @@ def create_reward_payment_session(request, item_id):
                 'wallet_deduction': float(wallet_deduction),
                 'type': 'reward_payment_with_wallet'
             },
-            success_url=request.build_absolute_uri('/dashboard/?payment=success'),
-            cancel_url=request.build_absolute_uri('/dashboard/?payment=cancel'),
+            success_url = request.build_absolute_uri(success_path),
+            cancel_url = request.build_absolute_uri(cancel_path),
         )
         return redirect(checkout_session.url, status=303)
 
