@@ -51,7 +51,7 @@ def check_matches_and_notify(new_post):
 
     opposite_type = 'found' if new_post.type == 'lost' else 'lost'
     
-    DISTANCE_THRESHOLD = 0.12 
+    DISTANCE_THRESHOLD = 0.12
     
     matches = (
         Item.objects.filter(type=opposite_type)

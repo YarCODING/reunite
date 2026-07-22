@@ -586,11 +586,11 @@ msgstr "В архіві"
 
 #: .\posts\templates\posts\item_line.html:72
 msgid "Approved & Live"
-msgstr "Схвалено та опубліковано"
+msgstr "Опубліковано"
 
 #: .\posts\templates\posts\item_line.html:89
 msgid "I Found It Myself"
-msgstr "Я знайшов(-ла) це самостійно"
+msgstr "Знайдено самостійно"
 
 #: .\posts\templates\posts\item_list.html:8
 msgid "Explore Listings"
