@@ -246,9 +246,9 @@ msgid ""
 "Back to Where It's <span class='text-primary-dark dark:text-primary'>Loved</"
 "span>"
 msgstr ""
-"Поверніть те, що <span class='text-primary dark:text-primary-dark brightness-125'>втрачено</"
-"span>, туди, де його <span class='text-primary-dark dark:text-"
-"primary  brightness-125'>люблять</span>"
+"Поверніть те, що <span class='text-primary dark:text-primary-dark'>втрачено</"
+"span>. Туди - де його <span class='text-primary-dark dark:text-"
+"primary'>люблять</span>."
 
 #: .\posts\templates\posts\index.html:26
 msgid "Report Lost Item"
