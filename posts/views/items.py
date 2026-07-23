@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.utils.translation import gettext_lazy as _
+from allauth.account.decorators import verified_email_required
+from django.utils.translation import gettext as _
 from django.db.models import Q
 from django.db.models import Count, Avg
 from django.http import HttpResponse
@@ -98,8 +99,8 @@ def item_detail(request, item_id):
     return render(request, 'posts/item_detail.html', {'item': item})
 
 
-
 @login_required
+@verified_email_required
 def dashboard(request):
     items = Item.objects.filter(user=request.user).order_by('status', '-created_at')
     return render(request, 'posts/dashboard.html', {'items': items})
@@ -108,6 +109,7 @@ def dashboard(request):
 
 @login_required
 @require_GET
+@verified_email_required
 def dashboard_list(request):
     items = Item.objects.filter(user=request.user).order_by('status', '-created_at')
     return render(request, 'posts/partials/dashboard_items.html', {'items': items})
@@ -117,6 +119,7 @@ def dashboard_list(request):
 
 @login_required
 @require_http_methods(["GET", "POST"])
+@verified_email_required
 def dashboard_add(request):
     FREE_POST_LIMIT = 2
     
@@ -132,7 +135,7 @@ def dashboard_add(request):
             ).count()
             
             if monthly_posts_count >= FREE_POST_LIMIT:
-                error_msg = f"You have reached your limit of {FREE_POST_LIMIT} free posts this month. Upgrade to Reunite Hope for unlimited listings!"
+                error_msg = _("You have reached your limit of {free_post_limit} free posts this month. Upgrade to Reunite Hope for unlimited listings!").format(free_post_limit=FREE_POST_LIMIT)
                 return render(request, 'posts/partials/dashboard_form.html', {
                     'form': form, 
                     'limit_error': error_msg
@@ -167,6 +170,7 @@ def dashboard_add(request):
 
 @login_required
 @require_http_methods(["POST"])
+@verified_email_required
 def cancel_search_self_view(request, item_id):
     item = get_object_or_404(Item, id=item_id, user=request.user)
     
@@ -176,7 +180,7 @@ def cancel_search_self_view(request, item_id):
     item.status = 'reunited'
     
     if item.is_reward_paid and item.reward_amount > 0:
-        owner_wallet, _ = Wallet.objects.get_or_create(user=request.user)
+        owner_wallet, created = Wallet.objects.get_or_create(user=request.user)
 
         refund_amount = decimal.Decimal(str(item.reward_amount))
         
@@ -187,16 +191,17 @@ def cancel_search_self_view(request, item_id):
         item.is_reward_paid = False
         item.save()
         
-        messages.success(request, f"Listing closed! Out of €{refund_amount} reward, 100% has been returned to your Wallet.")
+        messages.success(request, _("Listing closed! Out of €{refund_amount} reward, 100% has been returned to your Wallet.").format(refund_amount=refund_amount))
     else:
         item.save()
-        messages.success(request, "Listing successfully closed. Glad you found your item!")
+        messages.success(request, _("Listing successfully closed. Glad you found your item!"))
 
     return redirect('dashboard')
 
 
 
 @login_required
+@verified_email_required
 def edit_item(request, item_id):
     item = get_object_or_404(Item, id=item_id, user=request.user)
     
@@ -214,6 +219,7 @@ def edit_item(request, item_id):
 
 @login_required
 @require_POST
+@verified_email_required
 def delete_item(request, item_id):
     item = get_object_or_404(Item, id=item_id, user=request.user)
     item.delete()
@@ -226,6 +232,6 @@ def delete_item(request, item_id):
 
 
 
-
+# ======= service =======
 def ping(request):
     return HttpResponse("pong", content_type="text/plain")

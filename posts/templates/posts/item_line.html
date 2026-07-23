@@ -83,7 +83,7 @@
         
         {% if item.user == request.user and item.status == 'active' %}
             <div>
-                <form action="{% url 'cancel-search-self' item.id %}" method="POST" onsubmit="return confirm('Are you sure you found the item yourself? This will close the listing. Any paid reward will be fully refunded to your site Wallet.');" class="m-0">
+               <form action="{% url 'cancel-search-self' item.id %}" method="POST" onsubmit="return confirm('{% blocktranslate %}Are you sure you found the item yourself? This will close the listing. Any paid reward will be fully refunded to your site Wallet.{% endblocktranslate %}');" class="m-0">
                     {% csrf_token %}
                     <button type="submit" class="w-full shrink-0 bg-slate-100 dark:bg-gray-700 hover:bg-slate-200 dark:hover:bg-gray-600 text-slate-700 dark:text-gray-200 font-medium py-2.5 px-4 rounded-xl text-xs border-0 cursor-pointer transition flex items-center justify-center gap-1.5 whitespace-nowrap">
                         <i class="fa-solid fa-circle-check text-emerald-500"></i>{% trans "I Found It Myself" %}

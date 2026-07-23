@@ -3,6 +3,8 @@ import stripe
 from django.conf import settings
 from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
+from allauth.account.decorators import verified_email_required
+from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
 from django.contrib import messages
@@ -15,6 +17,7 @@ from django.conf import Settings
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 @login_required
+@verified_email_required
 def create_reward_payment_session(request, item_id):
     item = get_object_or_404(Item, id=item_id, user=request.user)
     
@@ -24,13 +27,13 @@ def create_reward_payment_session(request, item_id):
             total_reward = decimal.Decimal(str(reward_amount_raw))
             
             if total_reward < decimal.Decimal('1.00'):
-                messages.error(request, "Minimum reward is €1.00.")
+                messages.error(request, _("Minimum reward is €1.00."))
                 return redirect('item-detail', item_id=item.id)
         except (ValueError, TypeError, decimal.InvalidOperation):
-            messages.error(request, "Invalid amount entered.")
+            messages.error(request, _("Invalid amount entered."))
             return redirect('item-detail', item_id=item.id)
 
-        wallet, _ = Wallet.objects.get_or_create(user=request.user)
+        wallet, created = Wallet.objects.get_or_create(user=request.user)
         user_balance = wallet.balance
 
         if user_balance >= total_reward:
@@ -48,7 +51,7 @@ def create_reward_payment_session(request, item_id):
             item.is_reward_paid = True
             item.save()
 
-            messages.success(request, f"Successfully paid! €{wallet_deduction} was deducted from your wallet balance.")
+            messages.success(request, _("Successfully paid! €{wallet_deduction} was deducted from your wallet balance.").format(wallet_deduction=wallet_deduction))
             return redirect('/dashboard/?payment=success')
 
         amount_in_cents = int(stripe_charge * 100)
@@ -63,8 +66,8 @@ def create_reward_payment_session(request, item_id):
                 'price_data': {
                     'currency': 'eur',
                     'product_data': {
-                        'name': f'Reward Sub-payment for Item: {item.title}',
-                        'description': f'Total reward: €{total_reward} (Paid via Wallet: €{wallet_deduction})',
+                        'name': _('Reward Sub-payment for Item: {item_title}').format(item_title=item.title),
+                        'description': _('Total reward: €{total_reward} (Paid via Wallet: €{wallet_deduction})').format(total_reward=total_reward, wallet_deduction=wallet_deduction),
                     },
                     'unit_amount': amount_in_cents,
                 },
@@ -85,6 +88,7 @@ def create_reward_payment_session(request, item_id):
 
 @login_required
 @require_http_methods(["POST"])
+@verified_email_required
 def confirm_reunite_view(request, chatroom_name):
     chat_group = get_object_or_404(ChatGroup, group_name=chatroom_name)
     item = chat_group.item
@@ -119,21 +123,22 @@ def confirm_reunite_view(request, chatroom_name):
         finder_wallet.balance += payout_amount
         finder_wallet.save()
         
-        messages.success(request, f"Success! Item marked as reunited. €{payout_amount} has been added to {finder_user.username}'s wallet.")
+        messages.success(request, _("Success! Item marked as reunited. €{payout_amount} has been added to {finder_username}'s wallet.").format(payout_amount=payout_amount,finder_username=finder_user.username))
     else:
-        messages.success(request, "Success! Item marked as reunited.")
+        messages.success(request, _("Success! Item marked as reunited."))
         
     return redirect('chatroom', chatroom_name=chatroom_name)
 
 
 @login_required
+@verified_email_required
 def request_withdrawal_view(request):
-    wallet, _ = Wallet.objects.get_or_create(user=request.user)
+    wallet, created = Wallet.objects.get_or_create(user=request.user)
 
     if request.method == "POST":
         current_balance = wallet.balance
         if current_balance <= 0:
-            messages.error(request, "Your balance is empty.")
+            messages.error(request, _("Your balance is empty."))
             return redirect('wallet-page')
 
         transaction = PayoutTransaction.objects.create(
@@ -160,7 +165,7 @@ def request_withdrawal_view(request):
             recipient_list=[settings.ADMIN_RECIPIENT_EMAIL],
         )
 
-        messages.success(request, f"Your request for {current_balance} EUR has been submitted! Admin will contact you soon.")
+        messages.success(request, _("Your request for {current_balance} EUR has been submitted! Admin will contact you soon.").format(current_balance=current_balance))
         return redirect('wallet-page')
 
     payout_history = request.user.payouts.all().order_by('-created_at')

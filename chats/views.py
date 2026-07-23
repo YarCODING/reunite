@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from allauth.account.decorators import verified_email_required
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import Http404
@@ -19,6 +20,7 @@ def chat_list_view(request):
     return render(request, 'chats/chats_list.html', {'chatrooms': chatrooms})
 
 @login_required
+@verified_email_required
 def chat_view(request, chatroom_name='public-chat'):
     chat_group = get_object_or_404(ChatGroup, group_name=chatroom_name)
     
@@ -71,6 +73,7 @@ def chat_view(request, chatroom_name='public-chat'):
 
 
 @login_required
+@verified_email_required
 def get_or_create_chatroom(request, username, item_id=None):
     if request.user.username == username:
         return redirect('home')

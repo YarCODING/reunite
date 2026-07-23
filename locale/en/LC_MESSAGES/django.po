@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-14 14:38+0300\n"
+"POT-Creation-Date: 2026-07-23 17:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: .\posts\templates\posts\item_card.html:27
 #: .\posts\templates\posts\item_detail.html:17
 #: .\posts\templates\posts\item_line.html:36
-#: .\posts\templates\posts\item_list.html:12
+#: .\posts\templates\posts\item_list.html:13
 msgid "Found"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: .\posts\forms.py:38 .\posts\templates\posts\item_list.html:35
+#: .\posts\forms.py:38 .\posts\templates\posts\item_list.html:46
 msgid "Type"
 msgstr ""
 
@@ -124,7 +124,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: .\posts\forms.py:40 .\posts\templates\posts\item_list.html:48
+#: .\posts\forms.py:40 .\posts\templates\posts\item_list.html:59
 msgid "City"
 msgstr ""
 
@@ -224,193 +224,193 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:13
+#: .\posts\templates\posts\index.html:17
 msgid "Smart & Safe Network"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:17
+#: .\posts\templates\posts\index.html:21
 msgid ""
 "Bring What’s <span class='text-primary dark:text-primary-dark'>Lost</span> "
 "Back to Where It's <span class='text-primary-dark dark:text-primary'>Loved</"
 "span>"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:26
+#: .\posts\templates\posts\index.html:29
 msgid "Report Lost Item"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:29
+#: .\posts\templates\posts\index.html:32
 msgid "Browse All Listings"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:36
+#: .\posts\templates\posts\index.html:39
 msgid "Success Rate"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:40
+#: .\posts\templates\posts\index.html:43
 msgid "Active Search"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:44
+#: .\posts\templates\posts\index.html:47
 msgid "Reunited Items"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:54
+#: .\posts\templates\posts\index.html:59
 msgid "Why Choose Us"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:55
+#: .\posts\templates\posts\index.html:60
 msgid "Engineered for Safe Return"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:56
+#: .\posts\templates\posts\index.html:61
 msgid ""
 "We built a set of intelligent tools to protect your privacy while maximizing "
 "the chances of finding your items."
 msgstr ""
 
-#: .\posts\templates\posts\index.html:64
+#: .\posts\templates\posts\index.html:69
 msgid "Privacy First Chat"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:65
+#: .\posts\templates\posts\index.html:70
 msgid ""
 "Communicate securely with finders through our encrypted internal messaging "
 "system without ever revealing your personal phone number or email."
 msgstr ""
 
-#: .\posts\templates\posts\index.html:72
+#: .\posts\templates\posts\index.html:77
 msgid "Smart Geo-Targeting"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:73
+#: .\posts\templates\posts\index.html:78
 msgid ""
 "Pinpoint exactly where an item was last seen. Our smart mapping architecture "
 "helps local communities look in exactly the right places."
 msgstr ""
 
-#: .\posts\templates\posts\index.html:80
+#: .\posts\templates\posts\index.html:85
 msgid "Instant Match Alerts"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:81
+#: .\posts\templates\posts\index.html:86
 msgid ""
 "Our background cross-referencing engine alerts you immediately the moment "
 "someone submits a 'Found' report matching your 'Lost' item description."
 msgstr ""
 
-#: .\posts\templates\posts\index.html:91
+#: .\posts\templates\posts\index.html:96
 msgid "Simple Steps"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:92
+#: .\posts\templates\posts\index.html:97
 msgid "How Does Reunite Work?"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:102
+#: .\posts\templates\posts\index.html:107
 msgid "Publish a Report"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:103
+#: .\posts\templates\posts\index.html:108
 msgid ""
 "Create a listing with details, area tags, and photos. It takes less than 2 "
 "minutes to broadcast to the network."
 msgstr ""
 
-#: .\posts\templates\posts\index.html:110
+#: .\posts\templates\posts\index.html:115
 msgid "Verify & Connect"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:111
+#: .\posts\templates\posts\index.html:116
 msgid ""
 "Once a potential match is found, use our secure text system to verify item "
 "ownership safely through security questions."
 msgstr ""
 
-#: .\posts\templates\posts\index.html:118
+#: .\posts\templates\posts\index.html:123
 msgid "Safely Reunite"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:119
+#: .\posts\templates\posts\index.html:124
 msgid ""
 "Arrange to meet up in a public, well-lit safe exchange spot to successfully "
 "hand over your recovered property."
 msgstr ""
 
-#: .\posts\templates\posts\index.html:130
+#: .\posts\templates\posts\index.html:135
 msgid "Live Feed"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:131
+#: .\posts\templates\posts\index.html:136
 msgid "Latest Active Reports"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:132
+#: .\posts\templates\posts\index.html:137
 msgid "Help your neighbors find what they are looking for."
 msgstr ""
 
-#: .\posts\templates\posts\index.html:135
+#: .\posts\templates\posts\index.html:140
 msgid "See All Reports"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:145
+#: .\posts\templates\posts\index.html:150
 msgid "No active reports found"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:146
+#: .\posts\templates\posts\index.html:151
 msgid "Be the first one to create a safe report listing!"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:157
+#: .\posts\templates\posts\index.html:162
 msgid "Success Stories"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:158
+#: .\posts\templates\posts\index.html:163
 msgid "Heartwarming Reunions"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:167
+#: .\posts\templates\posts\index.html:172
 msgid "Found my keys in 2 hours!"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:168
+#: .\posts\templates\posts\index.html:173
 msgid ""
 "I dropped my car keys while jogging in Central Park. Posted a report here, "
 "and someone found them and contacted me via secure chat within two hours. "
 "Absolute lifesaver!"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:174
+#: .\posts\templates\posts\index.html:179
 msgid "Lost Car Keys"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:184
+#: .\posts\templates\posts\index.html:189
 msgid "Max is back home safely"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:185
+#: .\posts\templates\posts\index.html:190
 msgid ""
 "Our golden retriever Max escaped through the backyard fence. The community "
 "support here was outstanding. A neighbor three blocks away posted a photo of "
 "him under 'Found Pets'."
 msgstr ""
 
-#: .\posts\templates\posts\index.html:191
+#: .\posts\templates\posts\index.html:196
 msgid "Lost Golden Retriever"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:201
+#: .\posts\templates\posts\index.html:206
 msgid "Safe and secure exchange"
 msgstr ""
 
-#: .\posts\templates\posts\index.html:202
+#: .\posts\templates\posts\index.html:207
 msgid ""
 "Found an expensive camera setup at a cafe. I was worried about scams, but "
 "the built-in messaging let me verify the rightful owner safely by asking "
 "them about the specific lens serial number."
 msgstr ""
 
-#: .\posts\templates\posts\index.html:208
+#: .\posts\templates\posts\index.html:213
 msgid "Found DSLR Camera"
 msgstr ""
 
@@ -538,45 +538,67 @@ msgstr ""
 msgid "Approved & Live"
 msgstr ""
 
+#: .\posts\templates\posts\item_line.html:86
+msgid ""
+"Are you sure you found the item yourself? This will close the listing. Any "
+"paid reward will be fully refunded to your site Wallet."
+msgstr ""
+
 #: .\posts\templates\posts\item_line.html:89
 msgid "I Found It Myself"
 msgstr ""
 
-#: .\posts\templates\posts\item_list.html:8
+#: .\posts\templates\posts\item_list.html:9
 msgid "Explore Listings"
 msgstr ""
 
-#: .\posts\templates\posts\item_list.html:9
+#: .\posts\templates\posts\item_list.html:10
 msgid "Search and filter reported lost and found items."
 msgstr ""
 
-#: .\posts\templates\posts\item_list.html:20
+#: .\posts\templates\posts\item_list.html:21
+msgid "Search"
+msgstr ""
+
+#: .\posts\templates\posts\item_list.html:26
+msgid "Search by title or description..."
+msgstr ""
+
+#: .\posts\templates\posts\item_list.html:32
 msgid "Categories"
 msgstr ""
 
-#: .\posts\templates\posts\item_list.html:38
+#: .\posts\templates\posts\item_list.html:49
 msgid "All Types"
 msgstr ""
 
-#: .\posts\templates\posts\item_list.html:56
+#: .\posts\templates\posts\item_list.html:65
 msgid "Enter city name..."
 msgstr ""
 
-#: .\posts\templates\posts\item_list.html:65
+#: .\posts\templates\posts\item_list.html:71
+msgid "Date From"
+msgstr ""
+
+#: .\posts\templates\posts\item_list.html:77
+msgid "Date To"
+msgstr ""
+
+#: .\posts\templates\posts\item_list.html:86
 msgid "Apply"
 msgstr ""
 
-#: .\posts\templates\posts\item_list.html:90
+#: .\posts\templates\posts\item_list.html:111
 msgid "No matching items"
 msgstr ""
 
-#: .\posts\templates\posts\item_list.html:92
+#: .\posts\templates\posts\item_list.html:113
 msgid ""
 "We couldn't find anything matching your search criteria. Try adjusting the "
 "filters or resetting them."
 msgstr ""
 
-#: .\posts\templates\posts\item_list.html:96
+#: .\posts\templates\posts\item_list.html:117
 msgid "Reset All Filters"
 msgstr ""
 
@@ -670,11 +692,11 @@ msgstr ""
 msgid "Cancelled"
 msgstr ""
 
-#: .\posts\utils.py:66
+#: .\posts\utils.py:70
 msgid "Match found!"
 msgstr ""
 
-#: .\posts\utils.py:68
+#: .\posts\utils.py:72
 #, python-brace-format
 msgid ""
 "Hello!\n"
@@ -686,13 +708,77 @@ msgid ""
 "{found_description}"
 msgstr ""
 
-#: .\posts\views\items.py:15
+#: .\posts\views\items.py:17
 msgid ""
 "Reunite is a modern, community-driven platform designed to reconnect lost "
 "belongings with their rightful owners. Safe, secure, and fast."
 msgstr ""
 "Reunite is a modern, community-driven platform designed to reconnect lost "
 "belongings with their rightful owners. Safe, secure, and fast."
+
+#: .\posts\views\items.py:138
+#, python-brace-format
+msgid ""
+"You have reached your limit of {free_post_limit} free posts this month. "
+"Upgrade to Reunite Hope for unlimited listings!"
+msgstr ""
+
+#: .\posts\views\items.py:194
+#, python-brace-format
+msgid ""
+"Listing closed! Out of €{refund_amount} reward, 100% has been returned to "
+"your Wallet."
+msgstr ""
+
+#: .\posts\views\items.py:197
+msgid "Listing successfully closed. Glad you found your item!"
+msgstr ""
+
+#: .\posts\views\rewards.py:30
+msgid "Minimum reward is €1.00."
+msgstr ""
+
+#: .\posts\views\rewards.py:33
+msgid "Invalid amount entered."
+msgstr ""
+
+#: .\posts\views\rewards.py:54
+#, python-brace-format
+msgid ""
+"Successfully paid! €{wallet_deduction} was deducted from your wallet balance."
+msgstr ""
+
+#: .\posts\views\rewards.py:69
+#, python-brace-format
+msgid "Reward Sub-payment for Item: {item_title}"
+msgstr ""
+
+#: .\posts\views\rewards.py:70
+#, python-brace-format
+msgid "Total reward: €{total_reward} (Paid via Wallet: €{wallet_deduction})"
+msgstr ""
+
+#: .\posts\views\rewards.py:126
+#, python-brace-format
+msgid ""
+"Success! Item marked as reunited. €{payout_amount} has been added to "
+"{finder_username}'s wallet."
+msgstr ""
+
+#: .\posts\views\rewards.py:128
+msgid "Success! Item marked as reunited."
+msgstr ""
+
+#: .\posts\views\rewards.py:141
+msgid "Your balance is empty."
+msgstr ""
+
+#: .\posts\views\rewards.py:168
+#, python-brace-format
+msgid ""
+"Your request for {current_balance} EUR has been submitted! Admin will "
+"contact you soon."
+msgstr ""
 
 #: .\subscription\templates\subscription\my-sub.html:6
 #: .\templates\includes\header.html:123
@@ -884,6 +970,10 @@ msgstr ""
 
 #: .\subscription\templates\subscription\subscription.html:179
 msgid "Full Lifetime Access"
+msgstr ""
+
+#: .\subscription\views.py:52
+msgid "To subscribe, you must confirm your email address."
 msgstr ""
 
 #: .\templates\404.html:6

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-14 14:38+0300\n"
+"POT-Creation-Date: 2026-07-23 17:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Yaroslav Zaitsev <20011aric@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgstr "Kadunud"
 #: .\posts\templates\posts\item_card.html:27
 #: .\posts\templates\posts\item_detail.html:17
 #: .\posts\templates\posts\item_line.html:36
-#: .\posts\templates\posts\item_list.html:12
+#: .\posts\templates\posts\item_list.html:13
 msgid "Found"
 msgstr "Leitud"
 
@@ -124,7 +124,7 @@ msgstr "Esitage üksikasjad (värv, seerianumbrid, unikaalsed märgid)..."
 msgid "Title"
 msgstr "Pealkiri"
 
-#: .\posts\forms.py:38 .\posts\templates\posts\item_list.html:35
+#: .\posts\forms.py:38 .\posts\templates\posts\item_list.html:46
 msgid "Type"
 msgstr "Tüüp"
 
@@ -132,7 +132,7 @@ msgstr "Tüüp"
 msgid "Category"
 msgstr "Kategooria"
 
-#: .\posts\forms.py:40 .\posts\templates\posts\item_list.html:48
+#: .\posts\forms.py:40 .\posts\templates\posts\item_list.html:59
 msgid "City"
 msgstr "Linn"
 
@@ -232,11 +232,11 @@ msgstr "Salvesta muudatused"
 msgid "Cancel"
 msgstr "Tühista"
 
-#: .\posts\templates\posts\index.html:13
+#: .\posts\templates\posts\index.html:17
 msgid "Smart & Safe Network"
 msgstr "Nutikas ja turvaline võrgustik"
 
-#: .\posts\templates\posts\index.html:17
+#: .\posts\templates\posts\index.html:21
 msgid ""
 "Bring What’s <span class='text-primary dark:text-primary-dark'>Lost</span> "
 "Back to Where It's <span class='text-primary-dark dark:text-primary'>Loved</"
@@ -246,35 +246,35 @@ msgstr ""
 "span>, tagasi sinna, kus seda <span class='text-primary-dark dark:text-"
 "primary'>armastatakse</span>"
 
-#: .\posts\templates\posts\index.html:26
+#: .\posts\templates\posts\index.html:29
 msgid "Report Lost Item"
 msgstr "Teata kaotatud asjast"
 
-#: .\posts\templates\posts\index.html:29
+#: .\posts\templates\posts\index.html:32
 msgid "Browse All Listings"
 msgstr "Sirvi kõiki kuulutusi"
 
-#: .\posts\templates\posts\index.html:36
+#: .\posts\templates\posts\index.html:39
 msgid "Success Rate"
 msgstr "Eduprotsent"
 
-#: .\posts\templates\posts\index.html:40
+#: .\posts\templates\posts\index.html:43
 msgid "Active Search"
 msgstr "Aktiivne otsing"
 
-#: .\posts\templates\posts\index.html:44
+#: .\posts\templates\posts\index.html:47
 msgid "Reunited Items"
 msgstr "Omanikuni tagasi jõudnud asjad"
 
-#: .\posts\templates\posts\index.html:54
+#: .\posts\templates\posts\index.html:59
 msgid "Why Choose Us"
 msgstr "Miks valida meid"
 
-#: .\posts\templates\posts\index.html:55
+#: .\posts\templates\posts\index.html:60
 msgid "Engineered for Safe Return"
 msgstr "Loodud turvaliseks tagastamiseks"
 
-#: .\posts\templates\posts\index.html:56
+#: .\posts\templates\posts\index.html:61
 msgid ""
 "We built a set of intelligent tools to protect your privacy while maximizing "
 "the chances of finding your items."
@@ -282,11 +282,11 @@ msgstr ""
 "Oleme loonud nutikad tööriistad, mis kaitsevad sinu privaatsust, suurendades "
 "samal ajal maksimaalselt asjade leidmise tõenäosust."
 
-#: .\posts\templates\posts\index.html:64
+#: .\posts\templates\posts\index.html:69
 msgid "Privacy First Chat"
 msgstr "Privaatsust esikohale seadev vestlus"
 
-#: .\posts\templates\posts\index.html:65
+#: .\posts\templates\posts\index.html:70
 msgid ""
 "Communicate securely with finders through our encrypted internal messaging "
 "system without ever revealing your personal phone number or email."
@@ -294,11 +294,11 @@ msgstr ""
 "Suhtle leidjatega turvaliselt läbi meie krüpteeritud sisesõnumite süsteemi, "
 "avaldamata kunagi oma isiklikku telefoninumbrit või e-posti aadressi."
 
-#: .\posts\templates\posts\index.html:72
+#: .\posts\templates\posts\index.html:77
 msgid "Smart Geo-Targeting"
 msgstr "Nutikas geotargeting"
 
-#: .\posts\templates\posts\index.html:73
+#: .\posts\templates\posts\index.html:78
 msgid ""
 "Pinpoint exactly where an item was last seen. Our smart mapping architecture "
 "helps local communities look in exactly the right places."
@@ -306,11 +306,11 @@ msgstr ""
 "Määra täpselt koht, kus asja viimati nähti. Meie nutikas kaardiarhitektuur "
 "aitab kohalikel kogukondadel otsida just õigetest kohtadest."
 
-#: .\posts\templates\posts\index.html:80
+#: .\posts\templates\posts\index.html:85
 msgid "Instant Match Alerts"
 msgstr "Kiirteavitused sobivuste kohta"
 
-#: .\posts\templates\posts\index.html:81
+#: .\posts\templates\posts\index.html:86
 msgid ""
 "Our background cross-referencing engine alerts you immediately the moment "
 "someone submits a 'Found' report matching your 'Lost' item description."
@@ -318,19 +318,19 @@ msgstr ""
 "Meie taustal töötav võrdlussüsteem teavitab sind koheselt, kui keegi "
 "sisestab leitud asja teatise, mis ühtib sinu kaotatud asja kirjeldusega."
 
-#: .\posts\templates\posts\index.html:91
+#: .\posts\templates\posts\index.html:96
 msgid "Simple Steps"
 msgstr "Lihtsad sammud"
 
-#: .\posts\templates\posts\index.html:92
+#: .\posts\templates\posts\index.html:97
 msgid "How Does Reunite Work?"
 msgstr "Kuidas Reunite töötab?"
 
-#: .\posts\templates\posts\index.html:102
+#: .\posts\templates\posts\index.html:107
 msgid "Publish a Report"
 msgstr "Avalda teatis"
 
-#: .\posts\templates\posts\index.html:103
+#: .\posts\templates\posts\index.html:108
 msgid ""
 "Create a listing with details, area tags, and photos. It takes less than 2 "
 "minutes to broadcast to the network."
@@ -338,11 +338,11 @@ msgstr ""
 "Loo kuulutus koos üksikasjade, piirkonnatähiste ja fotodega. Võrgustikus "
 "levitamiseks kulub vähem kui 2 minutit."
 
-#: .\posts\templates\posts\index.html:110
+#: .\posts\templates\posts\index.html:115
 msgid "Verify & Connect"
 msgstr "Kinnita ja võta ühendust"
 
-#: .\posts\templates\posts\index.html:111
+#: .\posts\templates\posts\index.html:116
 msgid ""
 "Once a potential match is found, use our secure text system to verify item "
 "ownership safely through security questions."
@@ -350,11 +350,11 @@ msgstr ""
 "Kui potentsiaalne vaste on leitud, kasuta meie turvalist sõnumisüsteemi, et "
 "kontrollküsimuste abil kindlalt asja kuuluvust kontrollida."
 
-#: .\posts\templates\posts\index.html:118
+#: .\posts\templates\posts\index.html:123
 msgid "Safely Reunite"
 msgstr "Turvaline tagastamine"
 
-#: .\posts\templates\posts\index.html:119
+#: .\posts\templates\posts\index.html:124
 msgid ""
 "Arrange to meet up in a public, well-lit safe exchange spot to successfully "
 "hand over your recovered property."
@@ -362,43 +362,43 @@ msgstr ""
 "Leppige kokku kohtumine avalikus, hästi valgustatud ja turvalises "
 "vahetuspunktis, et leitud vara edukalt üle anda."
 
-#: .\posts\templates\posts\index.html:130
+#: .\posts\templates\posts\index.html:135
 msgid "Live Feed"
 msgstr "Reaalajas voog"
 
-#: .\posts\templates\posts\index.html:131
+#: .\posts\templates\posts\index.html:136
 msgid "Latest Active Reports"
 msgstr "Viimased aktiivsed teatised"
 
-#: .\posts\templates\posts\index.html:132
+#: .\posts\templates\posts\index.html:137
 msgid "Help your neighbors find what they are looking for."
 msgstr "Aita oma naabritel leida seda, mida nad otsivad."
 
-#: .\posts\templates\posts\index.html:135
+#: .\posts\templates\posts\index.html:140
 msgid "See All Reports"
 msgstr "Vaata kõiki teatisi"
 
-#: .\posts\templates\posts\index.html:145
+#: .\posts\templates\posts\index.html:150
 msgid "No active reports found"
 msgstr "Aktiivseid teatisi ei leitud"
 
-#: .\posts\templates\posts\index.html:146
+#: .\posts\templates\posts\index.html:151
 msgid "Be the first one to create a safe report listing!"
 msgstr "Ole esimene, kes loob turvalise teatise kuulutuse!"
 
-#: .\posts\templates\posts\index.html:157
+#: .\posts\templates\posts\index.html:162
 msgid "Success Stories"
 msgstr "Edulood"
 
-#: .\posts\templates\posts\index.html:158
+#: .\posts\templates\posts\index.html:163
 msgid "Heartwarming Reunions"
 msgstr "Südantsoojendavad taasühinemised"
 
-#: .\posts\templates\posts\index.html:167
+#: .\posts\templates\posts\index.html:172
 msgid "Found my keys in 2 hours!"
 msgstr "Leidsin oma võtmed 2 tunniga!"
 
-#: .\posts\templates\posts\index.html:168
+#: .\posts\templates\posts\index.html:173
 msgid ""
 "I dropped my car keys while jogging in Central Park. Posted a report here, "
 "and someone found them and contacted me via secure chat within two hours. "
@@ -408,15 +408,15 @@ msgstr ""
 "keegi leidis need ja võttis minuga turvalise vestluse kaudu kahe tunni "
 "jooksul ühendust. Tõeline elupäästja!"
 
-#: .\posts\templates\posts\index.html:174
+#: .\posts\templates\posts\index.html:179
 msgid "Lost Car Keys"
 msgstr "Kaotatud autovõtmed"
 
-#: .\posts\templates\posts\index.html:184
+#: .\posts\templates\posts\index.html:189
 msgid "Max is back home safely"
 msgstr "Max on turvaliselt kodus tagasi"
 
-#: .\posts\templates\posts\index.html:185
+#: .\posts\templates\posts\index.html:190
 msgid ""
 "Our golden retriever Max escaped through the backyard fence. The community "
 "support here was outstanding. A neighbor three blocks away posted a photo of "
@@ -426,15 +426,15 @@ msgstr ""
 "siin oli erakordne. Kolme kvartali kaugusel elav naaber postitas tema foto "
 "leitud lemmikloomade alla."
 
-#: .\posts\templates\posts\index.html:191
+#: .\posts\templates\posts\index.html:196
 msgid "Lost Golden Retriever"
 msgstr "Kaotatud kuldne retriiver"
 
-#: .\posts\templates\posts\index.html:201
+#: .\posts\templates\posts\index.html:206
 msgid "Safe and secure exchange"
 msgstr "Turvaline ja kindel vahetus"
 
-#: .\posts\templates\posts\index.html:202
+#: .\posts\templates\posts\index.html:207
 msgid ""
 "Found an expensive camera setup at a cafe. I was worried about scams, but "
 "the built-in messaging let me verify the rightful owner safely by asking "
@@ -444,7 +444,7 @@ msgstr ""
 "sisseehitatud sõnumisüsteem võimaldas mul õiget omanikku turvaliselt "
 "kontrollida, küsending temalt objektiivi konkreetset seerianumbrit."
 
-#: .\posts\templates\posts\index.html:208
+#: .\posts\templates\posts\index.html:213
 msgid "Found DSLR Camera"
 msgstr "Leitud peegelkaamera"
 
@@ -579,39 +579,65 @@ msgstr "Arhiivitud"
 msgid "Approved & Live"
 msgstr "Kinnitatud ja avalik"
 
+#: .\posts\templates\posts\item_line.html:86
+msgid ""
+"Are you sure you found the item yourself? This will close the listing. Any "
+"paid reward will be fully refunded to your site Wallet."
+msgstr ""
+"Kas olete kindel, et leidsite üksuse ise? See sulgeb kirje. Igasugune "
+"makstud preemia tagastatakse täielikult teie saidile Wallet."
+
 #: .\posts\templates\posts\item_line.html:89
 msgid "I Found It Myself"
 msgstr "Leidsin selle ise"
 
-#: .\posts\templates\posts\item_list.html:8
+#: .\posts\templates\posts\item_list.html:9
 msgid "Explore Listings"
 msgstr "Avasta kuulutusi"
 
-#: .\posts\templates\posts\item_list.html:9
+#: .\posts\templates\posts\item_list.html:10
 msgid "Search and filter reported lost and found items."
 msgstr "Otsi ja filtreeri teatatud kaotatud ja leitud esemeid."
 
-#: .\posts\templates\posts\item_list.html:20
+#: .\posts\templates\posts\item_list.html:21
+msgid "Search"
+msgstr "Otsi"
+
+#: .\posts\templates\posts\item_list.html:26
+#, fuzzy
+#| msgid "Detailed Description"
+msgid "Search by title or description..."
+msgstr "Otsi pealkirja või kirjelduse järgi..."
+
+#: .\posts\templates\posts\item_list.html:32
 msgid "Categories"
 msgstr "Kategooriad"
 
-#: .\posts\templates\posts\item_list.html:38
+#: .\posts\templates\posts\item_list.html:49
 msgid "All Types"
 msgstr "Kõik tüübid"
 
-#: .\posts\templates\posts\item_list.html:56
+#: .\posts\templates\posts\item_list.html:65
 msgid "Enter city name..."
 msgstr "Sisesta linna nimi..."
 
-#: .\posts\templates\posts\item_list.html:65
+#: .\posts\templates\posts\item_list.html:71
+msgid "Date From"
+msgstr "Kuupäev alates"
+
+#: .\posts\templates\posts\item_list.html:77
+msgid "Date To"
+msgstr "Kuupäev kuni"
+
+#: .\posts\templates\posts\item_list.html:86
 msgid "Apply"
 msgstr "Rakenda"
 
-#: .\posts\templates\posts\item_list.html:90
+#: .\posts\templates\posts\item_list.html:111
 msgid "No matching items"
 msgstr "Vasteid ei leitud"
 
-#: .\posts\templates\posts\item_list.html:92
+#: .\posts\templates\posts\item_list.html:113
 msgid ""
 "We couldn't find anything matching your search criteria. Try adjusting the "
 "filters or resetting them."
@@ -619,7 +645,7 @@ msgstr ""
 "Me ei leidnud midagi, mis vastaks sinu otsingukriteeriumitele. Proovi "
 "filtreid muuta või need lähtestada."
 
-#: .\posts\templates\posts\item_list.html:96
+#: .\posts\templates\posts\item_list.html:117
 msgid "Reset All Filters"
 msgstr "Lähtesta kõik filtrid"
 
@@ -713,11 +739,11 @@ msgstr "Makstud"
 msgid "Cancelled"
 msgstr "Tühistatud"
 
-#: .\posts\utils.py:66
+#: .\posts\utils.py:70
 msgid "Match found!"
 msgstr "Sobivus leitud!"
 
-#: .\posts\utils.py:68
+#: .\posts\utils.py:72
 #, python-brace-format
 msgid ""
 "Hello!\n"
@@ -736,7 +762,7 @@ msgstr ""
 "Vaata leitud eseme kirjeldust:\n"
 "{found_description}"
 
-#: .\posts\views\items.py:15
+#: .\posts\views\items.py:17
 msgid ""
 "Reunite is a modern, community-driven platform designed to reconnect lost "
 "belongings with their rightful owners. Safe, secure, and fast."
@@ -744,6 +770,80 @@ msgstr ""
 "Reunite on kaasaegne ja kogukonnapõhine platvorm, mis on loodud kadunud "
 "asjade taasühendamiseks nende õigusjärgsete omanikega. Turvaline, kindel ja "
 "kiire."
+
+#: .\posts\views\items.py:138
+#, python-brace-format
+msgid ""
+"You have reached your limit of {free_post_limit} free posts this month. "
+"Upgrade to Reunite Hope for unlimited listings!"
+msgstr ""
+"Oled selle kuu jooksul saavutanud oma {free_post_limit} tasuta postituse "
+"limiidi. Uuenda Reunite Hope'ile, et saada piiramatu arv kuulutusi!"
+
+#: .\posts\views\items.py:194
+#, python-brace-format
+msgid ""
+"Listing closed! Out of €{refund_amount} reward, 100% has been returned to "
+"your Wallet."
+msgstr ""
+"Kuulutus suletud! €{refund_amount} preemiast on 100% teie rahakotti "
+"tagastatud."
+
+#: .\posts\views\items.py:197
+msgid "Listing successfully closed. Glad you found your item!"
+msgstr "Kuulutus edukalt suletud. Tore, et oma eseme leidsite!"
+
+#: .\posts\views\rewards.py:30
+msgid "Minimum reward is €1.00."
+msgstr "Minimaalne preemia on 1,00 €."
+
+#: .\posts\views\rewards.py:33
+msgid "Invalid amount entered."
+msgstr "Sisestatud summa on sobimatu."
+
+#: .\posts\views\rewards.py:54
+#, python-brace-format
+msgid ""
+"Successfully paid! €{wallet_deduction} was deducted from your wallet balance."
+msgstr ""
+"Edukalt makstud! Teie rahakoti saldost arvati maha €{wallet_deduction}."
+
+#: .\posts\views\rewards.py:69
+#, python-brace-format
+msgid "Reward Sub-payment for Item: {item_title}"
+msgstr "Preemia osamakse eseme eest: {item_title}"
+
+#: .\posts\views\rewards.py:70
+#, python-brace-format
+msgid "Total reward: €{total_reward} (Paid via Wallet: €{wallet_deduction})"
+msgstr ""
+"Kogupreemia: €{total_reward} (Makstud rahakoti kaudu: €{wallet_deduction})"
+
+#: .\posts\views\rewards.py:126
+#, python-brace-format
+msgid ""
+"Success! Item marked as reunited. €{payout_amount} has been added to "
+"{finder_username}'s wallet."
+msgstr ""
+"Õnnestus! Ese märgiti taasühendatuks. Summa €{payout_amount} on lisatud "
+"kasutaja {finder_username} rahakotile."
+
+#: .\posts\views\rewards.py:128
+msgid "Success! Item marked as reunited."
+msgstr "Õnnestus! Üksus märgiti taasühendatuks."
+
+#: .\posts\views\rewards.py:141
+msgid "Your balance is empty."
+msgstr "Teie saldo on tühi."
+
+#: .\posts\views\rewards.py:168
+#, python-brace-format
+msgid ""
+"Your request for {current_balance} EUR has been submitted! Admin will "
+"contact you soon."
+msgstr ""
+"Teie taotlus summale {current_balance} EUR on esitatud! Administraator võtab "
+"teiega peagi ühendust."
 
 #: .\subscription\templates\subscription\my-sub.html:6
 #: .\templates\includes\header.html:123
@@ -918,7 +1018,9 @@ msgid "The percentage retained by the platform upon a successful return"
 msgstr "Platvormi poolt eduka tagastamise korral kinni peetav protsent"
 
 #: .\subscription\templates\subscription\subscription.html:170
-msgid "Only 2%"
+#, fuzzy, python-format
+#| msgid "Only 2%"
+msgid "Only 2%%"
 msgstr "Ainult 2%"
 
 #: .\subscription\templates\subscription\subscription.html:175
@@ -939,6 +1041,10 @@ msgstr "Lukustatakse koheselt"
 #: .\subscription\templates\subscription\subscription.html:179
 msgid "Full Lifetime Access"
 msgstr "Täielik eluaegne juurdepääs"
+
+#: .\subscription\views.py:52
+msgid "To subscribe, you must confirm your email address."
+msgstr "Tellimaks peate oma e-posti aadressi kinnitama."
 
 #: .\templates\404.html:6
 msgid "Page not found"

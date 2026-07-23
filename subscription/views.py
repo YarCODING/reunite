@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.utils.translation import gettext_lazy as _
+from allauth.account.models import EmailAddress
 from django.contrib import messages
 import datetime
 from django.utils.timezone import make_aware
@@ -37,6 +39,19 @@ def subscription_view(request):
     if request.method == 'POST':
         if not request.user.is_authenticated:
             return redirect(f'{settings.BASE_URL}{reverse("account_login")}?next={request.get_full_path()}')
+
+        is_verified = EmailAddress.objects.filter(
+            user=request.user, 
+            email=request.user.email, 
+            verified=True
+        ).exists()
+
+        if not is_verified:
+            messages.error(
+                request, 
+                _("To subscribe, you must confirm your email address.")
+            )
+            return redirect('subscription')
         
         selected_price_id = request.POST.get('price_id')
 
