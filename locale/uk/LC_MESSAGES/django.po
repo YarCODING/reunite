@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-23 17:33+0300\n"
+"POT-Creation-Date: 2026-07-24 11:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Yaroslav Zaitsev <20011aric@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -592,7 +592,9 @@ msgstr "Опубліковано"
 msgid ""
 "Are you sure you found the item yourself? This will close the listing. Any "
 "paid reward will be fully refunded to your site Wallet."
-msgstr "Ви впевнені, що самі знайшли цю річ? Це закриє оголошення. Будь-яка виплачена винагорода буде повністю повернута на ваш гаманець."
+msgstr ""
+"Ви впевнені, що самі знайшли цю річ? Це закриє оголошення. Будь-яка "
+"виплачена винагорода буде повністю повернута на ваш гаманець."
 
 #: .\posts\templates\posts\item_line.html:89
 msgid "I Found It Myself"
@@ -1127,7 +1129,12 @@ msgstr "Творець"
 msgid "Staff"
 msgstr "Персонал"
 
-#: .\users\templates\users\profile.html:28
+#: .\users\templates\users\profile.html:32
+#, python-format
+msgid "Member since %(joined_date)s (%(time_ago)s ago)"
+msgstr "На сайті з %(joined_date)s (%(time_ago)s тому)"
+
+#: .\users\templates\users\profile.html:37
 msgid "Chat with me"
 msgstr "Написати мені"
 

@@ -21,9 +21,18 @@
                 <i class="fa-solid fa-user-tie"></i> {% trans "Staff" %}
             </span>
         {% endif %}
+        
         {% if profile.info %}
         <div class="mt-8 text-slate-700 dark:text-gray-300">{{ profile.info|linebreaksbr }}</div>
-        {% endif %}  
+        {% endif %}   
+
+        {% with joined_date=profile.user.date_joined|date:"d.m.Y" time_ago=profile.user.date_joined|timesince %}
+            <div class="mt-4 text-xs text-gray-400 dark:text-gray-500 flex items-center justify-center gap-1">
+                <i class="fa-regular fa-calendar-alt"></i>
+                {% blocktrans %}Member since {{ joined_date }} ({{ time_ago }} ago){% endblocktrans %}
+            </div>
+        {% endwith %}
+
         {% if profile.user != user %}
         <a class="mt-3 bg-primary hover:bg-primary-dark text-white font-bold px-6 py-4 inline-block rounded-lg shadow-lg transition-all cursor-pointer" href="{% url 'start-chat' profile.user.username %}">{% trans "Chat with me" %}</a>
         {% endif %}

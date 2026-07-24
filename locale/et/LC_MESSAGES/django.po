@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-23 17:33+0300\n"
+"POT-Creation-Date: 2026-07-24 11:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Yaroslav Zaitsev <20011aric@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1118,7 +1118,12 @@ msgstr "Looja"
 msgid "Staff"
 msgstr "Personal"
 
-#: .\users\templates\users\profile.html:28
+#: .\users\templates\users\profile.html:32
+#, python-format
+msgid "Member since %(joined_date)s (%(time_ago)s ago)"
+msgstr "Liikmeks alates %(joined_date)s (%(time_ago)s tagasi)"
+
+#: .\users\templates\users\profile.html:37
 msgid "Chat with me"
 msgstr "Vestle minuga"
 
