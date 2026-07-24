@@ -112,7 +112,7 @@ def stripe_webhook(request):
                 total_reward = decimal.Decimal(str(float(total_reward_raw)))
                 wallet_deduction = decimal.Decimal(str(float(wallet_deduction_raw)))
                 
-                owner_wallet, _ = Wallet.objects.get_or_create(user=item.user)
+                owner_wallet, created = Wallet.objects.get_or_create(user=item.user)
                 owner_wallet.balance -= wallet_deduction
                 owner_wallet.save()
                 

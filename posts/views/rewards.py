@@ -119,7 +119,7 @@ def confirm_reunite_view(request, chatroom_name):
         service_fee = reward_decimal * decimal.Decimal(str(commission_rate))
         payout_amount = reward_decimal - service_fee
         
-        finder_wallet, _ = Wallet.objects.get_or_create(user=finder_user)
+        finder_wallet, created = Wallet.objects.get_or_create(user=finder_user)
         finder_wallet.balance += payout_amount
         finder_wallet.save()
         
